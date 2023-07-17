@@ -1,0 +1,227 @@
+header {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1470px;
+    align-items: center;
+    nav {
+        width: 33%;
+        font-size: 1.04vw;
+        font-weight: 300;
+    }
+    #nav-wrap1 {
+        li {
+            &:hover {
+                transform: scale(2);
+                transition: 0.5s;
+            }
+        }
+    }
+    #nav-wrap2 {
+        li {
+            &:hover {
+                transform: scale(2);
+                transition: 0.5s;
+            }
+        }
+    }
+    ul {
+        display: flex;
+        li {
+            width: 100%;
+            text-align: center;
+            a {
+                text-align: center;
+            }
+        }
+    }
+    #logo {
+        width: 33%;
+        text-align: center;
+        h1 {
+            a {
+                img {
+                    &:hover {
+                        transform: scale(1.5);
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    width: 100%;
+    section:nth-of-type(1) {
+        width: 100%;
+        #banner-wrap {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    section:nth-of-type(2) {
+        width: 100%;
+        height: 75vh;
+        margin: 0 auto;
+        max-width: 1470px;
+    }
+    #main-title {
+        text-align: center;
+        margin: 155px 0px 108px 0px;
+        b {
+            font-size: 1.56vw;
+            font-family: intel;
+        }
+        .main-title-deco {
+            width: 98px;
+            border-bottom: 1px solid #000000;
+            margin: 30px auto;
+        }
+        .main-text {
+            font-size: 0.78vw;
+            font-weight: 300;
+            line-height: 18px;
+        }
+    }
+    #main-con-box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        img {
+            width: 100%;
+            margin-bottom: 38px;
+        }
+        figure {
+            a {
+                img {
+                    &:hover {
+                        transform: scale(1.2);
+                        transition: 0.5s;
+                    }
+                }
+            }
+            figcaption {
+                text-align: center;
+                font-size: 0.78vw;
+                font-weight: 300;
+                line-height: 18px;
+            }
+        }
+    }
+}
+footer {
+    margin-bottom: 260px;
+    position: relative;
+    #footer-img {
+        width: 100%;
+        height: 787px;
+    }
+    #footer-title-box {
+        position: absolute;
+        top: 15%;
+        right: 18%;
+        width: 658.14px;
+        p:nth-child(1) {
+            font-size: 1.8vw;
+            font-weight: 700;
+            font-family: intel;
+            line-height: 42px;
+            span {
+                color: #d91226;
+            }
+        }
+        p:nth-child(2) {
+            font-size: 1.04vw;
+            font-weight: 300;
+            color: #302c2d;
+        }
+    }
+    #icon-box {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 30%;
+        right: 17%;
+        width: 690px;
+        align-items: center;
+        .icons {
+            width: 170px;
+            height: 170px;
+            background-color: #fff;
+            border-radius: 200px;
+            p:nth-of-type(1) {
+                font-size: 1.04vw;
+                font-weight: bold;
+                color: #444444;
+            }
+            p:nth-of-type(2) {
+                color: #6e6e6e;
+            }
+            p {
+                text-align: center;
+            }
+        }
+        #icon1 {
+            img {
+                margin: 35px 47px 34px 48px;
+            }
+            figcaption {
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                font-size: 0.52vw;
+                color: #d91226;
+                font-weight: 700;
+            }
+        }
+        #icon2 {
+            img {
+                margin: 56px 36px 55px 36px;
+            }
+            p {
+                margin-top: 10px;
+            }
+            figcaption {
+                position: absolute;
+                top: 42%;
+                left: 48.5%;
+                font-size: 1.04vw;
+                color: #d91226;
+                font-weight: 700;
+            }
+        }
+        #icon3 {
+            img {
+                margin: 35px 56px 34px 57px;
+            }
+            figcaption {
+                position: absolute;
+                top: 38%;
+                left: 85.5%;
+                font-size: 1.56vw;
+                color: #d91226;
+                font-weight: 700;
+                width: 35px;
+                height: 27px;
+            }
+        }
+    }
+}
+
+@import "_reset";
+@import "_m-index";
+
+// 1. 해상도 스타일 (디바이스별 사이즈 , mixin, media) => _media.css
+
+// 2. 각 페이지별 반응형 스타일 =>_m-index.scss
+
+//PC 최적화
+
+//1 페이지 코딩 (헤더 , 메인 , 푸터)
+//2 공통스타일 (헤더 , 푸터)
+//3 반응형
+//  ㄴ분기점파악 (_media.scss)
+//  ㄴ각페이지별 반응형처리 (_m-index.html)

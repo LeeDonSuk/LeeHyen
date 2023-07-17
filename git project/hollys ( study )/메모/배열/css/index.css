@@ -1,0 +1,65 @@
+@charset "UTF-8";
+div ul {
+  display: flex;
+  justify-content: center;
+}
+div li {
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 500px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.478);
+}
+div li figure {
+  margin: 0;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+div li:nth-child(1) > figure > figcaption::after {
+  position: absolute;
+  left: 25%;
+  top: 110%;
+  content: "1번입니다";
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  z-index: 999;
+  width: 100px;
+  height: 50px;
+}
+div li:nth-child(2) > figure > figcaption::after {
+  position: absolute;
+  left: 25%;
+  top: 110%;
+  content: "2번입니다";
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  z-index: 999;
+  width: 100px;
+  height: 50px;
+}
+div li:nth-child(3) > figure > figcaption::after {
+  position: absolute;
+  left: 25%;
+  top: 110%;
+  content: "3번입니다";
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  z-index: 999;
+  width: 100px;
+  height: 50px;
+}
+div li:nth-child(1) > figure {
+  background: url(../imgs/coffee.png) no-repeat center;
+}
+div li:nth-child(2) > figure {
+  background: url(../imgs/smartphone.png) no-repeat center;
+}
+div li:nth-child(3) > figure {
+  background: url(../imgs/ticket.png) no-repeat center;
+}/*# sourceMappingURL=index.css.map */

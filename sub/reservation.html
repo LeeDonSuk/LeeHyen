@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script defer src="../js/audio.js"></script>
+    <script defer src="../js/d-day.js"></script>
+    <script defer src="../js/reservation.js"></script>
+    <script src="../js/stepbefor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script defer src="../js/header-toggle.js"></script>
+    <link rel="shortcut icon" href="../imgs/icon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" div
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="mobile-menu">
+                <span class="material-symbols-outlined menu-ico">
+                    menu
+                </span>
+                <span class="material-symbols-outlined menu-close">
+                    close
+                </span>
+                <div class="mobile-dropdown">
+                    <div class="mobile-dropdown-container">
+                        <ul>
+                            <li>
+                                <a href="./sub/kislandcamping.html">
+                                    키즈랜드 캠핑
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./reservation.html">
+                                    실시간 예약 / 응모
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./content.html">
+                                    컨텐츠
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./FAQ.html">
+                                    고객센터
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header-logo">
+                <a href="../index.html" title="메인페이지로 이동">
+                    <img src="../imgs/logo/logo_orange.png" alt="logo.png">
+                </a>
+            </div>
+            <ul class="main-menu">
+                <li class="dropdown-items">
+                    <a href="../sub/kislandcamping.html">
+                        키즈랜드 캠핑
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" title="키즈랜드 캠핑이란?">
+                                키즈랜드 캠핑이란?
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="전체 키즈랜드 캠핑장">
+                                전체 키즈랜드 캠핑장
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="키즈랜드 전용 캠핑장">
+                                키즈랜드 전용 캠핑장
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-items">
+                    <a href="./reservation.html">
+                        실시간 예약 / 응모
+
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" title="실시간 예약">
+                                실시간 예약
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="고객초청 캠핑 응모">고객초청 캠핑 응모</a>
+                        </li>
+                        <li>
+                            <a href="#" title="예약관리">
+                                예약관리
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-items">
+                    <a href="./content.html">컨텐츠</a>
+                    <ul>
+                        <li>
+                            <a href="#" title="이벤트">
+                                이벤트
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" title="키즈랜드 소개">
+                                키즈랜드 소개
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-items">
+                    <a href="./servicecenter.html">고객센터</a>
+                    <ul>
+                        <li>
+                            <a href="#" title="공지사항">
+                                공지사항
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="FAQ">
+                                FAQ
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <audio src="https://www.kidslandcamping.co.kr/data/camping_song.mp3"></audio>
+                <div class="audio-container">
+                    <a href="javascript:void(0)" title="일시정지" id="pause">
+                        <img src="../imgs/icon/btn_pause.png" alt="일시정지">
+                    </a>
+                    <a href="javascript:void(0)" title="재생" id="play">
+                        <img src="../imgs/icon/btn_play.png" alt="재생">
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </header>
+    <main id="reservation-main">
+        <div class="dropdown-container">
+            <div class="dropdown-frame">
+
+            </div>
+        </div>
+        <div class="Status">
+            <div class="figures">
+                <figure>
+                    <p class="circles step1 step"></p>
+                    <figcaption>
+                        <p>Step 1</p>
+                        <p>캠핑장 선택</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p class="circles step2 step"></p>
+                    <figcaption>
+                        <p>Step 2</p>
+                        <p>날짜 및 <br>
+                            사이트 선택</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p class="circles step3 step"></p>
+                    <figcaption>
+                        <p>Step 3</p>
+                        <p>인증 방법 선택</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p class="circles step4 step"></p>
+                    <figcaption>
+                        <p>Step 4</p>
+                        <p>개인정보 입력</p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p class="circles lastcircles step5 step"></p>
+                    <figcaption>
+                        <p>Step 5</p>
+                        <p>약관 동의</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="camping-list" id="camping-list">
+            <div class="list-title">
+                <p>캠핑장 리스트</p>
+            </div>
+            <ul>
+                <li class="listitem1 listitems">
+                    <p>강원권</p>
+                    <p>병지방 오토캠핑장</p>
+                </li>
+                <li class="listitem2 listitems">
+                    <p>충남권</p>
+                    <p>어은돌 송림 캠핑장</p>
+                </li>
+                <li class="listitem3 listitems">
+                    <p>전남권</p>
+                    <p>담양 금성산성 캠핑장</p>
+                </li>
+            </ul>
+            <ul>
+                <li class="listitem4 listitems">
+                    <p>경북권</p>
+                    <p>칠곡보 오토 캠핑장</p>
+                </li>
+                <li class="listitem5 listitems">
+                    <p>경남권</p>
+                    <p>캠프포레</p>
+                </li>
+                <li class="listitem6 listitems">
+                    <p>경기권</p>
+                    <p>수원KT위즈파크</p>
+                </li>
+            </ul>
+        </div>
+        <div class="d-day" id="d-day">
+            <div class="titles">
+                <div class="d-day-title">
+                    <p>예약날짜</p>
+                </div>
+                <div class="site-title">
+                    <p>캠핑장사이트</p>
+                </div>
+            </div>
+            <div class="re-content">
+                <div class="d-day-container">
+                    <div id="months"></div>
+                    <div id="datepicker"></div>
+
+                    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+                    <script>
+                        flatpickr("#datepicker", {
+                            inline: true,
+                            locale: "ko",
+                            dateFormat: "Y-m-d",
+                            onReady: function (selectedDates, dateStr, instance) {
+                                var monthsElement = document.getElementById('months');
+                                var calendarContainer = instance.calendarContainer;
+
+                                // 년도 요소 추출
+                                var yearElement = calendarContainer.querySelector('.cur-year');
+                                yearElement.classList.add('flatpickr-year');
+
+                                // 월 헤더 요소 추출
+                                var monthHeaders = calendarContainer.querySelectorAll('.flatpickr-monthDropdown-months');
+
+                                // 컨테이너에 년도 요소와 월 헤더 요소 추가
+                                monthsElement.appendChild(yearElement);
+                                monthHeaders.forEach(function (header) {
+                                    monthsElement.appendChild(header);
+
+                                });
+                            }
+                        });
+                    </script>
+                </div>
+                <div class="site">
+                    <div class="site-item">
+                        <figure>
+                            <a href="javascript:void(0)" class="site-img">
+                                <img src="../imgs/banner/site-benner.jpg">
+                            </a>
+                            <figcaption>
+                                ※ 캠핑장 사정에 따라 예약 사이트는 변경 될 수 있습니다 <br>
+                                (캠핑장과 예약고객의 협의에 따라 변경 진행)
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ss-radio">
+                <div class="radio1">
+                    <div class="radio-1">
+                        <input type="radio" name="radio-item1" id="radio-item1">
+                        <label for="radio-item1">A구역 01 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                    <div class="radio-2">
+                        <input type="radio" name="radio-item1" id="radio-item2">
+                        <label for="radio-item2">A구역 02 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                    <div class="radio-3">
+                        <input type="radio" name="radio-item1" id="radio-item3">
+                        <label for="radio-item3">A구역 03 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                    <div class="radio-4">
+                        <input type="radio" name="radio-item1" id="radio-item4">
+                        <label for="radio-item4">A구역 04 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                    <div class="radio-5">
+                        <input type="radio" name="radio-item1" id="radio-item5">
+                        <label for="radio-item5">A구역 05 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                </div>
+                <div class="radio2">
+                    <div class="radio-1">
+                        <input type="radio" name="radio-item1" id="radio-item1">
+                        <label for="radio-item1">A구역 06 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                    <div class="radio-2">
+                        <input type="radio" name="radio-item1" id="radio-item2">
+                        <label for="radio-item2">A구역 07 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                    <div class="radio-3">
+                        <input type="radio" name="radio-item1" id="radio-item3">
+                        <label for="radio-item3">A구역 08 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                    <div class="radio-4">
+                        <input type="radio" name="radio-item1" id="radio-item4">
+                        <label for="radio-item4">A구역 09 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                    <div class="radio-5">
+                        <input type="radio" name="radio-item1" id="radio-item5">
+                        <label for="radio-item5">A구역 10 (6m × 8m / 사이드 주차 / 파쇄석)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ingjung">
+            <div class="ingjung-title">
+                <p>
+                    <span>본인인증</span>
+                    <span>※세 가지 인증 방법 중 택1 (멤버십 포인트로 인증 시 멤버십 포인트 차감)</span>
+                </p>
+                <p>
+                    [차감 포인트] ① 키즈랜드 전용 캠핑장(병지방) : 20,000p, ② 수원 KT위즈파크 : 20,000p, ③ 기타 : 10,000p
+                </p>
+            </div>
+            <div class="ingjun-content">
+                <div class="pay-01">
+                    <figure>
+                        <img src="../imgs/icon/pay_ico1.png">
+                        <figcaption>
+                            <p>
+                                지니 tv 키즈랜드 고객이라면<br>
+                                kt.com 아이디로 인증하세요.
+                            </p>
+                            <p>
+                                (지니 TV 키즈랜드팩 초이스 or 프라임 키즈랜드팩 가입 고객)
+                            </p>
+                            <div class="pay-input">
+                                <div class="in-1">
+                                    <p>kt.com ID</p>
+                                    <p>
+                                        <input type="text" placeholder="키즈랜드 가입 명의자 아이디 기재">
+                                    </p>
+                                </div>
+                                <div class="in-2">
+                                    <p>생년월일</p>
+                                    <p>
+                                        <input type="text" placeholder="명의자 본인 ( 숫자6자리 )">
+                                    </p>
+                                </div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="pay-02">
+                    <figure>
+                        <img src="../imgs/icon/pay_ico2.png">
+                        <figcaption>
+                            <p>
+                                지니 tv 키즈랜드 고객이 아니라면<br>
+                                kt 멤버십 번호로 인증하세요
+                            </p>
+                            <div class="pay-input2">
+                                <div class="in-1">
+                                    <p>KT 멤버십 번호</p>
+                                    <p>
+                                        <input type="text" placeholder="4자리수">
+                                        <span class="in-span">-</span>
+                                        <input type="text" placeholder="4자리수">
+                                        <span class="in-span">-</span>
+                                        <input type="text" placeholder="4자리수">
+                                        <span class="in-span">-</span>
+                                        <input type="text" placeholder="4자리수">
+                                    </p>
+                                </div>
+                                <div class="in-2">
+                                    <p>생년월일</p>
+                                    <p>
+                                        <input type="text" placeholder="명의자 본인 ( 숫자6자리 )">
+                                    </p>
+                                </div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="pay-03">
+                    <figure>
+                        <img src="../imgs/icon/pay_ico3.png">
+                        <figcaption>
+                            <p>
+                                키즈랜드 캠핑 무료 이용권 번호를<br>
+                                입력해 주세요.
+                            </p>
+                            <div class="pay-input2">
+                                <div class="in-1">
+                                    <p>무료 이용권 번호</p>
+                                    <p>
+                                        <input type="text" placeholder="4자리수">
+                                        <span class="in-span">-</span>
+                                        <input type="text" placeholder="4자리수">
+                                        <span class="in-span">-</span>
+                                        <input type="text" placeholder="4자리수">
+                                        <span class="in-span">-</span>
+                                        <input type="text" placeholder="4자리수">
+                                    </p>
+                                </div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="yeyak-info">
+            <h2>
+                예약자 정보
+            </h2>
+            <div class="ul-container">
+                <ul>
+                    <li>
+                        <p>
+                            예약자 성명 <span>*</span>
+                        </p>
+                        <p>
+                            <input type="text" placeholder="예약자 성명을 입력해주세요">
+                        </p>
+                        <p></p>
+                    </li>
+                    <li>
+                        <p>
+                            휴대전화 번호 <span>*</span>
+                        </p>
+                        <p>
+                            <input type="text" placeholder="휴대전화 번호를 입력해 주세요.">
+                        </p>
+                        <button>
+                            <p>인증하기</p>
+                        </button>
+                    </li>
+                    <li>
+                        <p>
+                            인증번호 <span>*</span>
+                        </p>
+                        <p>
+                            <input type="text" placeholder="인증번호를 입력해 주세요 ( 6글자 )">
+                        </p>
+                        <button>
+                            <p>인증완료</p>
+                        </button>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <p>
+                            차량번호 <span>*</span>
+                        </p>
+                        <figure>
+                            <input type="text" placeholder="차량 번호를 입력해 주세요">
+                            <figcaption>
+                                ※ 캠핑장에서의 본인 확인을 위해 정확한 차량번호를 입력해 주시기 바랍니다.
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <p>
+                            도착 예상 시간 <span>*</span>
+                        </p>
+                        <figure>
+                            <input type="text" placeholder="도착 예상 시간을 입력해 주세요">
+                            <figcaption>
+                                ※ 도착 예상시간은 캠핑장별 입실시간 확인 후 입력 요망!<br>
+                                - 병지방(14시~20시)/어은돌(14시~20시)/담양(13시~21시)<br>
+                                - 캠프포레(15시~17시)/칠곡보(14시~20시)/KT위즈파크(경기시작 2시간전)<br>
+                                예약시간과 다르게 입장하는 경우 각 캠핑장 확인 부탁드립니다.
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <p> 인원 <span>*</span></p>
+                        <figure>
+                            <p>
+                                성인:
+                                <select name="inwon1">
+                                    <option value>성인인원</option>
+                                    <option value>1명</option>
+                                    <option value>2명</option>
+                                </select>
+                            </p>
+                            <p>
+                                아동:
+                                <select name="inwon2">
+                                    <option value>아동인원</option>
+                                    <option value>1명</option>
+                                    <option value>2명</option>
+                                    <option value>3명</option>
+                                </select>
+                            </p>
+                        </figure>
+                    <li>
+                        <p>
+                            * 만 12세이하 자녀 동반이 가능한 KT고객. 보호자 최대 2명 / 자녀 최대 3명까지 동반 가능
+                        </p>
+                    </li>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dong2">
+            <h2>약관동의</h2>
+            <div class="don2-radio">
+                <div class="input-1">
+                    <input type="checkbox" name="dong2-1" id="allcheck">
+                    <label for="dong2-1">이용약관, 개인정보 수집에 모두 동의합니다.</label>
+                </div>
+                <div class="input-2">
+                    <input type="checkbox" name="dong2-2" class="checked">
+                    <label for="dong2-2">이용 시 유의사항 <span>(필수)</span></label>
+                </div>
+                <div class="input-3">
+                    <input type="checkbox" name="dong2-3" class="checked">
+                    <label for="dong2-3">개인정보 수집 이용 동의 <span>(필수)</span></label>
+                </div>
+                <div class="input-4">
+                    <input type="checkbox" name="dong2-4" class="checked">
+                    <label for="dong2-4">개인정보 3자 제공 동의 <span>(필수)</span></label>
+                </div>
+                <div class="input-5">
+                    <input type="checkbox" name="dong2-5" class="checked">
+                    <label for="dong2-5">개인정보 처리 위탁 동의 <span>(필수)</span></label>
+                </div>
+                <div class="input-6">
+                    <input type="checkbox" name="dong2-6" class="checked">
+                    <label for="dong2-6">마케팅 수신 동의 <mark>(선택)</mark> </label>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="reservation-foot">
+        <div class="footer-container">
+            <div class="footer-text">
+                <div class="footer-logo">
+                    <h1>
+                        <img src="../imgs/logo/footer-logo.png" alt="logo.png">
+                    </h1>
+                </div>
+                <p class="footer-title">
+                    <b>개인정보 처리방침</b>
+                </p>
+                <p class="footer-ptags">
+                    경기도 성남시 분당구 불정로 90 (정자동) (주)케이티 대표이사구현모 사업자등록번호102-81-42945 통신판매업신고2002-경기성남-0048
+                </p>
+                <p class="footer-ptags">
+                    *상시 무료 캠핑 고객센터 : 02-545-6296
+                </p>
+                <p class="footer-ptags">
+                    (고객센터 운영시간 : 평일 10:00 ~ 17:00 / 점심시간 12:30 ~ 13:30)
+                </p>
+                <p class="license">
+                    Copyright © hello kids camping co.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

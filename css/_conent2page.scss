@@ -1,0 +1,68 @@
+body {
+    max-height: 468.0370vw;
+    main {
+        .content-contaier2 {
+            padding-bottom: 0 !important;
+            background: none;
+        }
+        .content-container {
+            .content-sec2-2page {
+                .epsec1 {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .youtube-wrap {
+                    width: 100%;
+                    background-color: #ffd9a2;
+                    transform: translateY(-10px);
+                    .frame-wrap {
+                        width: 80vw;
+                        padding: 5vw;
+                        margin: 0 auto;
+                        background-color: #fff;
+                        position: relative;
+                        border-radius: 48px;
+                        height: 50vw;
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                .epsec2 {
+                    transform: translateY(-10px);
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .epsec3 {
+                    transform: translateY(-14px);
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .epsec4 {
+                    transform: translateY(-18px);
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .epsec5 {
+                    transform: translateY(-22px);
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        transform: translateY(-26px);
+    }
+}

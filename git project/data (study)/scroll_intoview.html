@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll_intoview.html</title>
+
+</head>
+
+<body>
+
+    <!-- scroll_intoview.html -->
+
+    <header id="header">
+
+        <a> menu01</a>
+        <a> menu02</a>
+        <a> menu03</a>
+        <a> menu04</a>
+        <a> menu05</a>
+
+    </header>
+
+    <main>
+
+        <section>01</section>
+        <section>02</section>
+        <section>03</section>
+        <section>04</section>
+        <section>05</section>
+
+    </main>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 20px 0px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            transition: .5s;
+        }
+
+        a:hover {
+            cursor: pointer;
+        }
+
+        header a.active {
+            color: red;
+        }
+
+        header.active {
+            transform: translateY(-100%);
+        }
+
+        section {
+            font-size: 5rem;
+            width: 100%;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section:nth-child(2n) {
+            background-color: #eee;
+        }
+    </style>
+    <script>
+
+        const elMenus = document.querySelectorAll('header a'); // header 안의 모든 <a> 요소를 선택하여 elMenus 변수에 저장합니다.
+        const elSections = document.querySelectorAll('section'); // 모든 <section> 요소를 선택하여 elSections 변수에 저장합니다.
+ 
+            console.log(elMenus.scrollIntoView)
+
+        elMenus.forEach(function (ele, k) { // elMenus의 각 요소에 대해 반복문을 실행합니다.
+            ele.onclick = function () { // 메뉴 요소가 클릭되었을 때 실행되는 함수를 정의합니다.
+                elMenus.forEach(function (menu) { // 모든 메뉴 요소에 대해 반복문을 실행합니다.
+                  console.log(menu)
+                    menu.style.color = 'white'; // 메뉴 요소의 텍스트 색상을 흰색으로 설정합니다.
+                });
+                ele.style.color = 'red'; // 클릭한 메뉴 요소의 텍스트 색상을 빨간색으로 설정합니다.
+                elSections[k].scrollIntoView({ behavior: "smooth", block: 'center' }); // 해당 인덱스에 해당하는 섹션으로 스크롤을 부드럽게 이동합니다.
+            };
+        });
+
+    </script>
+
+</body>
+
+</html>

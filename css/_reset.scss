@@ -1,0 +1,39 @@
+:root{
+/*---------------------------------*/
+    --color-black:#333;
+    --color-dark:#000000;
+    --color-salmon:#eb6a7a;
+    --color-gray:#595959;
+    --color-bullet:#e2e2e2;
+    --color-borders:#c6c6c6;
+    --color-footer:#3e3e3e;
+    --color-white:#fff;
+    --color-t-title:#ff5f4b;
+}
+@font-face {
+    font-family: "NanumSquare";
+    src: url(../font/NanumSquareB.woff);
+}
+figure{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+    font-family: "NanumSquare";
+}
+table{
+    border-collapse: collapse;
+}
+
+body,ul,li,ol,p,h1{
+    margin: 0;
+    padding: 0;
+}
+ul,li,ol{
+list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--color-black);
+}

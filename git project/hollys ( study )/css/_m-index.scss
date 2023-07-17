@@ -1,0 +1,522 @@
+@import "_media";
+// 미디어변수 호출
+
+@include device(nth($tablet, 1)) {
+    // 값을보냄  [1번째]
+
+    body {
+        background-color: #fff;
+    }
+    header {
+        width: 100%;
+        margin: 0 auto;
+        max-width: none;
+        nav {
+            display: none;
+        }
+        #logo {
+            width: 100%;
+            text-align: center;
+            h1 {
+                a {
+                    img {
+                        &:hover {
+                            transform: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main {
+        width: 100%;
+        section:nth-of-type(1) {
+            width: 100%;
+            #banner-wrap {
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        section:nth-of-type(2) {
+            width: 100%;
+            height: 50vh;
+            margin: 0 auto;
+            max-width: 1470px;
+        }
+        #main-title {
+            text-align: center;
+            margin: 0px 0px;
+            b {
+            }
+            .main-title-deco {
+            }
+            .main-text {
+            }
+        }
+        #main-con-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            img {
+                width: 100%;
+            }
+            figure {
+                a {
+                    img {
+                        padding: 1px;
+                        margin: 1%;
+                        &:hover {
+                            transform: none;
+                        }
+                    }
+                }
+                figcaption {
+                }
+            }
+        }
+    }
+    footer {
+        position: static;
+        margin-bottom: 10vh;
+        #footer-img {
+            width: 100%;
+            display: none;
+        }
+        #footer-title-box {
+            position: static;
+            width: 100%;
+            margin: 2% 0px;
+            text-align: center;
+            p:nth-child(1) {
+                font-size: 1.8vw;
+                font-weight: 700;
+                font-family: intel;
+                line-height: 42px;
+                span {
+                    color: #d91226;
+                }
+            }
+            p:nth-child(2) {
+                font-size: 1.04vw;
+                font-weight: 300;
+                color: #302c2d;
+            }
+        }
+        #icon-box {
+            display: flex;
+            flex-direction: wrap;
+            justify-content: center;
+            position: static;
+            bottom: none;
+            right: none;
+            width: 100%;
+            align-items: center;
+            .icons {
+                width: 170px;
+                height: 170px;
+                background-color: #fff;
+                border-radius: 200px;
+                margin: 60px 50px;
+                position: relative;
+                box-shadow: 2px 2px 2px 5px#eee;
+                p:nth-of-type(1) {
+                    font-size: 1.04vw;
+                    font-weight: bold;
+                    color: #444444;
+                }
+                p:nth-of-type(2) {
+                    color: #6e6e6e;
+                }
+                p {
+                    display: block;
+                    font-size: 1.5vw;
+                }
+            }
+            #icon1 {
+                img {
+                    margin: 25% 25% 25% 28%;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 54%;
+                    left: 40%;
+                }
+            }
+            #icon2 {
+                img {
+                    margin: 56px 36px 55px 36px;
+                }
+                p {
+                    margin-top: 10px;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 42%;
+                    left: 42%;
+                    font-size: 20px;
+                }
+            }
+            #icon3 {
+                img {
+                    margin: 35px 56px 34px 57px;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 40%;
+                    left: 41%;
+                }
+            }
+        }
+    }
+}
+
+
+@include device(nth($mobile, 2)) {
+    // 값을보냄  [1번째]
+    body {
+        background-color: #fff;
+    }
+    header {
+        width: 100%;
+        margin: 0 auto;
+        max-width: none;
+        nav {
+            display: none;
+        }
+        #logo {
+            width: 100%;
+            text-align: center;
+            h1 {
+                a {
+                    img {
+                        &:hover {
+                            transform: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main {
+        width: 100%;
+        section:nth-of-type(1) {
+            width: 100%;
+            #banner-wrap {
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        section:nth-of-type(2) {
+            width: 100%;
+            height: 50vh;
+            margin: 0 auto;
+            max-width: 1470px;
+        }
+        #main-title {
+            text-align: center;
+            margin: 0px 0px;
+            b {
+            }
+            .main-title-deco {
+            }
+            .main-text {
+            }
+        }
+        #main-con-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            img {
+                width: 100%;
+            }
+            figure {
+                a {
+                    img {
+                        padding: 2px;
+                        margin: 1%;
+                        &:hover {
+                            transform: none;
+                        }
+                    }
+                }
+                figcaption {
+                }
+            }
+        }
+    }
+    footer {
+        position: static;
+        margin-bottom: 10vh;
+        #footer-img {
+            width: 100%;
+            display: none;
+        }
+        #footer-title-box {
+            position: static;
+            width: 100%;
+            margin: 2% 0px;
+            text-align: center;
+            p:nth-child(1) {
+                font-size: 1.8vw;
+                font-weight: 700;
+                font-family: intel;
+                line-height: 42px;
+                span {
+                    color: #d91226;
+                }
+            }
+            p:nth-child(2) {
+                font-size: 1.04vw;
+                font-weight: 300;
+                color: #302c2d;
+            }
+        }
+        #icon-box {
+            display: flex;
+            flex-direction: wrap;
+            justify-content: center;
+            position: static;
+            bottom: none;
+            right: none;
+            width: 100%;
+            align-items: center;
+            .icons {
+                width: 150px;
+                height: 150px;
+                background-color: #fff;
+                border-radius: 200px;
+                margin: 60px 20px;
+                position: relative;
+                box-shadow: 2px 2px 2px 5px#eee;
+                p:nth-of-type(1) {
+                    font-size: 1.04vw;
+                    font-weight: bold;
+                    color: #444444;
+                }
+                p:nth-of-type(2) {
+                    color: #6e6e6e;
+                }
+                p {
+                    display: block;
+                    font-size: 1.5vw;
+                }
+            }
+            #icon1 {
+                img {
+                    margin: 35px 47px 34px 48px;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 55%;
+                    left: 45%;
+                }
+            }
+            #icon2 {
+                img {
+                    margin: 56px 36px 55px 36px;
+                }
+                p {
+                    margin-top: 10px;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 46%;
+                    left: 48%;
+                    font-size: 20px;
+                }
+            }
+            #icon3 {
+                img {
+                    margin: 35px 56px 34px 57px;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 46%;
+                    left: 46%;
+                }
+            }
+        }
+    }
+}
+@include device(nth($mobile, 1)) {
+    // 값을보냄  [1번째]
+
+    body {
+        background-color: #fff;
+    }
+    header {
+        width: 100%;
+        margin: 0 auto;
+        max-width: none;
+        nav {
+            display: none;
+        }
+        #logo {
+            width: 100%;
+            text-align: center;
+            h1 {
+                a {
+                    img {
+                        &:hover {
+                            transform: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main {
+        width: 100%;
+        section:nth-of-type(1) {
+            width: 100%;
+            #banner-wrap {
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        section:nth-of-type(2) {
+            width: 100%;
+            height: 50vh;
+            margin: 0 auto;
+            max-width: 1470px;
+        }
+        #main-title {
+            text-align: center;
+            margin: 0px 0px;
+            b {
+            }
+            .main-title-deco {
+            }
+            .main-text {
+            }
+        }
+        #main-con-box {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            img {
+                width: 100%;
+            }
+            figure {
+                a {
+                    img {
+                        padding: 1px;
+                        margin: 1%;
+                        &:hover {
+                            transform: none;
+                        }
+                    }
+                }
+                figcaption {
+                }
+            }
+        }
+    }
+    footer {
+        position: static;
+        margin-bottom: 10vh;
+        #footer-img {
+            width: 100%;
+            display: none;
+        }
+        #footer-title-box {
+            position: static;
+            width: 100%;
+            margin: 2% 0px;
+            text-align: center;
+            p:nth-child(1) {
+                font-size: 1.8vw;
+                font-weight: 700;
+                font-family: intel;
+                line-height: 42px;
+                span {
+                    color: #d91226;
+                }
+            }
+            p:nth-child(2) {
+                font-size: 1.04vw;
+                font-weight: 300;
+                color: #302c2d;
+            }
+        }
+        #icon-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: static;
+            bottom: none;
+            right: none;
+            width: 100%;
+            align-items: center;
+            .icons {
+                width: 170px;
+                height: 170px;
+                background-color: #fff;
+                border-radius: 200px;
+                margin: 60px 0px;
+                position: relative;
+                box-shadow: 2px 2px 2px 5px#eee;
+                p:nth-of-type(1) {
+                    font-size: 1.04vw;
+                    font-weight: bold;
+                    color: #444444;
+                }
+                p:nth-of-type(2) {
+                    color: #6e6e6e;
+                }
+                p {
+                    display: block;
+                    font-size: 3vw;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 45% !important;
+                    left: 40% !important;
+                }
+            }
+            #icon1 {
+                img {
+                    margin: 35px 47px 34px 48px;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 50%;
+                    left: 40%;
+                }
+            }
+            #icon2 {
+                img {
+                    margin: 56px 36px 55px 36px;
+                }
+                p {
+                    margin-top: 10px;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 42%;
+                    left: 42%;
+                    font-size: 20px;
+                }
+            }
+            #icon3 {
+                img {
+                    margin: 35px 56px 34px 57px;
+                }
+                figcaption {
+                    position: absolute;
+                    top: 40%;
+                    left: 41%;
+                }
+            }
+        }
+    }
+}
