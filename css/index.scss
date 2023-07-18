@@ -71,18 +71,19 @@ header {
 
                             &:hover::after {
                                 opacity: 1;
-                                transform: scaleY(1);
+                                display: block;
                             }
 
                             &::after {
                                 content: "";
-                                width: 100%;
+                                width: 100px;
                                 height: 4px;
                                 transition: opacity 1s, transform 1s;
                                 background-color: var(--color-salmon);
                                 transform-origin: bottom;
                                 opacity: 0;
-                                transform: scaleX(0);
+                                transform: translateX(50%);
+                            }
                             }
                         }
                     }
@@ -160,7 +161,6 @@ header {
             }
         }
     }
-}
 main {
     width: 100%;
     margin: 0 auto;

@@ -134,6 +134,9 @@ main {
                 width: 313px;
                 height: 280px;
                 min-width: 100%;
+                &:hover{
+                    cursor: pointer;
+                }
             }
         }
     } //content-container
