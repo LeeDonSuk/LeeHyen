@@ -37,8 +37,6 @@ function clearClassFromLocalStorageIfIndexPage() {
         localStorage.removeItem("clickedItem");
     }
 }
-
-// 새로고침 이벤트 발생 시 클래스 정보 초기화 (인덱스 페이지만 적용)
 window.addEventListener("beforeunload", clearClassFromLocalStorageIfIndexPage);
 
 applyClassFromLocalStorage();
