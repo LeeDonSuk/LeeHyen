@@ -206,15 +206,9 @@ main {
                   height: 24vw;
                   background-size: 100%;
                   background-repeat: no-repeat;
+                  pointer-events: auto; /* 드래그 활성화를 위해 pointer-events 속성을 auto로 설정 */
                 }
               }
-            }
-          
-            .slide-img1,
-            .slide-img2,
-            .slide-img3 {
-              cursor: grab;
-              user-drag: none;
             }
           
             .slide-img1 {
@@ -234,47 +228,49 @@ main {
               width: 100%;
               height: 100%;
             }
+          
             .swiper-next {
-                width: 41px;
-                height: 41px;
-                background: url(../imgs/icon/slide_arrow.png) center no-repeat;
-                z-index: 99;
-                position: absolute;
-                right: 1%;
-                top: 50%;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-                border-radius: 200px;
-                transform: translate(-10%) rotate(180deg);
-                &:hover {
-                    cursor: pointer;
-                }
+              width: 41px;
+              height: 41px;
+              background: url(../imgs/icon/slide_arrow.png) center no-repeat;
+              z-index: 99;
+              position: absolute;
+              right: 1%;
+              top: 50%;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+              border-radius: 200px;
+              transform: translate(-10%) rotate(180deg);
+              &:hover {
+                cursor: pointer;
+              }
             }
+          
             .swiper-prev {
-                width: 41px;
-                height: 41px;
-                background: url(../imgs/icon/slide_arrow.png) center no-repeat;
-                z-index: 99;
-                position: absolute;
-                left: 1%;
-                top: 50%;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-                transform: translate(-10%);
-                border-radius: 200px;
-                &:hover {
-                    cursor: pointer;
-                }
+              width: 41px;
+              height: 41px;
+              background: url(../imgs/icon/slide_arrow.png) center no-repeat;
+              z-index: 99;
+              position: absolute;
+              left: 1%;
+              top: 50%;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+              transform: translate(-10%);
+              border-radius: 200px;
+              &:hover {
+                cursor: pointer;
+              }
             }
-
+          
             .swiper-pagination-bullet {
-                width: 10px;
-                height: 10px;
-                background-color: var(--color-bullet);
-                &-active {
-                    border: 2px solid red;
-                    background-color: var(--color-white);
-                }
+              width: 10px;
+              height: 10px;
+              background-color: var(--color-bullet);
+              &-active {
+                border: 2px solid red;
+                background-color: var(--color-white);
+              }
             }
-        }
+          }
     }
     article:nth-of-type(2) {
         width: 100%;

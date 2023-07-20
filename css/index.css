@@ -240,12 +240,7 @@ main article:nth-of-type(1) .mySwiper .swiper-slide a > div {
   height: 24vw;
   background-size: 100%;
   background-repeat: no-repeat;
-}
-main article:nth-of-type(1) .mySwiper .slide-img1,
-main article:nth-of-type(1) .mySwiper .slide-img2,
-main article:nth-of-type(1) .mySwiper .slide-img3 {
-  cursor: grab;
-  user-drag: none;
+  pointer-events: auto; /* 드래그 활성화를 위해 pointer-events 속성을 auto로 설정 */
 }
 main article:nth-of-type(1) .mySwiper .slide-img1 {
   background-image: url(../imgs/banner/key_648a6e4dd6f70_1.png);
