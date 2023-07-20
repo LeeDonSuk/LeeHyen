@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: "NanumSquare";
-  src: url(../font/NanumSquareB.woff);
+  src: url(../font/NanumSquareR.woff);
 }
 figure {
   margin: 0;
@@ -216,13 +216,14 @@ main article:nth-of-type(1) {
   height: 435px;
   margin: 0 auto;
 }
-main article:nth-of-type(1) .swiper {
+main article:nth-of-type(1) .mySwiper {
   width: 100%;
   margin: 0 auto;
   top: 28%;
   overflow: hidden;
 }
-main article:nth-of-type(1) .swiper .swiper-slide {
+main article:nth-of-type(1) .mySwiper .swiper-slide {
+  flex-shrink: 0;
   width: 100%;
   text-align: center;
   font-size: 18px;
@@ -231,30 +232,36 @@ main article:nth-of-type(1) .swiper .swiper-slide {
   justify-content: center;
   align-items: center;
 }
-main article:nth-of-type(1) .swiper .swiper-slide a {
+main article:nth-of-type(1) .mySwiper .swiper-slide a {
   width: 100%;
 }
-main article:nth-of-type(1) .swiper .swiper-slide a > div {
+main article:nth-of-type(1) .mySwiper .swiper-slide a > div {
   width: 100%;
   height: 24vw;
   background-size: 100%;
   background-repeat: no-repeat;
 }
-main article:nth-of-type(1) .swiper .slide-img1 {
+main article:nth-of-type(1) .mySwiper .slide-img1,
+main article:nth-of-type(1) .mySwiper .slide-img2,
+main article:nth-of-type(1) .mySwiper .slide-img3 {
+  cursor: grab;
+  user-drag: none;
+}
+main article:nth-of-type(1) .mySwiper .slide-img1 {
   background-image: url(../imgs/banner/key_648a6e4dd6f70_1.png);
 }
-main article:nth-of-type(1) .swiper .slide-img2 {
+main article:nth-of-type(1) .mySwiper .slide-img2 {
   background-image: url(../imgs/banner/key_645325d79d056_1.png);
 }
-main article:nth-of-type(1) .swiper .slide-img3 {
+main article:nth-of-type(1) .mySwiper .slide-img3 {
   background-image: url(../imgs/banner/key_64532541a2b37_1.png);
 }
-main article:nth-of-type(1) .swiper .swiper-slide img {
+main article:nth-of-type(1) .mySwiper .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
 }
-main article:nth-of-type(1) .swiper .swiper-next {
+main article:nth-of-type(1) .mySwiper .swiper-next {
   width: 41px;
   height: 41px;
   background: url(../imgs/icon/slide_arrow.png) center no-repeat;
@@ -266,10 +273,10 @@ main article:nth-of-type(1) .swiper .swiper-next {
   border-radius: 200px;
   transform: translate(-10%) rotate(180deg);
 }
-main article:nth-of-type(1) .swiper .swiper-next:hover {
+main article:nth-of-type(1) .mySwiper .swiper-next:hover {
   cursor: pointer;
 }
-main article:nth-of-type(1) .swiper .swiper-prev {
+main article:nth-of-type(1) .mySwiper .swiper-prev {
   width: 41px;
   height: 41px;
   background: url(../imgs/icon/slide_arrow.png) center no-repeat;
@@ -281,15 +288,15 @@ main article:nth-of-type(1) .swiper .swiper-prev {
   transform: translate(-10%);
   border-radius: 200px;
 }
-main article:nth-of-type(1) .swiper .swiper-prev:hover {
+main article:nth-of-type(1) .mySwiper .swiper-prev:hover {
   cursor: pointer;
 }
-main article:nth-of-type(1) .swiper .swiper-pagination-bullet {
+main article:nth-of-type(1) .mySwiper .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
   background-color: var(--color-bullet);
 }
-main article:nth-of-type(1) .swiper .swiper-pagination-bullet-active {
+main article:nth-of-type(1) .mySwiper .swiper-pagination-bullet-active {
   border: 2px solid red;
   background-color: var(--color-white);
 }
@@ -4429,11 +4436,12 @@ main .main-img-items .kisland5 {
 main .main-img-items .kisland5 > figure {
   width: 100%;
   margin: 0;
-  background: url(../imgs/banner/kislandcamping6.jpg);
+  background-color: #25AE60;
   background-position: bottom;
 }
 main .main-img-items .kisland5 > figure img {
   width: 100%;
+  max-width: 1100px;
 }
 
 @media (max-width: 950px) {
@@ -6640,19 +6648,36 @@ body main .content-contaier2 {
   padding-bottom: 0 !important;
   background: none;
 }
+body main .content-container .content-sec2-2page .eee-back {
+  background-image: url(../imgs/banner/bg_intro1.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+}
+body main .content-container .content-sec2-2page .eee-back2 {
+  background-image: url(../imgs/banner/bg_intro2.jpg);
+  text-align: center;
+  background-position: center top;
+  transform: translateY(-11px);
+}
 body main .content-container .content-sec2-2page .epsec1 {
   width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 body main .content-container .content-sec2-2page .epsec1 img {
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 body main .content-container .content-sec2-2page .youtube-wrap {
   width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   background-color: #ffd9a2;
   transform: translateY(-10px);
 }
 body main .content-container .content-sec2-2page .youtube-wrap .frame-wrap {
-  width: 80vw;
+  width: 100%;
   padding: 5vw;
   margin: 0 auto;
   background-color: #fff;
@@ -6661,22 +6686,28 @@ body main .content-container .content-sec2-2page .youtube-wrap .frame-wrap {
   height: 50vw;
 }
 body main .content-container .content-sec2-2page .youtube-wrap .frame-wrap iframe {
+  min-width: 100%;
   width: 100%;
   height: 100%;
 }
 body main .content-container .content-sec2-2page .epsec2 {
   transform: translateY(-10px);
   width: 100%;
+  background-color: #ffd9a2;
+  margin: 0 auto;
+  text-align: center;
 }
 body main .content-container .content-sec2-2page .epsec2 img {
   width: 100%;
+  max-width: 1100px;
 }
 body main .content-container .content-sec2-2page .epsec3 {
-  transform: translateY(-14px);
+  transform: translateY(0px);
   width: 100%;
 }
 body main .content-container .content-sec2-2page .epsec3 img {
   width: 100%;
+  max-width: 1100px;
 }
 body main .content-container .content-sec2-2page .epsec4 {
   transform: translateY(-18px);
@@ -6684,13 +6715,15 @@ body main .content-container .content-sec2-2page .epsec4 {
 }
 body main .content-container .content-sec2-2page .epsec4 img {
   width: 100%;
+  max-width: 1100px;
 }
 body main .content-container .content-sec2-2page .epsec5 {
-  transform: translateY(-22px);
+  transform: translateY(-8px);
   width: 100%;
 }
 body main .content-container .content-sec2-2page .epsec5 img {
   width: 100%;
+  max-width: 1100px;
 }
 body footer {
   transform: translateY(-26px);

@@ -4,21 +4,41 @@ body {
         .content-contaier2 {
             padding-bottom: 0 !important;
             background: none;
+
         }
         .content-container {
+
             .content-sec2-2page {
+                .eee-back{
+                    background-image: url(../imgs/banner/bg_intro1.jpg);
+                    background-repeat: no-repeat;
+                    background-position: top;
+
+                }
+                .eee-back2{
+                    background-image: url(../imgs/banner/bg_intro2.jpg);
+                    text-align: center;
+                    background-position: center top;
+                    transform: translateY(-11px);
+                }
                 .epsec1 {
                     width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
                     img {
                         width: 100%;
+                        max-width: 1100px;
+                        margin: 0 auto;
                     }
                 }
                 .youtube-wrap {
                     width: 100%;
+                    max-width: 1000px;
+                    margin: 0 auto;
                     background-color: #ffd9a2;
                     transform: translateY(-10px);
                     .frame-wrap {
-                        width: 80vw;
+                        width: 100%;
                         padding: 5vw;
                         margin: 0 auto;
                         background-color: #fff;
@@ -26,6 +46,7 @@ body {
                         border-radius: 48px;
                         height: 50vw;
                         iframe {
+                            min-width: 100%;
                             width: 100%;
                             height: 100%;
                         }
@@ -34,15 +55,21 @@ body {
                 .epsec2 {
                     transform: translateY(-10px);
                     width: 100%;
+                    background-color: #ffd9a2;
+                    margin: 0 auto;
+                    text-align: center;
                     img {
                         width: 100%;
+                        max-width: 1100px;
                     }
                 }
                 .epsec3 {
-                    transform: translateY(-14px);
+                    transform: translateY(-0px);
                     width: 100%;
                     img {
                         width: 100%;
+                        max-width: 1100px;
+
                     }
                 }
                 .epsec4 {
@@ -50,13 +77,15 @@ body {
                     width: 100%;
                     img {
                         width: 100%;
+                        max-width: 1100px;
                     }
                 }
                 .epsec5 {
-                    transform: translateY(-22px);
+                    transform: translateY(-8px);
                     width: 100%;
                     img {
                         width: 100%;
+                        max-width: 1100px;
                     }
                 }
             }

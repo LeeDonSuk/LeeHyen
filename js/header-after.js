@@ -42,7 +42,6 @@ window.addEventListener("beforeunload", clearClassFromLocalStorageIfIndexPage);
 applyClassFromLocalStorage();
 
 dropdownsub.forEach(ele => {
-    console.log(ele);
     ele.addEventListener('mouseover', function () {
         ele.classList.add('mouseover');
     });

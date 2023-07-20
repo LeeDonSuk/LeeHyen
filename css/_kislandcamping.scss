@@ -61,10 +61,11 @@ main {
            > figure {
             width: 100%;
             margin: 0;
-            background: url(../imgs/banner/kislandcamping6.jpg);
+            background-color: #25AE60;
             background-position: bottom;
             img {
                     width: 100%;
+                    max-width: 1100px;
                 }
             }
         }
