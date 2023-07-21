@@ -834,6 +834,76 @@
             justify-content: space-between;
             display: flex;
             position: relative;
+            .main-menu {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                > li {
+                    position: relative;
+                    top: 0;
+                    width: 25%;
+                    height: 100%;
+                    font-size: 1.71vw;
+                    display: flex;
+                    flex-direction: column;
+                    ul {
+                        width: 100%;
+                        position: absolute;
+                        top: 70px;
+                        left: 0;
+                        li {
+                            width: 100%;
+                            text-align: center;
+                            font-size: 1.43vw;
+                            padding: 10px 0px;
+                            display: none;
+                            height: 50px !important;
+                            z-index: 50;
+                            transition: 0.5s;
+                            a {
+                                color: white;
+                                padding-bottom: 10px;
+                                border-bottom: 4px solid rgba(255, 255, 255, 0);
+
+                                &.mouseover {
+                                    border-bottom: 4px solid rgba(255, 255, 255, 1);
+                                    transition: .5s;
+                                    
+                                  }
+                            }
+                        }
+                    }
+
+                    >a {
+                        &:hover::after {
+                            opacity: 0.5;
+                            display: block;
+                            position: absolute;
+                            bottom: -40px;
+                            border: none;
+                        }
+                        &::after {
+                            content: "";
+                            width: 100%;
+                            height: 6px;
+                            transition: opacity 1s, transform 0.5s;
+                            background-color: var(--color-salmon);
+                            transform-origin: bottom;
+                            opacity: 0;
+                        }
+                        &.clicked {
+                            &::after {
+                                opacity: 1;
+                                display: block;
+                                position: absolute;
+                                bottom: -40px;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
             .mobile-menu {
                 &:hover {
                     cursor: pointer;
@@ -906,76 +976,7 @@
                     }
                 }
             }
-            > .main-menu {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                text-align: center;
-                > li {
-                    position: relative;
-                    top: 0;
-                    width: 25%;
-                    height: 100%;
-                    font-size: 1.71vw;
-                    display: flex;
-                    flex-direction: column;
-                    ul {
-                        width: 100%;
-                        position: absolute;
-                        top: 70px;
-                        left: 0;
-                        li {
-                            width: 100%;
-                            text-align: center;
-                            font-size: 1.43vw;
-                            padding: 10px 0px;
-                            display: none;
-                            height: 50px !important;
-                            z-index: 50;
-                            transition: 0.5s;
-                            a {
-                                color: white;
-                                padding-bottom: 10px;
-                                border-bottom: 4px solid rgba(255, 255, 255, 0);
 
-                                &.mouseover {
-                                    border-bottom: 4px solid rgba(255, 255, 255, 1);
-                                    transition: .5s;
-                                    
-                                  }
-                            }
-                        }
-                    }
-
-                    >a {
-                        &:hover::after {
-                            opacity: 0.5;
-                            display: block;
-                            position: absolute;
-                            bottom: -40px;
-                            border: none;
-                        }
-                        &::after {
-                            content: "";
-                            width: 100%;
-                            height: 6px;
-                            transition: opacity 1s, transform 0.5s;
-                            background-color: var(--color-salmon);
-                            transform-origin: bottom;
-                            opacity: 0;
-                        }
-                        &.clicked {
-                            &::after {
-                                opacity: 1;
-                                display: block;
-                                position: absolute;
-                                bottom: -40px;
-                                border: none;
-                            }
-                        }
-                    }
-                }
-            }
             .audio-container {
                 width: 100%;
                 display: flex;

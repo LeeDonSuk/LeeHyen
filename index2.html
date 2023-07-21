@@ -6,62 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
+<style>
+    header {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-<body>
+    figure {
+        width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    img {
+        width: 300px;
+    }
 
-        body {
-            position: relative;
-        }
+    button {
+        border: none;
+        border-radius: 20px;
+        width: 100px;
+        height: 100px;
+        background-color: #eee;
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.431);
+    }
+    button:hover{
+        cursor: pointer;
+    }
+</style>
+<header>
+    <button>
+        ◀
+     </button>
+            <figure>
+                <img src="../11.jpg" alt="">
+                <img src="../22.jpg" alt="">
+            </figure>
+            <button>
+                ▶
+            </button>
+</header>
+<script>
+const btn = document.querySelectorAll("button");
+const elfig = document.querySelectorAll("figure");
 
-        .text {
-            position: absolute;
-            top: 63%;
-            left: 30%;
-            color: white;
-            background-color: rgba(255, 192, 203, 0.615);
-            border-radius: 200px;
-            padding: 10px;
-        }
-
-        .text1 {
-            position: absolute;
-            top: 197px;
-            left: 105px;
-            font-size: 20px;
-            text-align: center;
-            font-weight: bold;
-            color: white;
-        }
-
-        .bacground {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            background-image: url(./cat-4637643_640.webp);
-            background-repeat: no-repeat;
-            background-size: contain;
-            filter: blur(2px);
-        }
-    </style>
-    <main>
-        <div class="bacground">
-        </div>
-        <div class="text">
-            <h2>방장</h2>
-        </div>
-        <div class="text1">
-            물고기 후원받아요(유니세프)<br>
-            자세한 내용은 방장과대화
-        </div>
-    </main>
-
-
+btn.forEach(button => {
+    button.addEventListener("click", () => {
+        elfig.forEach(figure => {
+            figure.style.transform = "translateX(-100%)";
+            figure.style.transition = ".5s"; // 수정된 부분
+        });
+    });
+});
+</script>
+<main></main>
+<footer></footer>
 </body>
 
 </html>
