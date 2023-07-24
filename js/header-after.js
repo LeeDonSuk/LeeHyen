@@ -1,4 +1,6 @@
 const dropdownItems = document.querySelectorAll(".dropdown-items > a");
+localStorage.removeItem("clickedItem");
+
 
 // 각 .dropdown-items에 대해 이벤트 리스너를 추가하는 함수
 function addClickListeners() {
