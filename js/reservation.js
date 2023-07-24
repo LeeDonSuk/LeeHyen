@@ -3,10 +3,10 @@ const checkboxes = document.querySelectorAll('.checked');
 const listItems = document.querySelectorAll(".listitems");
 const dDayContainer = document.getElementById("d-day");
 const radioButtons = document.querySelectorAll(".ss-radio input");
+
 const datepicker = document.getElementById("datepicker")._flatpickr;
 
 const currentScrollPosition = window.scrollY;
-console.log("현재 스크롤 위치:", currentScrollPosition);
 
 allcheck.addEventListener('change', function () {
   const isChecked = this.checked;
@@ -69,7 +69,12 @@ function handleScroll() {
     const stepElement = document.querySelector(step);
     stepElement.classList.toggle("active", index + 1 !== activeStep);
   });
-  console.log(activeStep)
+  if (currentScroll >= 250) {
+    dDayContainer.style.filter = "none";
+  } else {
+    // 스크롤이 250 미만인 경우 블러 효과 적용
+    dDayContainer.style.filter = "blur(5px)";
+  }
 }
 
 window.addEventListener("scroll", handleScroll);

@@ -363,6 +363,7 @@
         }
     }
     .d-day {
+        filter: blur(0.1px);
         width: 100%;
         margin: 0 auto;
         background-color: #f7f7f7;
@@ -543,6 +544,7 @@
                 }
             }
         }
+
     }
     .ingjung {
         width: 100%;

@@ -107,8 +107,8 @@ header .header-container .main-menu > li ul li > a {
   color: white;
   padding-bottom: 5px;
 }
-header .header-container .main-menu > li > a:hover::after {
-  opacity: 1;
+header .header-container .main-menu > li > a::after:hover {
+  opacity: 0.5;
   transform: scaleY(1);
 }
 header .header-container .main-menu > li > a::after {
@@ -120,6 +120,15 @@ header .header-container .main-menu > li > a::after {
   transform-origin: bottom;
   opacity: 0;
   transform: scaleX(0);
+}
+header .header-container .main-menu > li > a.clicked::after {
+  display: block;
+  width: 100%;
+  opacity: 1;
+  transform: scaleX(1);
+  position: absolute;
+  bottom: -40px;
+  height: 6px;
 }
 header .header-container .mobile-menu:hover {
   cursor: pointer;
@@ -1217,28 +1226,30 @@ footer .footer-container .footer-text .license {
     border-bottom: 4px solid rgb(255, 255, 255);
     transition: 0.5s;
   }
+  header .header-container .main-menu > li > a {
+    position: relative;
+    display: block;
+  }
   header .header-container .main-menu > li > a:hover::after {
     opacity: 0.5;
-    display: block;
-    position: absolute;
-    bottom: -40px;
-    border: none;
+    width: 100%;
+    transform: scaleX(1);
+  }
+  header .header-container .main-menu > li > a.clicked::after {
+    width: 100%;
+    opacity: 1;
+    transform: scaleX(1);
   }
   header .header-container .main-menu > li > a::after {
     content: "";
-    width: 100%;
+    width: 0%;
     height: 6px;
-    transition: opacity 1s, transform 0.5s;
+    transition: 0.5s;
     background-color: var(--color-salmon);
     transform-origin: bottom;
-    opacity: 0;
-  }
-  header .header-container .main-menu > li > a.clicked::after {
-    opacity: 1;
-    display: block;
     position: absolute;
+    left: 0;
     bottom: -40px;
-    border: none;
   }
   header .header-container .mobile-menu:hover {
     cursor: pointer;
@@ -5141,6 +5152,7 @@ main .content-container .content-sec2 img:hover {
   border-color: #eb6a7a;
 }
 #reservation-main .d-day {
+  filter: blur(0.1px);
   width: 100%;
   margin: 0 auto;
   background-color: #f7f7f7;
