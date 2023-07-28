@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- gradient -->
+    <article class="gradient">
+
+        <h2> gradient( linear / radial ) </h2>
+        <div> linear - gradient </div>
+        <div> radial - gradient </div>
+        <div> conic - gradient </div>
+
+        <style>
+            article {
+                width: 50%;
+                margin: 100px auto;
+            }
+
+            .gradient div {
+                height: 300px;
+            }
+
+            .gradient div:nth-of-type(1) {
+                /* background: linear-gradient(to right,red 50%, yellow 50%); */
+                background: repeating-linear-gradient(red, red 10px, yellow 10px, yellow 20px);
+            }
+
+            .gradient div:nth-of-type(2) {
+                /*farthest-side,*/
+                background: radial-gradient(circle farthest-side at 100px 100px, red 30%, rgb(42, 255, 22), green)
+            }
+
+            .gradient div:nth-of-type(3) {
+                /*farthest-side,*/
+                width: 300px;
+                background: conic-gradient(at 30% 30%, red 10%, yellow 0%)
+            }
+        </style>
+    </article>
+
+    <article class="str-dot">
+        <h2>긴 문자뒤에 점 찍기</h2>
+        <div>
+            졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려 졸려
+        </div>
+        <div>
+            죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다 죽겠다
+        </div>
+        <style>
+            .str-dot div {
+                margin: 100px 0;
+            }
+
+            .str-dot div:nth-of-type(1) {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .str-dot div:nth-of-type(2) {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+            }
+        </style>
+    </article>
+
+    <article class="filter">
+        <h2>filter (blur, brightbess, grayscale, drop-shadow)</h2>
+        <div>
+            blur
+        </div>
+        <div> <img src="../../imgs/banner/bottle_img1.png" width="300px"></div>
+        <style>
+            .filter div {
+                margin: 50px 0;
+            }
+
+            .filter div:nth-of-type(1) {
+                font-size: 3rem;
+                font-weight: bold;
+                -webkit-text-stroke: 1px red;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .filter div:nth-of-type(2) {
+                filter: drop-shadow(5px 5px 0px red) grayscale(100%) blur(5px) brightness(50%);
+                transition: .5s;
+            }
+
+            .filter div:nth-of-type(2):hover {
+                filter: drop-shadow(5px 5px 0px red) grayscale(0%) blur(0px) brightness(100%);
+            }
+        </style>
+    </article>
+
+    <article class="mix">
+        <h2>mix-blend-mode</h2>
+        <div>
+            부모배경색과 자식배경색을 혼합
+        </div>
+        <style>
+            .mix {
+                background-color: rgba;
+                position: relative;
+                text-align: center;
+                z-index: 2;
+            }
+
+            .mix div {
+                color: white;
+                font-size: 2rem;
+                font-weight: bold;
+                position: absolute;
+                bottom: 10px;
+                mix-blend-mode: difference;
+                margin-top: 100px;
+                transform: translateY(50%);
+            }
+
+            .mix::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                left: 0;
+                top: 100%;
+                z-index: 1;
+                background-color: rgb(255, 255, 255);
+                animation: bg 1s 1s forwards;
+                mix-blend-mode: difference;
+            }
+
+            @keyframes bg {
+                0% {
+                    top: 100%;
+                }
+
+                100% {
+                    top: 0%;
+                }
+            }
+        </style>
+    </article>
+</body>
+
+</html>

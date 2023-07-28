@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <!-- form.html -->
+    <style>
+        article:nth-of-type(1)>p {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        button {
+            border: none;
+            background-color: #e0dcdc;
+            padding: 7px;
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+        article {
+            background-color: #eee;
+            width: 30%;
+            padding: 10px;
+            text-align: center;
+            margin: 150px auto;
+        }
+
+        input {
+            padding: 8px;
+            border: none;
+            outline-style: none;
+            box-shadow: 0px 1px 2px;
+        }
+
+        input::placeholder {
+            font-size: 5px;
+        }
+
+        #data_submit {
+            width: 96%;
+        }
+
+        input[type="submit"] :hover {
+            cursor: pointer;
+        }
+
+        button[type="button"]:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <article>
+        <h2> form활용 </h2>
+        <form action="login" id="logininfo">
+            <p>
+                <input type="text" name="id" id="user_id" placeholder="아이디 8-15 자 특수기호 숫자 포함">
+                <button type="button"> ID 확인 </button>
+            </p>
+            <p>
+                <input type="password" name="id" id="user_password" placeholder="비밀번호 8자 이상 특수기호 2개 이상">
+                <button type="button"> PW 확인 </button>
+            </p>
+            <p>
+                <input type="email" name="id" id="user_email" placeholder="이메일 @ 반드시포함">
+                <button type="button"> email 확인 </button>
+            </p>
+            <p>
+                <input type="tel" name="id" id="user_tel" placeholder="전화번호 - 포함">
+                <button type="button"> 번호 확인 </button>
+            </p>
+            <p><input type="submit" name="id" id="data_submit" value="저장"></p>
+        </form>
+        <script>
+            const elInput = document.querySelectorAll('input');
+            const elButton = document.querySelectorAll('button');
+            const elarticle = document.querySelectorAll('article');
+
+
+            let regID =
+                /^(?=.*[!@#$%^&*()_+])[a-zA-Z0-9!@#$%^&*()_+]{7,14}(?=.*[0-9])(?=.*[!@#$%^&*()_+])[a-zA-Z0-9!@#$%^&*()_+]{1,}$/;
+            let regPW =
+                /^(?=.*[!@#$%^&*()_+]{2,}).{8,}$/;
+            let regMail =
+                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let regTel =
+                /^\+?[0-9]+-[0-9]+-[0-9]+$/;
+
+            elButton[0].addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (regID.test(elInput[0].value)) {
+                    alert("아이디 생성 가능");
+                    console.log(123);
+                } else {
+                    alert("아이디 생성 불가능");
+                }
+            });
+
+            elButton[1].addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (regPW.test(elInput[1].value)) {
+                    alert("비밀번호 생성 가능");
+                } else {
+                    alert("비밀번호 생성 불가능");
+                }
+            });
+            elButton[2].addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (regMail.test(elInput[2].value)) {
+                    alert("이메일 양식 일치");
+                } else {
+                    alert("이메일 양식 불일치");
+                }
+            });
+            elButton[3].addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (regTel.test(elInput[3].value)) {
+                    alert("전화번호 양식 일치");
+                } else {
+                    alert("전화번호 양식 불일치");
+                }
+            });
+
+            window.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                elButton.forEach(function (ele) {
+                    console.log(ele)
+                })
+
+                if (!regID.test(elInput[0].value)) {
+                    alert('아이디를 다시 입력해주세요')
+                    return;
+                }
+                if (!regPW.test(elInput[1].value)) {
+                    alert('비밀번호를 다시 입력해주세요')
+                }
+                if (!regMail.test(elInput[2].value)) {
+                    alert('이메일을 다시 입력해주세요')
+                }
+                if (!regTel.test(elInput[3].value)) {
+                    alert('전화번호를 다시 입력해주세요')
+                }
+                console.log(
+                    elInput[0].value,
+                    elInput[1].value,
+                    elInput[2].value,
+                    elInput[3].value
+                )
+                logininfo.submit();
+            })
+        // /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-z]{8,10}$/;
+
+
+//asdfasdf2@ skan1215!! leehyen132@gmail.com 01048157873
+
+        // | 또는
+        // () 그룹
+        // [] 문자세스 괄호안의 어떤 문자든
+        // [^] 부정 문자셋, 괄호안의 어떤 문가 아닐때
+        // (?:) 찾지만 기억하지는 않음
+        // ? 없거나 있거나 (ZERO OR ONE)
+        // * 없거나 있거나 많거나 (zero or more)
+        // + 하나 또는 많이 (one or more)
+        // {n} n번 반복
+        // {min,} 최소
+        // [min,max] 최소, 그리고 최대 
+
+        </script>
+    </article>
+    <article id="article">
+        <h2>체크</h2>
+        <p>
+            <input type="checkbox" id="check1">
+            모두 동의
+        </p>
+        <p>
+            <input type="checkbox" id="check2">
+            동의 1
+        </p>
+        <p>
+            <input type="checkbox" id="check3">
+            동의 2
+        </p>
+        <style>
+            article:nth-of-type(2) {
+                text-align: left;
+            }
+
+            article:nth-of-type(2)>h2 {
+                text-align: center;
+            }
+        </style>
+        <script>
+            article.addEventListener('click', (e) => {
+                if (e.target.id === "check1") {
+                    check2.checked = e.target.checked;
+                    check3.checked = e.target.checked;
+                }
+
+                if (check2.checked && check3.checked) {
+                    check1.checked = true;
+                } else {
+                    check1.checked = false;
+                }
+            })
+        </script>
+    </article>
+
+    <article>
+        <h2> file 이미지 미리보기</h2>
+        <div>
+            <input type="file" id="upload">
+            <img src="../../imgs/banner/03.jpg" width="200px">
+            <style>
+                img {
+                    margin-top: 20px;
+                }
+            </style>
+        </div>
+    </article>
+
+    <script>
+        const elimg = document.querySelector("div > img");
+        console.log(elimg)
+        upload.addEventListener('change', () => {
+
+            let reader = new FileReader();
+            reader.readAsDataURL(upload.files[0]);
+            reader.onload = (e) => {
+                prieview.src = e.target.result;
+            }
+        })
+        
+    </script>
+</body>
+
+</html>

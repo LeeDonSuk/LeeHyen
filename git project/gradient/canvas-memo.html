@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- canvas-memo.html -->
+
+
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <style>
+        canvas {
+            border: 1px solid red;
+            margin: 0 auto;
+            display: block;
+        }
+
+        header {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        select {
+            margin-right: 20px;
+            border-radius: 444px;
+            padding: 5px;
+            background: none;
+            border: none;
+        }
+
+        input {
+            margin-right: 20px;
+            border-radius: 444px;
+            padding: 2px;
+            background: none;
+            border: none;
+        }
+
+        option {
+            margin-right: 20px;
+        }
+
+        button {
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: yellowgreen;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let mouseX = 0;
+        let mouseY = 0;
+
+      
+        canvas.addEventListener('mousemove', (e) => {
+            console.log(e)
+            // 마우스의 현재 위치 갱신
+            mouseX = e.clientX - canvas.getBoundingClientRect().left;
+            mouseY = e.clientY - canvas.getBoundingClientRect().top;
+        });
+
+        function drawCircle(x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, 2 * Math.PI);
+            ctx.fillStyle = 'blue';
+            ctx.fill();
+        }
+
+        function drawFrame() {
+            // 캔버스를 초기화하여 이전 프레임의 그래픽을 지움
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 마우스 위치에 원을 그림
+            drawCircle(mouseX, mouseY);
+
+            // 다음 애니메이션 프레임 요청
+            requestAnimationFrame(drawFrame);
+        }
+
+        // 애니메이션 시작
+        drawFrame();
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "NanumSquare";
+  src: url("../font/NanumSquareB.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.282);
+  transition: 0.5s;
+  z-index: 99;
+}
+header:hover {
+  background-color: black;
+  cursor: pointer;
+}
+header > nav ul {
+  display: flex;
+}
+header > nav ul li {
+  padding: 5px;
+}
+header > nav ul li.notice {
+  margin-right: 40px;
+}
+header > nav ul li.m-menu {
+  margin-right: 40px;
+}
+header > nav ul li a {
+  color: white;
+  font-size: 20px;
+}
+header > nav:nth-of-type(2) ul {
+  align-items: center;
+}
+header > nav:nth-of-type(2) ul li:last-child {
+  padding: 0;
+}
+header > nav:nth-of-type(2) ul li:last-child:hover {
+  cursor: pointer;
+}
+header > nav:nth-of-type(2) ul li span {
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  display: block;
+}
+header > nav:nth-of-type(2) ul li span:nth-of-type(1) {
+  transform: translateY(-5px);
+}
+header > nav:nth-of-type(2) ul li span:nth-of-type(2) {
+  transform: translateY(0px);
+}
+header > nav:nth-of-type(2) ul li span:nth-of-type(3) {
+  transform: translateY(5px);
+}
+header > h2 > span {
+  color: white;
+  font-weight: bold;
+  font-family: "NanumSquare";
+  transition: 0.5s;
+  animation: scaleAnimation 3.5s linear infinite;
+  animation-delay: calc(0.1s * (var(--index) + 1));
+}
+header > h2 > span:nth-of-type(1) {
+  font-size: 30px;
+}
+@keyframes scaleAnimation {
+  0%, 100% {
+    font-size: 25px; /* 시작과 끝 지점, 원래 크기 */
+    opacity: 1; /* 글자가 보이도록 설정 */
+  }
+  50% {
+    font-size: 30px; /* 중간 지점, 크기가 두 배로 커짐 */
+    opacity: 0.5; /* 글자 투명도를 줄임 */
+  }
+}
+
+main article:nth-of-type(1) {
+  position: sticky;
+  margin: 0 auto;
+  transform: translateY(-100px);
+  z-index: -99;
+  width: 100%;
+}
+main article:nth-of-type(1) .benner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+main article:nth-of-type(1) .benner video {
+  width: 100%;
+}
+main article:nth-of-type(2) {
+  width: 100%;
+  height: 100px;
+  transform: translateY(-105px);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+main article:nth-of-type(2) .site-items ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main article:nth-of-type(2) .site-items ul li {
+  width: 23%;
+  margin-top: 15px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+main article:nth-of-type(2) .site-items ul li a figure {
+  text-align: center;
+  transition: 0.5s;
+}
+main article:nth-of-type(2) .site-items ul li a figure img {
+  width: 50px;
+  height: 50px;
+  border-radius: 200px;
+}
+main article:nth-of-type(2) .site-items ul li a figure figcaption {
+  font-size: 14px;
+  color: black;
+}
+main article:nth-of-type(2) .site-items ul li a figure:hover {
+  transform: translateY(-5px);
+}
+main article:nth-of-type(3) {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  transform: translateY(-80px);
+}
+main article:nth-of-type(3) .event-title > h2 {
+  display: flex;
+  flex-direction: column;
+}
+main article:nth-of-type(3) .event-title hr {
+  width: 80px;
+  margin: 20px auto;
+  opacity: 0.5;
+}
+main article:nth-of-type(3) .event-box-con {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+main article:nth-of-type(3) .event-box-con figure {
+  position: relative;
+  padding: 10px;
+}
+main article:nth-of-type(3) .event-box-con figure figcaption {
+  font-size: 20px;
+}
+main article:nth-of-type(3) .event-box-con figure img {
+  width: 300px;
+}
+main article:nth-of-type(3) .event-box-con figure .hover-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.438);
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+main article:nth-of-type(3) .event-box-con figure .hover-box.active {
+  opacity: 1;
+}
+main article:nth-of-type(3) .event-box-con figure .hover-box h2 {
+  width: 100px;
+  height: 100px;
+  margin: 100px auto;
+  border: 3px solid white;
+  border-radius: 200px;
+  line-height: 90px;
+  color: white;
+}
+main article:nth-of-type(3) .event-box-con figure .hover-box:hover {
+  cursor: pointer;
+}
+main article:nth-of-type(4) {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+main article:nth-of-type(4) h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+main article:nth-of-type(4) hr {
+  width: 170px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  opacity: 0.5;
+}
+main article:nth-of-type(4) video {
+  width: 100%;
+  max-width: 1400px;
+}
+main article:nth-of-type(5) {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}/*# sourceMappingURL=index.css.map */

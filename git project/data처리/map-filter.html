@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- map-filter.html -->
+
+    <script>
+        let data = [
+            { id: 0, name: '수박' },
+            { id: 1, name: '사과' },
+            { id: 2, name: '얼음' },
+        ];
+
+        let [a, ...all] = data;
+
+
+        all[0].name = '복숭아';
+
+        console.log(data);
+        console.log(all, '스프레드연산자');
+
+
+
+        let addData = data.map((obj, key) => {
+        console.log(obj);
+
+            obj.num = key;
+            return obj;
+        })
+
+
+
+
+
+        let find = data.filter(obj => obj.name === '사과');
+
+
+        // let find = data.filter(function(obj){
+        //                 if(obj.name ==='사과'){
+        //                     return obj;
+        //                 };
+        //            });
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -127,7 +127,7 @@ header .header-container .main-menu > li > a.clicked::after {
   opacity: 1;
   transform: scaleX(1);
   position: absolute;
-  bottom: -38px;
+  bottom: -41px;
   height: 6px;
 }
 header .header-container .mobile-menu:hover {
@@ -1249,7 +1249,7 @@ footer .footer-container .footer-text .license {
     transform-origin: bottom;
     position: absolute;
     left: 0;
-    bottom: -38px;
+    bottom: -41px;
   }
   header .header-container .mobile-menu:hover {
     cursor: pointer;
