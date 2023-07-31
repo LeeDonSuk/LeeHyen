@@ -11,6 +11,10 @@
     <script defer src="./js/eventhover.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script defer src="./js/swiper.js"></script>
+    <script defer src="./js/site-map.js"></script>
+    <script defer src="./js/headerover.js"></script>
+
+
 </head>
 
 <body>
@@ -35,13 +39,8 @@
                 </li>
             </ul>
         </nav>
-        <h2>
-            <span style="--index: 0;">키</span>
-            <span style="--index: 1;">즈</span>
-            <span style="--index: 2;">랜</span>
-            <span style="--index: 3;">드</span>
-            <span style="--index: 4;">캠</span>
-            <span style="--index: 5;">핑</span>
+        <h2 id="logo">
+            <img src="./imgs/logo/logo_orange.png">
         </h2>
         <nav>
             <ul>
@@ -57,7 +56,27 @@
                 </li>
             </ul>
         </nav>
-        <nav>
+        <div class="mobile-menu">
+            <ul>
+                <li>
+                    <a href="#">
+                        Camping
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Reservation
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Contents
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <nav class="menu-ico">
             <g>
                 <span></span>
                 <span></span>
@@ -98,7 +117,7 @@
                         <a href="#">
                             <figure>
                                 <img src="./imgs/banner/banner[5].jpg" title="담양 금성산성 캠핑장">
-                                <figcaption>담양 금성산성 캠핑장</figcaption>
+                                <figcaption class="site-hover">담양산성 금성 캠핑장</figcaption>
                             </figure>
                         </a>
                     </li>
@@ -134,7 +153,48 @@
             </div>
         </article>
 
-        <article>
+        <article class="kisland-article">
+            <div class="deco1">
+                <img src="./imgs/png/lnb_character.png" alt="">
+            </div>
+            <div class="introduction">
+                <h2>
+                    <a href="#">
+                        키즈랜드 소개
+                    </a>
+                </h2>
+                <video src="./mp4/질투가 많아진 아이, 오은영 박사의 금쪽 솔루션은_ 키즈랜드 30초 ver..mp4" autoplay loop controls></video>
+            </div>
+        </article>
+
+
+        <article class="swiper2-article">
+            <div class="swiper mySwiper swiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./imgs/banner/img_intro_01.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imgs/banner/img_intro_02.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./imgs/banner/img_intro_04.jpg">
+                    </div>
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="autoplay-progress">
+                    <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="20"></circle>
+                    </svg>
+                    <span></span>
+                </div>
+            </div>
+        </article>
+
+        <article class="event-article">
             <div class="ar3-container">
                 <div class="event-container">
 
@@ -171,7 +231,7 @@
                 <div class="swiper-container">
                     <h2>
                         <a href="#">
-                            event
+                            예약
                         </a>
                     </h2>
                     <div class="swiper mySwiper swiprer-script">
@@ -193,49 +253,6 @@
                 </div>
             </div>
 
-        </article>
-
-        <article>
-            <div class="introduction">
-                <h2>
-                    <a href="#">
-                        키즈랜드 소개
-                    </a>
-                </h2>
-                <video src="./mp4/질투가 많아진 아이, 오은영 박사의 금쪽 솔루션은_ 키즈랜드 30초 ver..mp4" autoplay loop controls></video>
-            </div>
-        </article>
-
-        <article>
-            <div class="swiper mySwiper swiper2">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="./imgs/banner/img_intro_01.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./imgs/banner/img_intro_02.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./imgs/banner/img_intro_03.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./imgs/banner/img_intro_04.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./imgs/banner/img_intro_05.jpg">
-                    </div>
-
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-                <div class="autoplay-progress">
-                    <svg viewBox="0 0 48 48">
-                        <circle cx="24" cy="24" r="20"></circle>
-                    </svg>
-                    <span></span>
-                </div>
-            </div>
         </article>
 
     </main>

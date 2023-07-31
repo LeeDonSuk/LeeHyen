@@ -32,9 +32,68 @@ header {
   transition: 0.5s;
   z-index: 99;
 }
+header .mobile-menu {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.319);
+  text-align: center;
+  padding: 10px;
+  display: none;
+}
+header .mobile-menu ul li a:hover {
+  color: white;
+}
+header .mobile-menu.active {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.872);
+  z-index: 20;
+}
+header .mobile-menu.active ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 250px;
+}
+header .mobile-menu.active ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+header .mobile-menu.active ul li a {
+  color: white;
+}
+header .mobile-menu.active ul li a::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  display: inline-block;
+  background-color: white;
+  opacity: 0;
+}
+header .mobile-menu.active ul li a:hover::after {
+  opacity: 1;
+  width: 100%;
+  transition: 0.5s;
+  transform-origin: center;
+}
+header .mobile-menu ul li {
+  margin-bottom: 5px;
+}
+header .mobile-menu ul li a {
+  color: black;
+}
 header:hover {
   background-color: black;
   cursor: pointer;
+}
+header > nav {
+  width: 30%;
 }
 header > nav ul {
   display: flex;
@@ -46,8 +105,27 @@ header > nav ul li a {
   color: white;
   font-size: 20px;
 }
+header > nav:nth-of-type(2) {
+  display: flex;
+  justify-content: right;
+}
 header > nav:nth-of-type(3) {
   display: none;
+  transition: 0.5s;
+}
+header > nav:nth-of-type(3).active g {
+  z-index: 22;
+}
+header > nav:nth-of-type(3).active g span:nth-of-type(1) {
+  transition: 0.5s;
+  transform: rotate(50deg) translateX(8px);
+}
+header > nav:nth-of-type(3).active g span:nth-of-type(2) {
+  display: none;
+}
+header > nav:nth-of-type(3).active g span:nth-of-type(3) {
+  transition: 0.5s;
+  transform: rotate(-50deg) translateX(6px);
 }
 header > nav:nth-of-type(3) g:hover {
   cursor: pointer;
@@ -63,6 +141,45 @@ header > nav:nth-of-type(3) g span:nth-of-type(2) {
 }
 header > nav:nth-of-type(3) g span:nth-of-type(3) {
   margin-top: 5px;
+}
+header > nav:nth-of-type(1) ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+header > nav:nth-of-type(1) ul li::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: white;
+  display: block;
+  transition: 0.5s;
+  transform-origin: center;
+  margin-top: 5px;
+}
+header > nav:nth-of-type(1) ul li:hover::after {
+  width: 100%;
+}
+header > nav:nth-of-type(2) ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+header > nav:nth-of-type(2) ul li::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: white;
+  display: block;
+  transition: 0.5s;
+  transform-origin: center;
+  margin-top: 5px;
+}
+header > nav:nth-of-type(2) ul li:hover::after {
+  width: 100%;
+}
+header > h2 {
+  margin-left: 160px;
 }
 header > h2 > span {
   color: white;
@@ -111,22 +228,7 @@ main article:nth-of-type(2) {
   margin: 0 auto;
 }
 main article:nth-of-type(2) .deco1 {
-  position: absolute;
-  bottom: -190%;
-  right: 0;
-  z-index: -9;
-  animation: cat 1.5s infinite;
-}
-@keyframes cat {
-  0% {
-    transform: rotateX(0deg);
-  }
-  50% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotateX(0deg);
-  }
+  display: none;
 }
 main article:nth-of-type(2) .deco1 img {
   width: 150px;
@@ -144,6 +246,72 @@ main article:nth-of-type(2) .site-items ul li {
   display: flex;
   justify-content: center;
 }
+main article:nth-of-type(2) .site-items ul li:nth-of-type(1) {
+  opacity: 0;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(1).active {
+  opacity: 1;
+  transition: 0.5s;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(1).active a figure figcaption {
+  display: block;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(2) {
+  opacity: 0;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(2).active {
+  opacity: 1;
+  transition: 0.5s;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(2).active a figure figcaption {
+  display: block;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(3) {
+  opacity: 1;
+  transform: translateX(100px);
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(3) figcaption {
+  transition: 0.5s;
+  display: block;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(3).active {
+  opacity: 1;
+  transition: 0.5s;
+  transform: translateX(0);
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(3).active a figure figcaption {
+  display: block;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(4) {
+  opacity: 0;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(4).active {
+  opacity: 1;
+  transition: 0.5s;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(4).active a figure figcaption {
+  display: block;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(5) {
+  opacity: 0;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(5).active {
+  opacity: 1;
+  transition: 0.5s;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(5).active a figure figcaption {
+  display: block;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(6) {
+  opacity: 0;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(6).active {
+  opacity: 1;
+  transition: 0.5s;
+}
+main article:nth-of-type(2) .site-items ul li:nth-of-type(6).active a figure figcaption {
+  display: block;
+}
 main article:nth-of-type(2) .site-items ul li a figure {
   text-align: center;
   transition: 0.5s;
@@ -156,124 +324,140 @@ main article:nth-of-type(2) .site-items ul li a figure img {
 main article:nth-of-type(2) .site-items ul li a figure figcaption {
   font-size: 14px;
   color: white;
+  display: none;
 }
-main article:nth-of-type(2) .site-items ul li a figure:hover {
-  transform: translateY(-5px);
-}
-main article:nth-of-type(3) {
+main article.event-article {
   width: 100%;
   max-width: 1400px;
   padding: 10px;
   margin: 0 auto;
   text-align: center;
 }
-main article:nth-of-type(3) .ar3-container {
+main article.event-article .ar3-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
-main article:nth-of-type(3) .ar3-container .event-container {
-  width: 50%;
+main article.event-article .ar3-container .event-container {
+  width: 100%;
+  margin-top: 60px;
 }
-main article:nth-of-type(3) .ar3-container .event-container h2 {
+main article.event-article .ar3-container .event-container h2 {
   margin-bottom: 30px;
+  font-size: 2em;
 }
-main article:nth-of-type(3) .ar3-container .event-container h2 a {
+main article.event-article .ar3-container .event-container h2 a {
   opacity: 0.5;
   font-weight: 500;
   color: black;
   border-bottom: 1.5px solid #919090;
   padding-bottom: 10px;
 }
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con {
+main article.event-article .ar3-container .event-container .eventbox-con {
   width: 50%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
 }
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con figure {
+main article.event-article .ar3-container .event-container .eventbox-con figure {
   margin-right: 10px;
   position: relative;
 }
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con figure:hover {
+main article.event-article .ar3-container .event-container .eventbox-con figure:hover {
   cursor: pointer;
 }
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con figure a img {
-  width: 200px;
+main article.event-article .ar3-container .event-container .eventbox-con figure a img {
+  width: 400px;
 }
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con figure figcaption {
-  font-size: 10px;
+main article.event-article .ar3-container .event-container .eventbox-con figure figcaption {
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
 }
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con .event-box1 figure .hover-box1 {
-  width: 200px;
-  height: 200px;
+main article.event-article .ar3-container .event-container .eventbox-con .event-box1 figure .hover-box1 {
+  width: 400px;
+  height: 400px;
   background-color: rgba(0, 0, 0, 0.396);
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con .event-box1 figure .hover-box1.active {
+main article.event-article .ar3-container .event-container .eventbox-con .event-box1 figure .hover-box1.active {
   opacity: 1;
   transition: 0.5s;
 }
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con .event-box1 figure .hover-box1 p {
+main article.event-article .ar3-container .event-container .eventbox-con .event-box1 figure .hover-box1 p {
+  width: 50px;
+  height: 50px;
   background-color: rgba(0, 0, 0, 0.396);
   color: white;
   border: 2px solid white;
-  border-radius: 500px;
+  border-radius: 200px;
   width: 50%;
   padding: 5px;
   position: absolute;
   top: 40%;
   left: 25%;
-}
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con .event-box2 figure .hover-box2 {
-  width: 200px;
-  height: 200px;
-  background-color: rgba(0, 0, 0, 0.396);
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con .event-box2 figure .hover-box2.active {
-  opacity: 1;
-  transition: 0.5s;
-}
-main article:nth-of-type(3) .ar3-container .event-container .eventbox-con .event-box2 figure .hover-box2 p {
-  background-color: rgba(0, 0, 0, 0.396);
-  color: white;
-  border: 2px solid white;
-  border-radius: 20px;
-  width: 50%;
-  padding: 5px;
-  position: absolute;
-  top: 40%;
-  left: 25%;
-}
-main article:nth-of-type(3) .ar3-container .swiper-container {
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+main article.event-article .ar3-container .event-container .eventbox-con .event-box2 figure .hover-box2 {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.396);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+main article.event-article .ar3-container .event-container .eventbox-con .event-box2 figure .hover-box2.active {
+  opacity: 1;
+  transition: 0.5s;
+}
+main article.event-article .ar3-container .event-container .eventbox-con .event-box2 figure .hover-box2 p {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.396);
+  color: white;
+  border: 2px solid white;
+  border-radius: 200px;
   width: 50%;
-  height: 280px;
+  padding: 5px;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main article.event-article .ar3-container .swiper-container {
+  justify-content: center;
+  width: 100%;
   margin: 0 auto;
   display: flex;
+  margin-top: 60px;
   flex-direction: column;
 }
-main article:nth-of-type(3) .ar3-container .swiper-container h2 {
+main article.event-article .ar3-container .swiper-container h2 {
   margin-bottom: 30px;
+  font-size: 2em;
 }
-main article:nth-of-type(3) .ar3-container .swiper-container h2 a {
+main article.event-article .ar3-container .swiper-container h2 a {
   opacity: 0.5;
   font-weight: 500;
   color: black;
   border-bottom: 1.5px solid #919090;
   padding-bottom: 10px;
 }
-main article:nth-of-type(3) .ar3-container .swiper-container .swiper {
+main article.event-article .ar3-container .swiper-container .swiper {
   width: 100%;
   height: 300px;
 }
-main article:nth-of-type(3) .ar3-container .swiper-container .swiper-slide {
+main article.event-article .ar3-container .swiper-container .swiper-slide {
   width: 100%;
   height: 100%;
   display: flex;
@@ -283,34 +467,55 @@ main article:nth-of-type(3) .ar3-container .swiper-container .swiper-slide {
   font-weight: bold;
   color: #fff;
 }
-main article:nth-of-type(3) .ar3-container .swiper-container .swiper-slide a img {
+main article.event-article .ar3-container .swiper-container .swiper-slide a img {
   width: 100%;
 }
-main article:nth-of-type(3) .ar3-container .swiper-container .swiper-slide:nth-child(1n) {
-  background-color: #eee;
-}
-event main article:nth-of-type(3):nth-of-type(4) {
+main article.event-article:nth-of-type(4) {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 }
-main article:nth-of-type(3):nth-of-type(5) {
+main article.event-article:nth-of-type(5) {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
 }
-main article:nth-of-type(4) {
+main article.kisland-article {
   width: 100%;
   max-width: 1400px;
   padding: 10px 10px 0px 10px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
 }
-main article:nth-of-type(4) h2 {
+main article.kisland-article .deco1 {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  transform: scaleY(-1);
+  z-index: -9;
+  animation: cat2 1.5s infinite;
+}
+@keyframes cat2 {
+  0% {
+    transform: rotateX(0deg) scaleX(-1);
+  }
+  50% {
+    transform: rotate(-10deg) scaleX(-1);
+  }
+  100% {
+    transform: rotateX(0deg) scaleX(-1);
+  }
+}
+main article.kisland-article .deco1 img {
+  width: 150px;
+  height: 150px;
+}
+main article.kisland-article h2 {
   margin-bottom: 30px;
 }
-main article:nth-of-type(4) h2 a {
+main article.kisland-article h2 a {
   opacity: 0.5;
   font-weight: 500;
   color: black;
@@ -318,21 +523,23 @@ main article:nth-of-type(4) h2 a {
   padding-bottom: 10px;
   font-size: 1.5em;
 }
-main article:nth-of-type(4) video {
+main article.kisland-article video {
   width: 100%;
 }
-main article:nth-of-type(5) {
+main article.swiper2-article {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0px 10px 0px 10px;
   text-align: center;
 }
-main article:nth-of-type(5) .swiper {
+main article.swiper2-article .swiper {
   width: 100%;
-  height: 800px;
 }
-main article:nth-of-type(5) .swiper .swiper-slide {
+main article.swiper2-article .swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+main article.swiper2-article .swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -340,11 +547,12 @@ main article:nth-of-type(5) .swiper .swiper-slide {
   justify-content: center;
   align-items: center;
 }
-main article:nth-of-type(5) .swiper .swiper-slide img {
+main article.swiper2-article .swiper .swiper-slide img {
   width: 100%;
+  min-width: 100%;
   height: 100%;
 }
-main article:nth-of-type(5) .swiper .autoplay-progress {
+main article.swiper2-article .swiper .autoplay-progress {
   position: absolute;
   right: 16px;
   bottom: 16px;
@@ -357,7 +565,7 @@ main article:nth-of-type(5) .swiper .autoplay-progress {
   font-weight: bold;
   color: var(--swiper-theme-color);
 }
-main article:nth-of-type(5) .swiper .autoplay-progress svg {
+main article.swiper2-article .swiper .autoplay-progress svg {
   --progress: 0;
   position: absolute;
   left: 0;
@@ -372,23 +580,23 @@ main article:nth-of-type(5) .swiper .autoplay-progress svg {
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
-main article:nth-of-type(5) .swiper .swiper-button-next {
+main article.swiper2-article .swiper .swiper-button-next {
   background: url(../imgs/png/slide_arrow.png);
   z-index: 99;
   width: 41px;
   height: 41px;
   transform: rotate(180deg);
 }
-main article:nth-of-type(5) .swiper .swiper-button-next::after {
+main article.swiper2-article .swiper .swiper-button-next::after {
   content: "";
 }
-main article:nth-of-type(5) .swiper .swiper-button-prev {
+main article.swiper2-article .swiper .swiper-button-prev {
   background: url(../imgs/png/slide_arrow.png);
   z-index: 99;
   width: 41px;
   height: 41px;
 }
-main article:nth-of-type(5) .swiper .swiper-button-prev::after {
+main article.swiper2-article .swiper .swiper-button-prev::after {
   content: "";
 }
 
@@ -401,6 +609,7 @@ main article:nth-of-type(5) .swiper .swiper-button-prev::after {
 #index-footer .footer-inner {
   width: 100%;
   margin: 0 auto;
+  padding: 20px 0px 20px 10px;
   background-color: black;
 }
 #index-footer .footer-inner .footer-title {
@@ -453,25 +662,46 @@ main article:nth-of-type(5) .swiper .swiper-button-prev::after {
     transition: 0.5s;
     transform: translateY(0);
   }
+  main article:nth-of-type(2) .site-items ul li {
+    opacity: 1 !important;
+  }
+  main article:nth-of-type(2) .site-items ul li:nth-of-type(3) {
+    transform: translateX(0px);
+  }
   main article:nth-of-type(2) .site-items ul li a figure figcaption {
+    display: block;
     color: black;
     font-size: 10px;
   }
   main article:nth-of-type(2) .deco1 {
     display: none;
   }
-  main article:nth-of-type(3) .ar3-container {
+  main article.event-article .eventbox-con {
+    width: 100% !important;
     flex-direction: column;
   }
-  main article:nth-of-type(3) .ar3-container .event-container {
-    width: 100%;
-    margin: 50px auto;
+  main article.event-article .eventbox-con .event-box1 figure a img {
+    width: 100% !important;
   }
-  main article:nth-of-type(3) .ar3-container .event-container .eventbox-con .event-box1 figcaption {
-    font-size: 14px;
+  main article.event-article .eventbox-con .event-box1 figure .hover-box1 {
+    width: 100% !important;
+    height: 100% !important;
   }
-  main article:nth-of-type(3) .ar3-container .swiper-container {
-    width: 100%;
-    margin: 0 auto;
+  main article.event-article .eventbox-con .event-box2 figure a img {
+    width: 100% !important;
+  }
+  main article.event-article .eventbox-con .event-box2 figure .hover-box2 {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  main article.kisland-article .deco1 img {
+    opacity: 0.7;
+  }
+  main article:nth-of-type(4) .deco1 {
+    top: 0;
+  }
+  main article:nth-of-type(4) .deco1 img {
+    width: 100px;
+    height: 100px;
   }
 }/*# sourceMappingURL=index.css.map */
