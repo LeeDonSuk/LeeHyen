@@ -1,16 +1,18 @@
 @font-face {
-    font-family: 'NanumSquare';
-    src: url('../font/NanumSquareB.ttf') format('truetype');
+    font-family: "NanumSquare";
+    src: url("../font/NanumSquareB.ttf") format("truetype");
 }
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'NanumSquare';
 }
-ul,li{
-list-style: none;
+ul,
+li {
+    list-style: none;
 }
-a{
+a {
     text-decoration: none;
 }
