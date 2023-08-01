@@ -1,4 +1,4 @@
-@import "_reset";
+@import "_reset","_common";
 
 header {
     width: 100%;
@@ -143,6 +143,10 @@ header {
                     display: flex;
                     align-items: center;
                     flex-direction: column;
+                    justify-content: center;
+                    &:nth-of-type(1) {
+                        transform: translateY(-2px);
+                    }
                     &::after {
                         content: "";
                         width: 0%;
@@ -384,7 +388,7 @@ main {
                         margin-bottom: 30px;
                         font-size: 2em;
                         a {
-                            opacity: 0.5;
+                            opacity: 0.7;
                             font-weight: 500;
                             color: black;
                             border-bottom: 1.5px solid #919090;
@@ -393,7 +397,7 @@ main {
                     }
                     .eventbox-con {
                         width: 50%;
-                        margin: 0 auto;
+                        margin: 50px auto;
                         display: flex;
                         justify-content: center;
 
@@ -487,16 +491,17 @@ main {
                 .swiper-container {
                     justify-content: center;
                     width: 100%;
-                    margin: 0 auto;
+                    margin: 80px auto;
                     display: flex;
                     margin-top: 60px;
                     flex-direction: column;
+                    padding: 10px;
 
                     h2 {
                         margin-bottom: 30px;
                         font-size: 2em;
                         a {
-                            opacity: 0.5;
+                            opacity: 0.7;
                             font-weight: 500;
                             color: black;
                             border-bottom: 1.5px solid #919090;
@@ -593,7 +598,10 @@ main {
             .swiper {
                 width: 100%;
                 .swiper-pagination {
-                    bottom: 0 !important;
+                    bottom: 10% !important;
+                    .swiper-pagination-bullet {
+                        background-color: salmon;
+                    }
                 }
                 .swiper-slide {
                     text-align: center;
@@ -612,7 +620,7 @@ main {
                 .autoplay-progress {
                     position: absolute;
                     right: 16px;
-                    bottom: 16px;
+                    bottom: 10%;
                     z-index: 10;
                     width: 48px;
                     height: 48px;
@@ -802,7 +810,6 @@ main {
         }
     }
 }
-
 @media (max-width: 468px) {
     article {
         &:nth-of-type(5) {

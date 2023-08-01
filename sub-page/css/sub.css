@@ -1,0 +1,258 @@
+#Reservation-main .maininner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+#Reservation-main .maininner .status {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 2px solid rgba(250, 128, 114, 0.531);
+  padding: 50px;
+  background-color: rgba(250, 128, 114, 0.411);
+}
+#Reservation-main .maininner .status .status-banner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+#Reservation-main .maininner .status .status-banner ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#Reservation-main .maininner .status .status-banner ul li {
+  width: 25%;
+  text-align: center;
+}
+#Reservation-main .maininner .status .status-banner ul li a {
+  color: black;
+  font-size: 20px;
+  transition: 0.5s;
+}
+#Reservation-main .maininner .status .status-banner ul li a:hover {
+  color: white;
+}
+#Reservation-main .maininner .status .status-banner ul li a::after {
+  content: "";
+  width: 0%;
+  height: 5px;
+  background-color: salmon;
+  opacity: 0;
+}
+#Reservation-main .maininner .status .status-banner .checkin li {
+  margin-top: 20px;
+}
+#Reservation-main .maininner .camping-list {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+#Reservation-main .maininner .camping-list ul {
+  display: flex;
+  justify-content: center;
+}
+#Reservation-main .maininner .camping-list ul li {
+  width: 33%;
+  margin-top: 20px;
+  border: 1px solid #858585;
+  margin-right: 10px;
+  padding: 15px;
+  border-radius: 40px;
+  transition: 0.5s;
+}
+#Reservation-main .maininner .camping-list ul li.active {
+  background-color: salmon;
+  border-color: white;
+  opacity: 1;
+}
+#Reservation-main .maininner .camping-list ul li.active a {
+  color: white;
+}
+#Reservation-main .maininner .camping-list ul li:hover {
+  transform: translateY(-10px);
+}
+#Reservation-main .maininner .camping-list ul li a {
+  color: #858585;
+}
+#Reservation-main .maininner .box-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+#Reservation-main .maininner .box-container .login {
+  width: 40%;
+  max-width: 1400px;
+  display: flex;
+  margin-right: 10px;
+  justify-content: center;
+}
+#Reservation-main .maininner .box-container .login .login-box {
+  max-width: 1000px;
+  padding: 20px;
+  width: 100%;
+  border: 5px solid salmon;
+  border-radius: 15px;
+  background-color: #eee;
+}
+#Reservation-main .maininner .box-container .login .login-box .login-title {
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .login .login-box .login-title h2 {
+  margin-bottom: 50px;
+}
+#Reservation-main .maininner .box-container .login .login-box .login-title figure {
+  margin-bottom: 50px;
+}
+#Reservation-main .maininner .box-container .login .login-box .userid p {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .login .login-box .userid input {
+  width: 100%;
+  border: none;
+  outline-style: none;
+  padding: 10px;
+}
+#Reservation-main .maininner .box-container .login .login-box .userid input::-moz-placeholder {
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .login .login-box .userid input::placeholder {
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .login .login-box .userpw p {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .login .login-box .userpw input {
+  width: 100%;
+  border: none;
+  outline-style: none;
+  padding: 10px;
+}
+#Reservation-main .maininner .box-container .login .login-box .userpw input::-moz-placeholder {
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .login .login-box .userpw input::placeholder {
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .info-check {
+  width: 50%;
+  border: 5px solid salmon;
+  border-radius: 15px;
+}
+#Reservation-main .maininner .box-container .info-check .info-box {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .info-check .info-box p {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+#Reservation-main .maininner .box-container .info-check .info-box input {
+  width: 100%;
+  padding: 10px;
+  outline-style: none;
+}
+#Reservation-main .maininner .box-container .info-check .info-box input::-moz-placeholder {
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .info-check .info-box input::placeholder {
+  text-align: center;
+}
+#Reservation-main .maininner .box-container .info-check .info-box .info-title {
+  margin-bottom: 20px;
+}
+#Reservation-main .maininner .Agree {
+  width: 90%;
+  margin: 30px auto;
+}
+#Reservation-main .maininner .Agree .Agree-inner {
+  width: 100%;
+  border: 1px solid rgba(111, 110, 110, 0.3647058824);
+}
+#Reservation-main .maininner .Agree .Agree-inner div {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(111, 110, 110, 0.3647058824);
+  padding-bottom: 15px;
+  padding-left: 10px;
+}
+#Reservation-main .maininner .Agree .Agree-inner span {
+  font-size: 12px;
+  color: red;
+}
+#Reservation-main .maininner .Agree .Agree-inner span.last-check {
+  color: #775c5c;
+}
+#Reservation-main .maininner .Agree .Agree-inner input {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+#Reservation-main .maininner .play-btn {
+  width: 70%;
+  max-width: 1400px;
+  margin: 30px auto;
+}
+#Reservation-main .maininner .play-btn button {
+  width: 100%;
+  height: 80px;
+  border: none;
+  background: none;
+  color: salmon;
+  font-size: 20px;
+  box-shadow: 1px 1px 5px 0px black;
+  border-radius: 10px;
+}
+#Reservation-main .maininner .play-btn button:hover {
+  cursor: pointer;
+}
+#Reservation-main .maininner .checkin ul li {
+  opacity: 0;
+}
+#Reservation-main .maininner .checkin ul li.active {
+  opacity: 1;
+  animation-name: textani;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes textani {
+  0% {
+    transform: rotate(0deg);
+    color: rgb(114, 114, 114);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(0deg);
+    color: rgb(114, 114, 114);
+  }
+  60% {
+    transform: rotate(-15deg);
+  }
+  80% {
+    transform: rotate(0deg);
+    color: rgb(114, 114, 114);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.Reservation-footer {
+  width: 100%;
+  padding: 0;
+}/*# sourceMappingURL=sub.css.map */
