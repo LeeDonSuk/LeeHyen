@@ -1,7 +1,7 @@
-const elg = document.querySelector('.menu-ico');
+const icon = document.querySelector('.menu-ico');
 const elmenu = document.querySelector('.mobile-menu');
 
-elg.addEventListener('click', () => {
+icon.addEventListener('click', () => {
   elmenu.classList.toggle('active');
-  elg.classList.toggle('active');
+  icon.classList.toggle('active');
 });

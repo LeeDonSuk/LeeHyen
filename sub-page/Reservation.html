@@ -28,12 +28,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" title="Reservation">
+                    <a href="./Reservation.html" title="예약신청">
                         예약신청
                     </a>
                 </li>
                 <li>
-                    <a href="#" title="Contents">
+                    <a href="./Reservationcheck.html" title="예약확인">
                         예약확인
                     </a>
                 </li>
@@ -64,12 +64,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./Reservation.html" title="예약신청">
                         예약신청
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./Reservationcheck.html" title="예약확인">
                         예약확인
                     </a>
                 </li>
@@ -83,37 +83,30 @@
             </g>
         </nav>
     </header>
+<div class="main-container">
+    <aside>
+        <div class="status">
+            <div class="status-title">
+                <h2>진행상황</h2>
+            </div>
+            <div class="status-item1 status-items">
+                <p>캠핑장 선택</p>
+                <p class="checklist">진행중</p>
+            </div>
+            <div class="status-item2 status-items">
+                <p>정보 입력</p>
+                <p class="checklist">진행중</p>
 
+            </div>
+            <div class="status-item3 status-items">
+                <p>이용약관</p>
+                <p class="checklist">진행중</p>
+            </div>
+        </div>
+    </aside>
     <main id="Reservation-main">
         <div class="maininner">
-            <div class="status">
-                <div class="status-banner">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                캠핑장 선택하기
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                본인인증및 예약자 정보
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                약관동의 하기
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="checkin">
-                        <ul>
-                            <li>진행중</li>
-                            <li>진행중</li>
-                            <li>진행중</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
             <div class="camping-list">
                 <ul>
                     <li>
@@ -149,11 +142,9 @@
                             </figure>
                         </div>
                         <div class="userid inputes">
-                            <p>Kt.com 아이디</p>
                             <input type="text" placeholder="Kt.com 아이디 입력">
                         </div>
                         <div class="userpw inputes">
-                            <p>Kt.com 비밀번호</p>
                             <input type="text" placeholder="Kt.com 비밀번호 입력">
                         </div>
                     </div>
@@ -163,21 +154,17 @@
                         <div class="info-title inputes">
                             <h2>예약자 정보 입력 !</h2>
                         </div>
-                        <div class="username inputes">
-                            <p>예약자 성명</p>
-                            <input type="text" placeholder="예약자 성명">
-                        </div>
-                        <div class="usercell inputes">
-                            <p>휴대폰 번호</p>
-                            <input type="text" placeholder="휴대폰 인증">
-                        </div>
-                        <div class="usercellcheck inputes">
-                            <p>인증번호 입력</p>
-                            <input type="text" placeholder="인증번호 입력">
-                        </div>
-                        <div class="carnumber inputes">
-                            <p>차량 번호</p>
-                            <input type="text" placeholder="차량 번호">
+                        <div class="input-container">
+                            <img src="../kidsland/imgs/png/pay_ico1.png" alt="">
+                            <div class="username inputes">
+                                <input type="text" placeholder="예약자 성명을 입력해주세요">
+                            </div>
+                            <div class="usercell inputes">
+                                <input type="text" placeholder="휴대폰 번호를 입력해주세요">
+                            </div>
+                            <div class="carnumber inputes">
+                                <input type="text" placeholder="차량 번호를 입력해주세요">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -185,28 +172,28 @@
             <div class="Agree">
                 <div class="Agree-inner">
                     <div class="all-Agree">
-                        <input type="checkbox" name="all">
-                        <label for="all">이용약관, 개인정보 수집에 모두 동의합니다.</label>
+                        <input type="checkbox" name="all" class="allcheck">
+                        <label for="all" class="label-title">이용약관, 개인정보 수집에 모두 동의합니다.</label>
                     </div>
                     <div class="Agree-1">
-                        <input type="checkbox" name="num1">
-                        <label for="num1">이용시 유의사항 <span>필수</span></label>
+                        <input type="checkbox" name="num1" class="checkboxitems">
+                        <label for="num1" class="labels">이용시 유의사항 <span>필수</span></label>
                     </div>
                     <div class="Agree-2">
-                        <input type="checkbox" name="num2">
-                        <label for="num2">개인정보 수집 이용 동의 <span>필수</span></label>
+                        <input type="checkbox" name="num2" class="checkboxitems">
+                        <label for="num2" class="labels">개인정보 수집 이용 동의 <span>필수</span></label>
                     </div>
                     <div class="Agree-3">
-                        <input type="checkbox" name="num3">
-                        <label for="num3">개인정보 3자 제공 동의 <span>필수</span></label>
+                        <input type="checkbox" name="num3" class="checkboxitems">
+                        <label for="num3" class="labels">개인정보 3자 제공 동의 <span>필수</span></label>
                     </div>
                     <div class="Agree-4">
-                        <input type="checkbox" name="num4">
-                        <label for="num4">개인정보 처리 위탁 동의 <span>필수</span></label>
+                        <input type="checkbox" name="num4" class="checkboxitems">
+                        <label for="num4" class="labels">개인정보 처리 위탁 동의 <span>필수</span></label>
                     </div>
                     <div class="Agree-5">
-                        <input type="checkbox" name="num5">
-                        <label for="num5">마케팅 수신 동의 <span class="last-check">선택</span></label>
+                        <input type="checkbox" name="num5" class="checkboxitems">
+                        <label for="num5" class="labels">마케팅 수신 동의 <span class="last-check">선택</span></label>
                     </div>
                 </div>
             </div>
@@ -217,6 +204,7 @@
             </div>
         </div>
     </main>
+</div>
 
     <footer id="index-footer" class="Reservation-footer">
         <div class="footer-inner">

@@ -1,59 +1,126 @@
-#Reservation-main .maininner {
+main {
   width: 100%;
-  max-width: 1400px;
+}
+main section {
+  width: 50%;
+  height: 565px;
   margin: 0 auto;
+  background-color: #eee;
+  padding: 20px;
 }
-#Reservation-main .maininner .status {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  border-bottom: 2px solid rgba(250, 128, 114, 0.531);
-  padding: 50px;
-  background-color: rgba(250, 128, 114, 0.411);
-}
-#Reservation-main .maininner .status .status-banner {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-#Reservation-main .maininner .status .status-banner ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-#Reservation-main .maininner .status .status-banner ul li {
-  width: 25%;
+main section .sec-title {
   text-align: center;
+  margin: 60px;
+  font-size: 2vw;
 }
-#Reservation-main .maininner .status .status-banner ul li a {
-  color: black;
-  font-size: 20px;
-  transition: 0.5s;
+main section .sec-info input {
+  width: 100%;
+  padding: 15px;
+  background-color: black;
+  border: none;
+  color: white;
+  outline-style: none;
 }
-#Reservation-main .maininner .status .status-banner ul li a:hover {
+main section .sec-info input::-moz-placeholder {
+  font-size: 15px;
+  text-align: center;
   color: white;
 }
-#Reservation-main .maininner .status .status-banner ul li a::after {
-  content: "";
-  width: 0%;
-  height: 5px;
-  background-color: salmon;
-  opacity: 0;
+main section .sec-info input::placeholder {
+  font-size: 15px;
+  text-align: center;
+  color: white;
 }
-#Reservation-main .maininner .status .status-banner .checkin li {
+main section .sec-btn button {
+  border: 4px solid black;
+  border-radius: 5px;
+  background-color: white;
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+main section .sec-btn button:hover {
+  cursor: pointer;
+}
+
+.main-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.main-container aside {
+  width: 20%;
+  height: 100vh;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+}
+.main-container aside .status {
+  position: absolute;
+  transition: 0.5s;
+  padding: 15px;
+  box-shadow: 1px 1px 5px 1px salmon;
+}
+.main-container aside .status .status-items p {
+  font-weight: 400;
+  color: #232323;
+}
+.main-container aside .status .status-items p:nth-of-type(2) {
   margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0.2;
 }
-#Reservation-main .maininner .camping-list {
+.main-container aside .status .status-items p.checklist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-container aside .status .status-items p.checklist.active {
+  opacity: 1;
+  animation: checklist 1.5s infinite;
+}
+@keyframes checklist {
+  0% {
+    color: #858585;
+  }
+  25% {
+    color: salmon;
+  }
+  50% {
+    color: #858585;
+  }
+  70% {
+    color: salmon;
+  }
+  100% {
+    color: #858585;
+  }
+}
+.main-container aside .status .status-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.main-container #Reservation-main {
+  width: 80%;
+}
+.main-container #Reservation-main .maininner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.main-container #Reservation-main .maininner .camping-list {
   width: 100%;
   margin-top: 20px;
   text-align: center;
 }
-#Reservation-main .maininner .camping-list ul {
+.main-container #Reservation-main .maininner .camping-list ul {
   display: flex;
   justify-content: center;
 }
-#Reservation-main .maininner .camping-list ul li {
+.main-container #Reservation-main .maininner .camping-list ul li {
   width: 33%;
   margin-top: 20px;
   border: 1px solid #858585;
@@ -62,33 +129,44 @@
   border-radius: 40px;
   transition: 0.5s;
 }
-#Reservation-main .maininner .camping-list ul li.active {
+.main-container #Reservation-main .maininner .camping-list ul li.active {
   background-color: salmon;
   border-color: white;
   opacity: 1;
 }
-#Reservation-main .maininner .camping-list ul li.active a {
+.main-container #Reservation-main .maininner .camping-list ul li.active a {
   color: white;
 }
-#Reservation-main .maininner .camping-list ul li:hover {
+.main-container #Reservation-main .maininner .camping-list ul li:hover {
   transform: translateY(-10px);
 }
-#Reservation-main .maininner .camping-list ul li a {
+.main-container #Reservation-main .maininner .camping-list ul li a {
   color: #858585;
 }
-#Reservation-main .maininner .box-container {
+.main-container #Reservation-main .maininner .box-container {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
-#Reservation-main .maininner .box-container .login {
-  width: 40%;
+.main-container #Reservation-main .maininner .box-container .login {
+  width: 50%;
   max-width: 1400px;
   display: flex;
   margin-right: 10px;
   justify-content: center;
 }
-#Reservation-main .maininner .box-container .login .login-box {
+.main-container #Reservation-main .maininner .box-container .login input {
+  border: none;
+  background-color: black;
+  color: white;
+}
+.main-container #Reservation-main .maininner .box-container .login input::-moz-placeholder {
+  color: white;
+}
+.main-container #Reservation-main .maininner .box-container .login input::placeholder {
+  color: white;
+}
+.main-container #Reservation-main .maininner .box-container .login .login-box {
   max-width: 1000px;
   padding: 20px;
   width: 100%;
@@ -96,92 +174,84 @@
   border-radius: 15px;
   background-color: #eee;
 }
-#Reservation-main .maininner .box-container .login .login-box .login-title {
+.main-container #Reservation-main .maininner .box-container .login .login-box .login-title {
   text-align: center;
 }
-#Reservation-main .maininner .box-container .login .login-box .login-title h2 {
+.main-container #Reservation-main .maininner .box-container .login .login-box .login-title h2 {
   margin-bottom: 50px;
 }
-#Reservation-main .maininner .box-container .login .login-box .login-title figure {
-  margin-bottom: 50px;
+.main-container #Reservation-main .maininner .box-container .login .login-box .login-title figure {
+  margin-top: 80px;
 }
-#Reservation-main .maininner .box-container .login .login-box .userid p {
-  width: 100%;
-  background-color: black;
-  color: white;
-  padding: 10px;
-  text-align: center;
+.main-container #Reservation-main .maininner .box-container .login .login-box .userid {
+  margin-top: 75px;
 }
-#Reservation-main .maininner .box-container .login .login-box .userid input {
+.main-container #Reservation-main .maininner .box-container .login .login-box .userid input {
   width: 100%;
   border: none;
   outline-style: none;
   padding: 10px;
 }
-#Reservation-main .maininner .box-container .login .login-box .userid input::-moz-placeholder {
+.main-container #Reservation-main .maininner .box-container .login .login-box .userid input::-moz-placeholder {
   text-align: center;
 }
-#Reservation-main .maininner .box-container .login .login-box .userid input::placeholder {
+.main-container #Reservation-main .maininner .box-container .login .login-box .userid input::placeholder {
   text-align: center;
 }
-#Reservation-main .maininner .box-container .login .login-box .userpw p {
-  width: 100%;
-  background-color: black;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-#Reservation-main .maininner .box-container .login .login-box .userpw input {
+.main-container #Reservation-main .maininner .box-container .login .login-box .userpw input {
   width: 100%;
   border: none;
   outline-style: none;
   padding: 10px;
 }
-#Reservation-main .maininner .box-container .login .login-box .userpw input::-moz-placeholder {
+.main-container #Reservation-main .maininner .box-container .login .login-box .userpw input::-moz-placeholder {
   text-align: center;
 }
-#Reservation-main .maininner .box-container .login .login-box .userpw input::placeholder {
+.main-container #Reservation-main .maininner .box-container .login .login-box .userpw input::placeholder {
   text-align: center;
 }
-#Reservation-main .maininner .box-container .info-check {
+.main-container #Reservation-main .maininner .box-container .info-check {
   width: 50%;
   border: 5px solid salmon;
   border-radius: 15px;
 }
-#Reservation-main .maininner .box-container .info-check .info-box {
+.main-container #Reservation-main .maininner .box-container .info-check .info-box {
   padding: 20px;
   width: 100%;
   text-align: center;
 }
-#Reservation-main .maininner .box-container .info-check .info-box p {
-  width: 100%;
-  background-color: black;
-  color: white;
-  padding: 10px;
+.main-container #Reservation-main .maininner .box-container .info-check .info-box .input-container img {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-#Reservation-main .maininner .box-container .info-check .info-box input {
+.main-container #Reservation-main .maininner .box-container .info-check .info-box .input-container input {
   width: 100%;
   padding: 10px;
   outline-style: none;
+  border: none;
+  color: white;
+  background-color: black;
 }
-#Reservation-main .maininner .box-container .info-check .info-box input::-moz-placeholder {
+.main-container #Reservation-main .maininner .box-container .info-check .info-box .input-container input::-moz-placeholder {
   text-align: center;
+  color: white;
 }
-#Reservation-main .maininner .box-container .info-check .info-box input::placeholder {
+.main-container #Reservation-main .maininner .box-container .info-check .info-box .input-container input::placeholder {
   text-align: center;
+  color: white;
 }
-#Reservation-main .maininner .box-container .info-check .info-box .info-title {
+.main-container #Reservation-main .maininner .box-container .info-check .info-box .info-title {
   margin-bottom: 20px;
 }
-#Reservation-main .maininner .Agree {
-  width: 90%;
+.main-container #Reservation-main .maininner .Agree {
+  width: 100%;
   margin: 30px auto;
 }
-#Reservation-main .maininner .Agree .Agree-inner {
+.main-container #Reservation-main .maininner .Agree .Agree-inner {
   width: 100%;
   border: 1px solid rgba(111, 110, 110, 0.3647058824);
 }
-#Reservation-main .maininner .Agree .Agree-inner div {
+.main-container #Reservation-main .maininner .Agree .Agree-inner div {
   display: flex;
   align-items: center;
   margin-top: 10px;
@@ -189,24 +259,24 @@
   padding-bottom: 15px;
   padding-left: 10px;
 }
-#Reservation-main .maininner .Agree .Agree-inner span {
+.main-container #Reservation-main .maininner .Agree .Agree-inner span {
   font-size: 12px;
   color: red;
 }
-#Reservation-main .maininner .Agree .Agree-inner span.last-check {
+.main-container #Reservation-main .maininner .Agree .Agree-inner span.last-check {
   color: #775c5c;
 }
-#Reservation-main .maininner .Agree .Agree-inner input {
+.main-container #Reservation-main .maininner .Agree .Agree-inner input {
   width: 30px;
   height: 30px;
   margin-right: 10px;
 }
-#Reservation-main .maininner .play-btn {
+.main-container #Reservation-main .maininner .play-btn {
   width: 70%;
   max-width: 1400px;
   margin: 30px auto;
 }
-#Reservation-main .maininner .play-btn button {
+.main-container #Reservation-main .maininner .play-btn button {
   width: 100%;
   height: 80px;
   border: none;
@@ -216,13 +286,13 @@
   box-shadow: 1px 1px 5px 0px black;
   border-radius: 10px;
 }
-#Reservation-main .maininner .play-btn button:hover {
+.main-container #Reservation-main .maininner .play-btn button:hover {
   cursor: pointer;
 }
-#Reservation-main .maininner .checkin ul li {
+.main-container #Reservation-main .maininner .checkin ul li {
   opacity: 0;
 }
-#Reservation-main .maininner .checkin ul li.active {
+.main-container #Reservation-main .maininner .checkin ul li.active {
   opacity: 1;
   animation-name: textani;
   animation-duration: 1s;
@@ -255,4 +325,89 @@
 .Reservation-footer {
   width: 100%;
   padding: 0;
+}
+
+@media (max-width: 768px) {
+  .main-container aside .status .status-title {
+    font-size: 1.6vw;
+  }
+  .main-container #Reservation-main .maininner .camping-list {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .main-container #Reservation-main .maininner .camping-list li {
+    height: 51px;
+    font-size: 1.8vw;
+  }
+  .main-container #Reservation-main .maininner .box-container {
+    display: block;
+  }
+  .main-container #Reservation-main .maininner .box-container .login {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  .main-container #Reservation-main .maininner .box-container .info-check {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  .main-container #Reservation-main .maininner .Agree {
+    width: 90%;
+  }
+  .main-container #Reservation-main .maininner .play-btn {
+    width: 90%;
+  }
+}
+@media (min-width: 468px) and (max-width: 768px) {
+  .main-container #Reservation-main .maininner .camping-list {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .main-container #Reservation-main .maininner .camping-list ul li {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    height: 51px;
+    font-size: 2px;
+    text-overflow: ellipsis;
+  }
+  .main-container #Reservation-main .maininner .Agree .Agree-inner .all-Agree .label-title {
+    font-size: 15px;
+  }
+  .main-container #Reservation-main .maininner .Agree .Agree-inner .labels {
+    font-size: 13px;
+  }
+  .main-container aside .status .status-title {
+    font-size: 8px;
+  }
+  .main-container aside .status .status-items {
+    font-size: 6px;
+  }
+}
+@media (max-width: 468px) {
+  .main-container #Reservation-main .maininner .camping-list {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .main-container #Reservation-main .maininner .camping-list ul li {
+    overflow: hidden;
+    width: 100px;
+    white-space: nowrap;
+    height: 51px;
+    font-size: 2px;
+    text-overflow: ellipsis;
+  }
+  .main-container #Reservation-main .maininner .Agree .Agree-inner .all-Agree .label-title {
+    font-size: 15px;
+  }
+  .main-container #Reservation-main .maininner .Agree .Agree-inner .labels {
+    font-size: 13px;
+  }
+  .main-container aside .status .status-title {
+    font-size: 8px;
+  }
+  .main-container aside .status .status-items {
+    font-size: 6px;
+  }
 }/*# sourceMappingURL=sub.css.map */
