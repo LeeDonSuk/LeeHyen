@@ -58,7 +58,7 @@ function updateChecklist() {
   // ellist가 선택되지 않았고, infoinpt에 값 입력시 경고창 띄우고 값 지우기
   if (!document.querySelector('.camping-list > ul > li.active')) {
     if (hasValueInAnyInput) {
-      alert('이전 단계를 먼저 진행해주세요.');
+      alert('캠핑장을 선택 해주세요');
       infoinpt.forEach((input) => (input.value = '')); // 입력된 값 지우기
       checklist[1].classList.remove('active'); // checklist[1]의 active 클래스 제거
       allcheck.checked = false; // allcheck 초기화
