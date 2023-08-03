@@ -119,107 +119,103 @@
     </header>
 
     <main id="campingmain">
+        
         <div class="section">
+    
+        <div class="section-title">
+            <div class="section-title-img">
+                <img src="./data/imgs/section6-title.jpg">
+            </div>
+
+            <div class="section-title-textbox">
+                <div class="textbox-title">
+                    <div class="textbox-title-icon">
+                        <img src="./data/imgs/section-icon.png">
+                    </div>
+                    <h2>금성산성 오토캠핑장</h2>
+                </div>
+
+                <div class="textbox-lolem">
+                    <p>영산강의 시원 용소가 있는 강의 고장</p>
+                    <p>명산과 자연휴양지와 풍류가 넘치는 남도 웰빙도시 담양에 위치한 캠핑장으로</p>
+    <p>담양을 대표하는 대나무 숲이 어우러져</p>
+<p>온가족이 함께 꿈과 희망을 얻으면서 힐링 할 수 있는 곳</p>
+                    </div>
+
+                <div class="textbox-btn">
+                    <a href="./Reservation.html">
+                        <button>예약하기</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section2-detail">
+            <img src="./data/imgs/detail_bg.jpg">
+        </div>
+        <div class="section2-title">
+            <h2>캠핑장 <span>미리보기</span></h2>
+        </div>
+        <!-- swiper -->
+        <div class="swiper mySwiper campingswiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide Slide1back">
+                <img src="./data/imgs/sec6-slide1.jpg">
+                </div>
+                <div class="swiper-slide Slide1back">
+                <img src="./data/imgs/sec6-slide2.jpg">
+                </div>
+                <div class="swiper-slide Slide1back">
+                <img src="./data/imgs/sec6-slide3.jpg">
+                </div>
+                <div class="swiper-slide Slide1back">
+                <img src="./data/imgs/sec6-slide4.jpg">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <script>
+    var swiper = new Swiper(".campingswiper", {
+        spaceBetween: '30', // 따옴표로 감싸야 함
+        centeredSlides: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+            </script>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section3-title">
+            <h2>캠핑장 위치</h2>
+        </div>
+        <div class="section3-box">
+            <div class="section3-icon">
+                <img src="./data/imgs/section3-icon.png">
+            </div>
+            <div class="section3-text">
+                <h2>금성산성 오토캠핑장</h2>
+                <p>전남 담양군 금성면 새덕굴길 135-88</p>
+                <p>
+                <span><img src="./data/imgs/tell.png"></span>
+                1668-1141
+            </p>
+            </div>
             
-            <div class="section-title">
-                <div class="section-title-img">
-                    <img src="./data/imgs/section1-title.png">
-                </div>
-    
-                <div class="section-title-textbox">
-                    <div class="textbox-title">
-                        <div class="textbox-title-icon">
-                            <img src="./data/imgs/section-icon.png">
-                        </div>
-                        <h2>병지방 오토캠핑장</h2>
-                    </div>
-    
-                    <div class="textbox-lolem">
-                        <p>횡성군의 대표 힐링 명소 “병지방계곡”의 상류에 위치한 캠핑장</p>
-                        <p>지연 그대로의 모습을 통해 즐거움과 편안함을 느낄 수 있는 곳</p>
-                    </div>
-    
-                    <div class="textbox-btn">
-                        <a href="./Reservation.html">
-                            <button>예약하기</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="section">
-            <div class="section2-detail">
-                <img src="./data/imgs/detail_bg.jpg">
-            </div>
-            <div class="section2-title">
-                <h2>캠핑장 <span>미리보기</span></h2>
-            </div>
-            <!-- swiper -->
-            <div class="swiper mySwiper campingswiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide Slide1back">
-                    <img src="./data/imgs/sec1-slide1.jpg">
-                    </div>
-                    <div class="swiper-slide Slide1back">
-                    <img src="./data/imgs/sec1-slide2.jpg">
-                    </div>
-                    <div class="swiper-slide Slide1back">
-                    <img src="./data/imgs/sec1-slide3.jpg">
-                    </div>
-                    <div class="swiper-slide Slide1back">
-                    <img src="./data/imgs/sec1-slide4.jpg">
-                    </div>
-                    <div class="swiper-slide Slide1back">
-                    <img src="./data/imgs/sec1-slide5.jpg">
-                    </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-                <script>
-        var swiper = new Swiper(".campingswiper", {
-            spaceBetween: '30', // 따옴표로 감싸야 함
-            centeredSlides: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-                </script>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section3-title">
-                <h2>캠핑장 위치</h2>
-            </div>
-            <div class="section3-box">
-                <div class="section3-icon">
-                    <img src="./data/imgs/section3-icon.png">
-                </div>
-                <div class="section3-text">
-                    <h2>병지방 오토 캠핑장</h2>
-                    <p>강원 횡성군 갑천면 어답산로 516</p>
-                    <p>
-                        <span><img src="./data/imgs/tell.png"></span>
-                        033-343-7639
-                    </p>
-                    <p>010-3000-0909</p>
-                </div>
-            </div>
-            <div class="section-page-link">
-                <a href="http://xn--vh3b1l64u9pb68d9xkusfbqi.kr/mall/">
-                병지방 오토캠핑장 <span> 홈페이지</span>
-                </a>
-            </div>
-        </div>
+    </div>
+          
     </main>
 
     <footer class="Reservation-footer">
