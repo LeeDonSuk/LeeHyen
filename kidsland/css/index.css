@@ -19,18 +19,59 @@ a {
   text-decoration: none;
 }
 
+body .top-btn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+body .top-btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+body .top-btn img {
+  width: 100%;
+  transform: rotate(-90deg);
+}
+body .github {
+  position: fixed;
+  opacity: 0.5;
+  bottom: 80px;
+  right: 20px;
+  z-index: 99;
+  width: 50px;
+  height: 50px;
+}
+body .github:hover {
+  opacity: 1;
+}
+body .github img {
+  width: 100%;
+}
+
 header {
   width: 100%;
-  max-width: 1400px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: 100px;
   align-items: center;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.282);
+  background-color: rgba(201, 201, 201, 0.1);
   transition: 0.5s;
   z-index: 99;
+  position: fixed;
+}
+header:hover {
+  background-color: black;
+  cursor: pointer;
+}
+header:hover ul li a {
+  color: white;
 }
 header .mobile-menu {
   width: 100%;
@@ -87,10 +128,6 @@ header .mobile-menu ul li {
 }
 header .mobile-menu ul li a {
   color: black;
-}
-header:hover {
-  background-color: black;
-  cursor: pointer;
 }
 header > nav {
   width: 30%;
@@ -221,7 +258,6 @@ main article:nth-of-type(1) {
 }
 main article:nth-of-type(1) .benner {
   width: 100%;
-  max-width: 1400px;
   margin: 0 auto;
 }
 main article:nth-of-type(1) .benner video {
@@ -613,15 +649,15 @@ main article.swiper2-article .swiper .swiper-button-prev::after {
 
 #index-footer {
   width: 100%;
-  max-width: 1400px;
   margin: 5px auto;
   padding: 0px 10px 0px 10px;
+  background-color: black;
 }
 #index-footer .footer-inner {
   width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 20px 0px 20px 10px;
-  background-color: black;
 }
 #index-footer .footer-inner .footer-title {
   padding-left: 10px;

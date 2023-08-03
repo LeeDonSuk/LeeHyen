@@ -21,13 +21,45 @@
 </head>
 
 <body>
+    <div class="top-btn">
+        <a id="topBtn" onclick="scrollToTop()">
+            <img src="./kidsland/imgs/png/icon-2423349_1280.png">
+        </a>
+    <script>
+        window.onscroll = function () {
+            scrollFunction();
+        };
 
+        function scrollFunction() {
+            var topBtn = document.getElementById("topBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        }
+
+        // Scroll to top when the button is clicked
+        function scrollToTop() {
+            var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            if (currentScroll > 0) {
+                window.requestAnimationFrame(scrollToTop);
+                window.scrollTo(0, currentScroll - (currentScroll / 8));
+            }
+        }
+    </script>
+    </div>
+    <div class="github">
+        <a href="https://github.com/LeeDonSuk/LeeHyen" target="_blank">
+            <img src="./kidsland/imgs/png/logo_github_icon_143196.png" alt="github-icon" title="github로 이동">
+        </a>
+    </div>
     <header>
         <nav>
             <ul>
                 <li>
-                    <a href="#" title="Camping">
-                        키즈랜드 캠핑
+                    <a href="./index.html" title="Camping">
+                        Home
                     </a>
                 </li>
                 <li>
@@ -48,9 +80,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#" title="kr/en">
-                        EN
-                    </a>
+                    <a href="https://www.kidslandcamping.co.kr/index.php" target="_blank">원본페이지</a>
                 </li>
                 <li class="notice">
                     <a href="#" title="고객센터">
@@ -62,8 +92,8 @@
         <div class="mobile-menu">
             <ul>
                 <li>
-                    <a href="#">
-                        키즈랜드 캠핑
+                    <a href="./index.html">
+                        Home
                     </a>
                 </li>
                 <li>
@@ -160,7 +190,7 @@
             </div>
             <div class="introduction">
                 <h2>
-                    <a href="#">
+                    <a>
                         키즈랜드 소개
                     </a>
                 </h2>
@@ -201,7 +231,7 @@
                 <div class="event-container">
 
                     <h2>
-                        <a href="#">
+                        <a>
                             event
                         </a>
                     </h2>
@@ -232,19 +262,19 @@
                 </div>
                 <div class="swiper-container">
                     <h2>
-                        <a href="#">
+                        <a href="./sub-page/Reservation.html">
                             예약
                         </a>
                     </h2>
                     <div class="swiper mySwiper swiprer-script">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href="#">
+                                <a href="./sub-page/Reservation.html">
                                     <img src="./kidsland/imgs/banner/contentswiper1.png">
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#">
+                                <a href="./sub-page/Reservation.html">
                                     <img src="./kidsland/imgs/banner/contentswiper2.png">
                                 </a>
                             </div>

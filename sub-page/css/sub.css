@@ -1,17 +1,21 @@
+#Reservationcheck-header {
+  position: sticky;
+  background-color: black;
+}
+
 main {
   width: 100%;
 }
 main section {
   width: 50%;
-  height: 565px;
-  margin: 0 auto;
+  margin: 50px auto;
   background-color: #eee;
   padding: 20px;
 }
 main section .sec-title {
   text-align: center;
-  margin: 60px;
   font-size: 2vw;
+  margin-bottom: 30px;
 }
 main section .sec-info input {
   width: 100%;
@@ -43,6 +47,47 @@ main section .sec-btn button {
 main section .sec-btn button:hover {
   cursor: pointer;
 }
+main #popup-container {
+  width: 500px;
+  height: 500px;
+}
+main #popup-container h2 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.Reservationcheck-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  background-color: black;
+}
+.Reservationcheck-footer .footer-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 0px 20px 10px;
+}
+.Reservationcheck-footer .footer-inner .footer-title {
+  padding-left: 10px;
+}
+.Reservationcheck-footer .footer-inner .footer-text {
+  padding: 10px;
+}
+.Reservationcheck-footer .footer-inner .footer-text p {
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+}
+.Reservationcheck-footer .footer-inner .footer-text p:nth-of-type(6) {
+  margin-top: 10px;
+}
+
+#Reservation-header {
+  position: sticky;
+  background-color: black;
+}
 
 .main-container {
   max-width: 1400px;
@@ -62,7 +107,7 @@ main section .sec-btn button:hover {
   position: absolute;
   transition: 0.5s;
   padding: 15px;
-  box-shadow: 1px 1px 5px 1px salmon;
+  box-shadow: 1px 1px 5px 1px black;
 }
 .main-container aside .status .status-items p {
   font-weight: 400;
@@ -87,13 +132,13 @@ main section .sec-btn button:hover {
     color: #858585;
   }
   25% {
-    color: salmon;
+    color: red;
   }
   50% {
     color: #858585;
   }
   70% {
-    color: salmon;
+    color: red;
   }
   100% {
     color: #858585;
@@ -172,7 +217,6 @@ main section .sec-btn button:hover {
   width: 100%;
   border: 5px solid salmon;
   border-radius: 15px;
-  background-color: #eee;
 }
 .main-container #Reservation-main .maininner .box-container .login .login-box .login-title {
   text-align: center;
@@ -272,7 +316,7 @@ main section .sec-btn button:hover {
   margin-right: 10px;
 }
 .main-container #Reservation-main .maininner .play-btn {
-  width: 70%;
+  width: 100%;
   max-width: 1400px;
   margin: 30px auto;
 }
@@ -324,7 +368,28 @@ main section .sec-btn button:hover {
 
 .Reservation-footer {
   width: 100%;
-  padding: 0;
+  padding: 0px 10px 0px 10px;
+  background-color: black;
+}
+.Reservation-footer .footer-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 0px 20px 10px;
+}
+.Reservation-footer .footer-inner .footer-title {
+  padding-left: 10px;
+}
+.Reservation-footer .footer-inner .footer-text {
+  padding: 10px;
+}
+.Reservation-footer .footer-inner .footer-text p {
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+}
+.Reservation-footer .footer-inner .footer-text p:nth-of-type(6) {
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {

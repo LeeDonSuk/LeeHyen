@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../kidsland/css/index.css">
     <link rel="stylesheet" href="./css/sub.css">
-    <link rel="shortcut icon" href="./kidsland/imgs/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../kidsland/imgs/favicon/favicon.ico" type="image/x-icon">
     <title>키즈랜드 캠핑!</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -17,14 +17,46 @@
 </head>
 
 <body>
+    <div class="top-btn">
+        <a id="topBtn" onclick="scrollToTop()">
+            <img src="../kidsland/imgs/png/icon-2423349_1280.png">
+        </a>
+        <script>
+            window.onscroll = function () {
+                scrollFunction();
+            };
 
+            function scrollFunction() {
+                var topBtn = document.getElementById("topBtn");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    topBtn.classList.add("show");
+                } else {
+                    topBtn.classList.remove("show");
+                }
+            }
 
-    <header>
+            // Scroll to top when the button is clicked
+            function scrollToTop() {
+                var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                if (currentScroll > 0) {
+                    window.requestAnimationFrame(scrollToTop);
+                    window.scrollTo(0, currentScroll - (currentScroll / 8));
+                }
+            }
+        </script>
+    </div>
+    <div class="github">
+        <a href="https://github.com/LeeDonSuk/LeeHyen" target="_blank">
+            <img src="../kidsland/imgs/png/logo_github_icon_143196.png" alt="github-icon" title="github로 이동">
+        </a>
+    </div>
+
+    <header id="Reservation-header">
         <nav>
             <ul>
                 <li>
-                    <a href="#" title="Camping">
-                        키즈랜드 캠핑
+                    <a href="../index.html" title="Camping">
+                        Home
                     </a>
                 </li>
                 <li>
@@ -45,9 +77,9 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#" title="kr/en">
-                        EN
-                    </a>
+                    <li>
+                        <a href="https://www.kidslandcamping.co.kr/index.php" target="_blank">원본페이지</a>
+                    </li>
                 </li>
                 <li class="notice">
                     <a href="#" title="고객센터">
@@ -59,8 +91,8 @@
         <div class="mobile-menu">
             <ul>
                 <li>
-                    <a href="#">
-                        키즈랜드 캠핑
+                    <a href="../index.html">
+                        Home
                     </a>
                 </li>
                 <li>
@@ -83,130 +115,130 @@
             </g>
         </nav>
     </header>
-<div class="main-container">
-    <aside>
-        <div class="status">
-            <div class="status-title">
-                <h2>진행상황</h2>
-            </div>
-            <div class="status-item1 status-items">
-                <p>캠핑장 선택</p>
-                <p class="checklist">진행중</p>
-            </div>
-            <div class="status-item2 status-items">
-                <p>정보 입력</p>
-                <p class="checklist">진행중</p>
-
-            </div>
-            <div class="status-item3 status-items">
-                <p>이용약관</p>
-                <p class="checklist">진행중</p>
-            </div>
-        </div>
-    </aside>
-    <main id="Reservation-main">
-        <div class="maininner">
-
-            <div class="camping-list">
-                <ul>
-                    <li>
-                        <a href="#">병지방 오토 캠핑장</a>
-                    </li>
-                    <li>
-                        <a href="#">어은돌 송림 캠핑장</a>
-                    </li>
-                    <li>
-                        <a href="#">담양 금성산성 캠핑장</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a href="#">칠곡보오토캠핑장</a>
-                    </li>
-                    <li>
-                        <a href="#">캠프포레</a>
-                    </li>
-                    <li>
-                        <a href="#">수원KT위즈파크</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="box-container">
-                <div class="login">
-                    <div class="login-box">
-                        <div class="login-title">
-                            <h2>KT.com 아이디 정보 입력</h2>
-                            <figure>
-                                <img src="../kidsland/imgs/png/pay_ico1.png" alt="login.icon">
-                                <figcaption></figcaption>
-                            </figure>
-                        </div>
-                        <div class="userid inputes">
-                            <input type="text" placeholder="Kt.com 아이디 입력">
-                        </div>
-                        <div class="userpw inputes">
-                            <input type="text" placeholder="Kt.com 비밀번호 입력">
-                        </div>
-                    </div>
+    <div class="main-container">
+        <aside>
+            <div class="status">
+                <div class="status-title">
+                    <h2>진행상황</h2>
                 </div>
-                <div class="info-check">
-                    <div class="info-box">
-                        <div class="info-title inputes">
-                            <h2>예약자 정보 입력 </h2>
-                        </div>
-                        <div class="input-container">
-                            <img src="../kidsland/imgs/png/pay_ico1.png" alt="">
-                            <div class="username inputes">
-                                <input type="text" placeholder="예약자 성명을 입력해주세요">
+                <div class="status-item1 status-items">
+                    <p>캠핑장 선택</p>
+                    <p class="checklist">진행중</p>
+                </div>
+                <div class="status-item2 status-items">
+                    <p>정보 입력</p>
+                    <p class="checklist">진행중</p>
+
+                </div>
+                <div class="status-item3 status-items">
+                    <p>이용약관</p>
+                    <p class="checklist">진행중</p>
+                </div>
+            </div>
+        </aside>
+        <main id="Reservation-main">
+            <div class="maininner">
+
+                <div class="camping-list">
+                    <ul>
+                        <li>
+                            <a href="#">병지방 오토 캠핑장</a>
+                        </li>
+                        <li>
+                            <a href="#">어은돌 송림 캠핑장</a>
+                        </li>
+                        <li>
+                            <a href="#">담양 금성산성 캠핑장</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#">칠곡보오토캠핑장</a>
+                        </li>
+                        <li>
+                            <a href="#">캠프포레</a>
+                        </li>
+                        <li>
+                            <a href="#">수원KT위즈파크</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-container">
+                    <div class="login">
+                        <div class="login-box">
+                            <div class="login-title">
+                                <h2>KT.com 아이디 정보 입력</h2>
+                                <figure>
+                                    <img src="../kidsland/imgs/png/pay_ico1.png" alt="login.icon">
+                                    <figcaption></figcaption>
+                                </figure>
                             </div>
-                            <div class="usercell inputes">
-                                <input type="text" placeholder="휴대폰 번호를 입력해주세요">
+                            <div class="userid inputes">
+                                <input type="id" placeholder="Kt.com 아이디 입력">
                             </div>
-                            <div class="carnumber inputes">
-                                <input type="text" placeholder="차량 번호를 입력해주세요">
+                            <div class="userpw inputes">
+                                <input type="password" placeholder="Kt.com 비밀번호 입력">
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="Agree">
-                <div class="Agree-inner">
-                    <div class="all-Agree">
-                        <input type="checkbox" name="all" class="allcheck">
-                        <label for="all" class="label-title">이용약관, 개인정보 수집에 모두 동의합니다.</label>
-                    </div>
-                    <div class="Agree-1">
-                        <input type="checkbox" name="num1" class="checkboxitems">
-                        <label for="num1" class="labels">이용시 유의사항 <span>필수</span></label>
-                    </div>
-                    <div class="Agree-2">
-                        <input type="checkbox" name="num2" class="checkboxitems">
-                        <label for="num2" class="labels">개인정보 수집 이용 동의 <span>필수</span></label>
-                    </div>
-                    <div class="Agree-3">
-                        <input type="checkbox" name="num3" class="checkboxitems">
-                        <label for="num3" class="labels">개인정보 3자 제공 동의 <span>필수</span></label>
-                    </div>
-                    <div class="Agree-4">
-                        <input type="checkbox" name="num4" class="checkboxitems">
-                        <label for="num4" class="labels">개인정보 처리 위탁 동의 <span>필수</span></label>
-                    </div>
-                    <div class="Agree-5">
-                        <input type="checkbox" name="num5" class="checkboxitems">
-                        <label for="num5" class="labels">마케팅 수신 동의 <span class="last-check">선택</span></label>
+                    <div class="info-check">
+                        <div class="info-box">
+                            <div class="info-title inputes">
+                                <h2>예약자 정보 입력 </h2>
+                            </div>
+                            <div class="input-container">
+                                <img src="../kidsland/imgs/png/pay_ico1.png" alt="">
+                                <div class="username inputes">
+                                    <input type="name" placeholder="예약자 성명을 입력해주세요">
+                                </div>
+                                <div class="usercell inputes">
+                                    <input type="cell" placeholder="휴대폰 번호를 입력해주세요">
+                                </div>
+                                <div class="carnumber inputes">
+                                    <input type="text" placeholder="차량 번호를 입력해주세요">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="Agree">
+                    <div class="Agree-inner">
+                        <div class="all-Agree">
+                            <input type="checkbox" name="all" class="allcheck">
+                            <label for="all" class="label-title">이용약관, 개인정보 수집에 모두 동의합니다.</label>
+                        </div>
+                        <div class="Agree-1">
+                            <input type="checkbox" name="num1" class="checkboxitems">
+                            <label for="num1" class="labels">이용시 유의사항 <span>필수</span></label>
+                        </div>
+                        <div class="Agree-2">
+                            <input type="checkbox" name="num2" class="checkboxitems">
+                            <label for="num2" class="labels">개인정보 수집 이용 동의 <span>필수</span></label>
+                        </div>
+                        <div class="Agree-3">
+                            <input type="checkbox" name="num3" class="checkboxitems">
+                            <label for="num3" class="labels">개인정보 3자 제공 동의 <span>필수</span></label>
+                        </div>
+                        <div class="Agree-4">
+                            <input type="checkbox" name="num4" class="checkboxitems">
+                            <label for="num4" class="labels">개인정보 처리 위탁 동의 <span>필수</span></label>
+                        </div>
+                        <div class="Agree-5">
+                            <input type="checkbox" name="num5" class="checkboxitems">
+                            <label for="num5" class="labels">마케팅 수신 동의 <span class="last-check">선택</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="play-btn">
+                    <button>
+                        예약완료하기
+                    </button>
+                </div>
             </div>
-            <div class="play-btn">
-                <button>
-                    예약완료하기
-                </button>
-            </div>
-        </div>
-    </main>
-</div>
+        </main>
+    </div>
 
-    <footer id="index-footer" class="Reservation-footer">
+    <footer class="Reservation-footer">
         <div class="footer-inner">
             <div class="footer-title">
                 <img src="../kidsland/imgs/logo/logo_white.png">

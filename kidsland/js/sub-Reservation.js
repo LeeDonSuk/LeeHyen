@@ -6,6 +6,17 @@ const allcheck = document.querySelector('.allcheck');
 const checkitems = document.querySelectorAll('.checkboxitems');
 const clearbtn = document.querySelector('.play-btn > button');
 
+// 예약 정보를 저장하는 함수
+function saveReservation(reservation) {
+  const reservationData = JSON.stringify(reservation);
+  localStorage.setItem(' 예약자 정보 ', reservationData);
+}
+
+// 예약 정보를 가져오는 함수
+function getReservation() {
+  const reservationData = localStorage.getItem('reservation');
+  return JSON.parse(reservationData);
+}
 
 // 스크롤 이벤트 처리
 window.addEventListener('scroll', function () {
@@ -137,6 +148,17 @@ checkitems.forEach((item) => {
 // 페이지 로드시
 window.addEventListener('load', function () {
   updateChecklist();
+
+  // 이전에 저장된 예약 정보 불러오기
+  const previousReservation = getReservation();
+  if (previousReservation) {
+    infoinpt[0].value = previousReservation.id || '';
+    infoinpt[1].value = previousReservation.password || '';
+    infoinpt[2].value = previousReservation.user_name || '';
+    infoinpt[3].value = previousReservation.phone_number || '';
+    infoinpt[4].value = previousReservation.car_number || ''; // <-- Added this line to load the car number value
+    // ... (기타 예약 정보를 로드하는 로직 추가)
+  }
 });
 
 // Clear Button (초기화 버튼) 이벤트 리스너 추가
@@ -146,7 +168,7 @@ clearbtn.addEventListener('click', function () {
   const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
   const namePattern = /^[가-힣]{2,6}$/;
   const phonePattern = /^\d{3}-\d{3,4}-\d{4}$/;
-  const carNumberPattern = /^[가-힣]{2}\s\d{2,3}[가-힣]\s\d{4}$/;
+  const carPattern = /^\d{4}$/; // 4자리 차량번호 정규식 패턴
 
   // 각 입력란에 대한 값 가져오기
   const idValue = infoinpt[0].value.trim();
@@ -157,27 +179,27 @@ clearbtn.addEventListener('click', function () {
 
   // 정규식 패턴 검사
   if (!idPattern.test(idValue)) {
-    alert('아이디를 형식에 맞게 입력해주세요. (영문자와 숫자, 6~12자)');
+    alert('아이디를 형식에 맞게 입력해주세요. ( 영문자와 숫자, 6~12자 )');
     return;
   }
 
   if (!passwordPattern.test(passwordValue)) {
-    alert('비밀번호를 형식에 맞게 입력해주세요. (영문자, 숫자, 8자 이상)');
+    alert('비밀번호를 형식에 맞게 입력해주세요. ( 영문자, 숫자, 8자 이상 )');
     return;
   }
 
   if (!namePattern.test(nameValue)) {
-    alert('이름을 형식에 맞게 입력해주세요. (한글, 2~6자)');
+    alert('이름을 형식에 맞게 입력해주세요. ( 한글, 2~6자 )');
     return;
   }
 
   if (!phonePattern.test(phoneValue)) {
-    alert('휴대폰 번호를 형식에 맞게 입력해주세요. (XXX-XXX-XXXX 또는 XXX-XXXX-XXXX)');
+    alert('휴대폰 번호를 형식에 맞게 입력해주세요. ( " - " 포함 )');
     return;
   }
 
-  if (!carNumberPattern.test(carNumberValue)) {
-    alert('차량 번호를 형식에 맞게 입력해주세요. (한글 2자, 숫자 2~3자, 한글 1자, 숫자 4자)');
+  if (!carPattern.test(carNumberValue)) {
+    alert('차량번호를 형식에 맞게 입력해주세요. ( 숫자 4자리 )');
     return;
   }
 
@@ -197,4 +219,15 @@ clearbtn.addEventListener('click', function () {
   });
 
   alert('예약이 완료되었습니다.');
+
+  // 예약 정보 객체 생성 및 저장
+  const reservationInfo = {
+    id: idValue,
+    password: passwordValue,
+    user_name: nameValue,
+    phone_number: phoneValue,
+    car_number: carNumberValue, // <-- Added the car number to the reservationInfo object
+    // ... (기타 예약 정보를 추가)
+  };
+  saveReservation(reservationInfo);
 });

@@ -7,24 +7,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../kidsland/css/index.css">
     <link rel="stylesheet" href="./css/sub.css">
-    <link rel="shortcut icon" href="./kidsland/imgs/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../kidsland/imgs/favicon/favicon.ico" type="image/x-icon">
     <title>키즈랜드 캠핑!</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script defer src="../kidsland/js/headerover.js"></script>
-    <script defer src="../kidsland/js/sub-Reservation.js"></script>
+    <script defer src="../kidsland/js/Reservationcheck.js"></script>
 
 </head>
 
 <body>
+    <div class="top-btn">
+        <a id="topBtn" onclick="scrollToTop()">
+            <img src="../kidsland/imgs/png/icon-2423349_1280.png">
+        </a>
+    <script>
+        window.onscroll = function () {
+            scrollFunction();
+        };
 
+        function scrollFunction() {
+            var topBtn = document.getElementById("topBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+        }
 
-    <header>
+        // Scroll to top when the button is clicked
+        function scrollToTop() {
+            var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            if (currentScroll > 0) {
+                window.requestAnimationFrame(scrollToTop);
+                window.scrollTo(0, currentScroll - (currentScroll / 8));
+            }
+        }
+    </script>
+    </div>
+    <div class="github">
+        <a href="https://github.com/LeeDonSuk/LeeHyen" target="_blank">
+            <img src="../kidsland/imgs/png/logo_github_icon_143196.png" alt="github-icon" title="github로 이동">
+        </a>
+    </div>
+
+    <header id="Reservationcheck-header">
         <nav>
             <ul>
                 <li>
-                    <a href="#" title="Camping">
-                        키즈랜드 캠핑
+                    <a href="../index.html" title="Camping">
+                        Home
                     </a>
                 </li>
                 <li>
@@ -45,9 +77,9 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#" title="kr/en">
-                        EN
-                    </a>
+                    <li>
+                        <a href="https://www.kidslandcamping.co.kr/index.php" target="_blank">원본페이지</a>
+                    </li>
                 </li>
                 <li class="notice">
                     <a href="#" title="고객센터">
@@ -59,8 +91,8 @@
         <div class="mobile-menu">
             <ul>
                 <li>
-                    <a href="#">
-                        키즈랜드 캠핑
+                    <a href="../index.html">
+                        Home
                     </a>
                 </li>
                 <li>
@@ -91,10 +123,10 @@
                 </div>
                 <div class="sec-info">
                     <div class="info1">
-                        <input type="text" name="user_id" placeholder="Kt.com 아이디 입력">
+                        <input type="id" name="user_id" placeholder="Kt.com 아이디 입력">
                     </div>
                     <div class="info2">
-                        <input type="text" name="user_pw" placeholder="Kt.com 비밀번호 입력">
+                        <input type="password" name="user_pw" placeholder="Kt.com 비밀번호 입력">
                     </div>
                     <div class="info3">
                         <input type="text" name="user_name" placeholder="예약자 성명을 입력해주세요">
@@ -103,7 +135,7 @@
                         <input type="text" name="user_cell" placeholder="휴대폰 번호를 입력해주세요">
                     </div>
                     <div class="info5">
-                        <input type="text" name="user_carnumber" placeholder="차량 번호를 입력해주세요">
+                        <input type="number" name="user_carnumber" placeholder="차량 번호를 입력해주세요">
                     </div>
                 </div>
                 <div class="sec-btn">
@@ -111,10 +143,16 @@
                 </div>
             </section>
         </main>
-
+        <div id="popup-container" style="display: none;">
+            <h2>예약 정보 확인</h2>
+            <p>아이디: <span id="popup-id"></span></p>
+            <p>이름: <span id="popup-name"></span></p>
+            <p>휴대폰 번호: <span id="popup-phone"></span></p>
+            <p>차량번호: <span id="popup-car"></span></p>
+          </div>
     </div>
 
-    <footer id="index-footer" class="Reservationcheck-footer">
+    <footer class="Reservationcheck-footer">
         <div class="footer-inner">
             <div class="footer-title">
                 <img src="../kidsland/imgs/logo/logo_white.png">
