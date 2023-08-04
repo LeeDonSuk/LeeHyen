@@ -19,6 +19,16 @@ a {
   text-decoration: none;
 }
 
+body .follower {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 99, 71, 0.2196078431);
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 99;
+  transition: 0.5s;
+}
 body .top-btn {
   position: fixed;
   width: 50px;
@@ -259,6 +269,46 @@ main article:nth-of-type(1) {
 main article:nth-of-type(1) .benner {
   width: 100%;
   margin: 0 auto;
+  position: relative;
+}
+main article:nth-of-type(1) .benner .benner-text {
+  position: absolute;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  left: 10%;
+  padding: 10px;
+  transition: 0.5s;
+}
+main article:nth-of-type(1) .benner .benner-text h1 {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, red, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 40px;
+}
+main article:nth-of-type(1) .benner .benner-text h1 img {
+  margin-right: 10px;
+  animation: title 1.5s linear infinite;
+}
+@keyframes title {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 main article:nth-of-type(1) .benner video {
   width: 100%;
@@ -666,7 +716,7 @@ main article.swiper2-article .swiper .swiper-button-prev::after {
   padding: 10px;
 }
 #index-footer .footer-inner .footer-text p {
-  color: white;
+  color: #9d9d9d;
   font-size: 14px;
   line-height: 20px;
 }
@@ -705,6 +755,45 @@ main article.swiper2-article .swiper .swiper-button-prev::after {
   }
   header h2 span {
     margin-right: 5px;
+  }
+  main article:nth-of-type(1) .benner .benner-text {
+    position: absolute;
+    top: 65%;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    padding: 10px;
+  }
+  main article:nth-of-type(1) .benner .benner-text h1 {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    background: linear-gradient(to right, red, white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  main article:nth-of-type(1) .benner .benner-text h1 img {
+    margin-right: 10px;
+    animation: title 1.5s linear infinite;
+  }
+  @keyframes title {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-15deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
   main article:nth-of-type(2) {
     transition: 0.5s;

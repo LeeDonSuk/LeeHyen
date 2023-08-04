@@ -26,34 +26,46 @@
         <a id="topBtn" onclick="scrollToTop()">
             <img src="./kidsland/imgs/png/icon-2423349_1280.png">
         </a>
-    <script>
-        window.onscroll = function () {
-            scrollFunction();
-        };
+        <script>
+            window.onscroll = function () {
+                scrollFunction();
+            };
 
-        function scrollFunction() {
-            var topBtn = document.getElementById("topBtn");
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                topBtn.classList.add("show");
-            } else {
-                topBtn.classList.remove("show");
+            function scrollFunction() {
+                var topBtn = document.getElementById("topBtn");
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    topBtn.classList.add("show");
+                } else {
+                    topBtn.classList.remove("show");
+                }
             }
-        }
 
-        // Scroll to top when the button is clicked
-        function scrollToTop() {
-            var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-            if (currentScroll > 0) {
-                window.requestAnimationFrame(scrollToTop);
-                window.scrollTo(0, currentScroll - (currentScroll / 8));
+            // Scroll to top when the button is clicked
+            function scrollToTop() {
+                var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                if (currentScroll > 0) {
+                    window.requestAnimationFrame(scrollToTop);
+                    window.scrollTo(0, currentScroll - (currentScroll / 8));
+                }
             }
-        }
-    </script>
+        </script>
     </div>
     <div class="github">
         <a href="https://github.com/LeeDonSuk/LeeHyen" target="_blank">
             <img src="./kidsland/imgs/png/logo_github_icon_143196.png" alt="github-icon" title="github로 이동">
         </a>
+    </div>
+    <div class="follower">
+        <script>
+            const follower = document.querySelector('.follower');
+
+            document.addEventListener('mousemove', (e) => {
+                // 마우스의 현재 위치를 follower의 위치로 설정합니다.
+                // .follower 요소의 크기의 절반만큼을 좌표에서 빼면 중앙에 오게 됩니다.
+                follower.style.left = e.pageX - follower.offsetWidth / 2.5 + 'px';
+                follower.style.top = e.pageY - follower.offsetHeight / 2.5 + 'px';
+            });
+        </script>
     </div>
     <header>
         <nav>
@@ -107,6 +119,11 @@
                         예약확인
                     </a>
                 </li>
+                <li>
+                    <a href="./sub-page/board.html" title="예약확인">
+                        고객센터
+                    </a>
+                </li>
             </ul>
         </div>
         <nav class="menu-ico">
@@ -121,6 +138,11 @@
 
         <article>
             <div class="benner">
+                <div class="benner-text">
+                    <h1>
+                        <img src="../kidsland/imgs/png/lnb_blit.png">키즈랜드 캠핑
+                    </h1>
+                </div>
                 <video src="./kidsland/mp4/bennr.mp4" autoplay loop muted></video>
             </div>
         </article>

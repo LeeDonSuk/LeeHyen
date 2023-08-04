@@ -1,5 +1,17 @@
 @import "_reset";
 body {
+    .follower {
+        width: 50px;
+        height: 50px;
+        background-color: #ff634738;
+        border-radius: 50%;
+        position: absolute;
+        pointer-events: none;
+        z-index: 99;
+        transition: .5s;
+      }
+  
+
     .top-btn {
         position: fixed;
         width: 50px;
@@ -26,10 +38,10 @@ body {
         z-index: 99;
         width: 50px;
         height: 50px;
-        &:hover{
+        &:hover {
             opacity: 1;
         }
-        img{
+        img {
             width: 100%;
         }
     }
@@ -274,6 +286,46 @@ main {
             .benner {
                 width: 100%;
                 margin: 0 auto;
+                position: relative;
+                .benner-text {
+                    position: absolute;
+                    top: 20%;
+                    display: flex;
+                    flex-direction: column;
+                    left: 10%;
+                    padding: 10px;
+                    transition: 0.5s;
+                    h1 {
+                        display: flex;
+                        align-items: center;
+                        background: linear-gradient(to right, red, white);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        color: transparent;
+                        font-size: 40px;
+                        img {
+                            margin-right: 10px;
+                            animation: title 1.5s linear infinite;
+                        }
+                    }
+                    @keyframes title {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                        25% {
+                            transform: rotate(10deg);
+                        }
+                        50% {
+                            transform: rotate(0deg);
+                        }
+                        75% {
+                            transform: rotate(-15deg);
+                        }
+                        100% {
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
                 video {
                     width: 100%;
                 }
@@ -729,7 +781,7 @@ main {
         .footer-text {
             padding: 10px;
             p {
-                color: white;
+                color: #9d9d9d;
                 font-size: 14px;
                 line-height: 20px;
                 &:nth-of-type(6) {
@@ -779,6 +831,49 @@ main {
     }
     main {
         article {
+            &:nth-of-type(1) {
+                .benner {
+                    .benner-text {
+                        position: absolute;
+                        top: 65%;
+                        display: flex;
+                        flex-direction: column;
+                        left: 0;
+                        padding: 10px;
+                        h1 {
+                            display: flex;
+                            align-items: center;
+                            color: white;
+                            font-size: 40px;
+                            background: linear-gradient(to right, red, white);
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                            color: transparent;
+                            img {
+                                margin-right: 10px;
+                                animation: title 1.5s linear infinite;
+                            }
+                        }
+                        @keyframes title {
+                            0% {
+                                transform: rotate(0deg);
+                            }
+                            25% {
+                                transform: rotate(10deg);
+                            }
+                            50% {
+                                transform: rotate(0deg);
+                            }
+                            75% {
+                                transform: rotate(-15deg);
+                            }
+                            100% {
+                                transform: rotate(0deg);
+                            }
+                        }
+                    }
+                }
+            }
             &:nth-of-type(2) {
                 transition: 0.5s;
                 transform: translateY(0);

@@ -9,7 +9,6 @@ main {
 main section {
   width: 50%;
   margin: 50px auto;
-  background-color: #eee;
   padding: 20px;
 }
 main section .sec-title {
@@ -76,7 +75,7 @@ main #popup-container h2 {
   padding: 10px;
 }
 .Reservationcheck-footer .footer-inner .footer-text p {
-  color: white;
+  color: #9d9d9d;
   font-size: 14px;
   line-height: 20px;
 }
@@ -409,10 +408,11 @@ main table tr td::after {
   text-align: center;
 }
 .main-container aside .status {
+  width: 80%;
   position: absolute;
   transition: 0.5s;
   padding: 15px;
-  box-shadow: 1px 1px 5px 1px black;
+  box-shadow: 1px 1px 5px 1px rgb(197, 196, 196);
 }
 .main-container aside .status .status-items p {
   font-weight: 400;
@@ -689,7 +689,7 @@ main table tr td::after {
   padding: 10px;
 }
 .Reservation-footer .footer-inner .footer-text p {
-  color: white;
+  color: #9d9d9d;
   font-size: 14px;
   line-height: 20px;
 }

@@ -7,7 +7,6 @@ main {
     section {
         width: 50%;
         margin: 50px auto;
-        background-color: #eee;
         padding: 20px;
         .sec-title {
             text-align: center;
@@ -71,7 +70,7 @@ main {
         .footer-text {
             padding: 10px;
             p {
-                color: white;
+                color: #9d9d9d;
                 font-size: 14px;
                 line-height: 20px;
                 &:nth-of-type(6) {
