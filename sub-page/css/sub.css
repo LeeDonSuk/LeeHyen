@@ -146,22 +146,18 @@ main .section:nth-of-type(1) .section-title .section-title-textbox .textbox-btn 
 main .section:nth-of-type(1) .section-title .section-title-textbox .textbox-btn a button:hover {
   cursor: pointer;
 }
-main .section:nth-of-type(2) {
+main .section.section-swiper {
   width: 100%;
   margin: 0px auto;
-  margin-top: 50px;
   text-align: center;
   background-color: #fff8ed;
 }
-main .section:nth-of-type(2) .section2-detail img {
-  width: 100%;
-}
-main .section:nth-of-type(2) .section2-title {
+main .section.section-swiper .section2-title {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-bottom: 50px;
 }
-main .section:nth-of-type(2) .section2-title::before {
+main .section.section-swiper .section2-title::before {
   content: "";
   width: 46px;
   height: 39px;
@@ -170,10 +166,10 @@ main .section:nth-of-type(2) .section2-title::before {
   background-repeat: no-repeat;
   background-size: cover;
 }
-main .section:nth-of-type(2) .section2-title span {
+main .section.section-swiper .section2-title span {
   color: #ff5f4b;
 }
-main .section:nth-of-type(2) .swiper {
+main .section.section-swiper .swiper {
   margin-top: 20px;
   width: 100%;
   max-width: 1100px;
@@ -182,7 +178,7 @@ main .section:nth-of-type(2) .swiper {
   border-bottom: 10px solid rgba(0, 0, 0, 0.5);
   border-left: 10px solid rgba(0, 0, 0, 0.5);
 }
-main .section:nth-of-type(2) .swiper .swiper-wrapper .swiper-slide {
+main .section.section-swiper .swiper .swiper-wrapper .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -190,16 +186,16 @@ main .section:nth-of-type(2) .swiper .swiper-wrapper .swiper-slide {
   justify-content: center;
   align-items: center;
 }
-main .section:nth-of-type(2) .swiper .swiper-wrapper .swiper-slide img {
+main .section.section-swiper .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .section:nth-of-type(2) .swiper .swiper-button-next {
+main .section.section-swiper .swiper .swiper-button-next {
   padding-right: 20px;
 }
-main .section:nth-of-type(2) .swiper .swiper-button-next::after {
+main .section.section-swiper .swiper .swiper-button-next::after {
   content: "";
   background-image: url(../../kidsland/imgs/png/slide_arrow.png);
   width: 41px;
@@ -208,10 +204,10 @@ main .section:nth-of-type(2) .swiper .swiper-button-next::after {
   display: block;
   transform: rotate(-180deg);
 }
-main .section:nth-of-type(2) .swiper .swiper-button-prev {
+main .section.section-swiper .swiper .swiper-button-prev {
   padding-left: 20px;
 }
-main .section:nth-of-type(2) .swiper .swiper-button-prev::after {
+main .section.section-swiper .swiper .swiper-button-prev::after {
   content: "";
   background-image: url(../../kidsland/imgs/png/slide_arrow.png);
   width: 41px;
@@ -219,23 +215,27 @@ main .section:nth-of-type(2) .swiper .swiper-button-prev::after {
   min-width: 41px;
   display: block;
 }
-main .section:nth-of-type(2) .swiper .swiper-pagination .swiper-pagination-bullet {
+main .section.section-swiper .swiper .swiper-pagination .swiper-pagination-bullet {
   background-color: #ff5f4b;
 }
-main .section:nth-of-type(3) {
+main .section.adress {
   width: 100%;
   margin: 0px auto;
   text-align: center;
   background-color: #fff8ed;
-  padding-top: 50px;
   padding-bottom: 50px;
+  margin-top: 50px;
 }
-main .section:nth-of-type(3) .section3-title {
+main .section.adress .section2-detail img {
+  width: 100%;
+}
+main .section.adress .section3-title {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
-main .section:nth-of-type(3) .section3-title::before {
+main .section.adress .section3-title::before {
   content: "";
   width: 46px;
   height: 39px;
@@ -244,7 +244,7 @@ main .section:nth-of-type(3) .section3-title::before {
   background-repeat: no-repeat;
   background-size: cover;
 }
-main .section:nth-of-type(3) .section3-box {
+main .section.adress .section3-box {
   width: 80%;
   margin: 0 auto;
   max-width: 800px;
@@ -257,29 +257,29 @@ main .section:nth-of-type(3) .section3-box {
   border-bottom: 8px solid rgba(0, 0, 0, 0.5);
   border-right: 8px solid rgba(0, 0, 0, 0.5);
 }
-main .section:nth-of-type(3) .section3-box .section3-icon img {
+main .section.adress .section3-box .section3-icon img {
   width: 84px;
   height: 101px;
   transform: translateY(15px);
 }
-main .section:nth-of-type(3) .section3-box .section3-text {
+main .section.adress .section3-box .section3-text {
   margin-left: 50px;
 }
-main .section:nth-of-type(3) .section3-box .section3-text h2 {
+main .section.adress .section3-box .section3-text h2 {
   line-height: 2;
 }
-main .section:nth-of-type(3) .section3-box .section3-text p {
+main .section.adress .section3-box .section3-text p {
   line-height: 2;
 }
-main .section:nth-of-type(3) .section-page-link {
+main .section.adress .section-page-link {
   margin-left: 120px;
   text-align: center;
   transform: translateY(-50px);
 }
-main .section:nth-of-type(3) .section-page-link a {
+main .section.adress .section-page-link a {
   color: black;
 }
-main .section:nth-of-type(3) .section-page-link span {
+main .section.adress .section-page-link span {
   color: #551a8b;
 }
 
@@ -296,13 +296,13 @@ main .section:nth-of-type(3) .section-page-link span {
     width: 90%;
     margin: 50px;
   }
-  main .section:nth-of-type(2) {
-    padding-top: 50px;
-  }
-  main .section:nth-of-type(2) .section2-detail {
+  main .section:nth-of-type(1) .section-title .section-title-textbox .textbox-title-icon {
     display: none;
   }
-  main .section:nth-of-type(2) .swiper {
+  main .section.section-swiper {
+    padding-bottom: 50px;
+  }
+  main .section.section-swiper .swiper {
     width: 80%;
     height: auto;
   }
@@ -317,6 +317,78 @@ main .section:nth-of-type(3) .section-page-link span {
     margin-top: 20px;
   }
 }
+main {
+  margin-top: 50px;
+}
+main h1 {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main h1 img {
+  margin-right: 10px;
+}
+main table {
+  width: 80%;
+  margin: 50px auto;
+  border-collapse: collapse;
+  margin-top: 50px;
+  max-width: 800px;
+}
+main table tr:hover {
+  background-color: #f5f5f5;
+}
+main table tr th {
+  background-color: #f2f2f2;
+  border-top: 3px solid #ff5f4b;
+  padding: 15px;
+  text-align: left;
+}
+main table tr td {
+  border: 1px solid rgba(204, 204, 204, 0.5058823529);
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  font-weight: bold;
+  font-size: 16px;
+}
+main table tr td.active {
+  padding-bottom: 105px;
+}
+main table tr td.active::after {
+  transform: rotate(0deg);
+}
+main table tr td.active .td-items {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  padding-left: 15px;
+}
+main table tr td p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+  padding: 5px;
+  display: none;
+}
+main table tr td::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-image: url(../../kidsland/imgs/png/drop.png);
+  background-size: cover;
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+
 #Reservation-header {
   position: sticky;
   background-color: black;

@@ -743,7 +743,7 @@ main article.swiper2-article .swiper .swiper-button-prev::after {
     height: 100% !important;
   }
   main article.kisland-article .deco1 img {
-    opacity: 0.7;
+    opacity: 0;
   }
   main article:nth-of-type(4) .deco1 {
     top: 0;

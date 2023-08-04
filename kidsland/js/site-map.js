@@ -8,7 +8,7 @@ sitebtn.forEach((btn) => {
             siteico.forEach((item) => {
                 item.classList.add('active');
             });
-            sitehover.innerText = "담양산성 금성 캠핑장";
+            sitehover.innerText = "담양산성";
         }
     });
 
@@ -22,5 +22,5 @@ sitebtn.forEach((btn) => {
     });
 });
 if (window.innerWidth < 768) {
-    sitehover.innerText = "담양산성 금성 캠핑장";
+    sitehover.innerText = "담양산성";
 }
