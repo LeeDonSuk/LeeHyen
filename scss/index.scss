@@ -193,7 +193,6 @@ main {
             position: relative;
             width: 100%;
             height: 130px;
-            @include mwd(1280px);
             .swiper {
                 width: 100%;
                 height: 130px;
@@ -310,7 +309,7 @@ main {
                             justify-content: left;
                             li {
                                 padding: 0px 15px 15px 15px;
-                                margin-right: 5.2083vw;
+                                margin-right:50px;
                                 a {
                                     display: inline-block;
                                     margin-bottom: 1.5625vw;
@@ -347,7 +346,7 @@ main {
                             justify-content: left;
                             li {
                                 padding: 0px 15px 15px 15px;
-                                margin-right: 11.4083vw;
+                                margin-right:110px;
                                 a {
                                     display: inline-block;
                                     margin-bottom: 1.5625vw;
@@ -441,7 +440,6 @@ main {
             overflow: hidden;
             .imganimation {
                 width: 100%;
-                @include mwd(1280px);
                 display: flex;
                 white-space: nowrap;
                 animation: imganimation 20s linear infinite;
@@ -454,9 +452,6 @@ main {
                     width: 100%;
                 }
             }
-        }
-        &.mainfootbg {
-            @include mwd(1280px);
         }
     }
 }
