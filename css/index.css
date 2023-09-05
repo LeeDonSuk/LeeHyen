@@ -1,0 +1,637 @@
+@font-face {
+  font-family: "nanumB";
+  src: url(../font/NanumSquareB.ttf);
+}
+@font-face {
+  font-family: "nanumR";
+  src: url(../font/NanumSquareR.ttf);
+}
+@font-face {
+  font-family: "nanumA";
+  src: url(../font/NanumSquareAcB.ttf);
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  outline-style: none;
+  border: none;
+}
+
+.popup .popup-icon {
+  width: 50px;
+  height: 50px;
+  background-image: url(../imgs/main/btn/note-1314943_1280.png);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 1px 1px 5px black;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  border-radius: 50px;
+  z-index: 9;
+}
+.popup .popup-icon:hover {
+  cursor: pointer;
+  background-color: #c0c0c0;
+}
+.popup .popup-container {
+  display: none;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  background-color: black;
+  position: fixed;
+  bottom: 15%;
+  right: 5%;
+  transition: 0.5s;
+  z-index: 10;
+}
+.popup .popup-container.active {
+  display: block;
+}
+.popup .popup-container.close {
+  display: none;
+}
+.popup .popup-container.mini {
+  height: 24px;
+  overflow: hidden;
+}
+.popup .popup-container.minix {
+  height: 300px;
+  overflow: hidden;
+}
+.popup .popup-container .pop-header {
+  height: 24px;
+  background-color: salmon;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: white;
+}
+.popup .popup-container .pop-header div:hover {
+  cursor: pointer;
+}
+.popup .popup-container .play-stat {
+  width: 80%;
+  margin: 0 auto;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+.popup .popup-container .play-stat video {
+  display: none;
+}
+.popup .popup-container .play-stat .play-progress {
+  position: absolute;
+  left: 20px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  background-color: white;
+  border-radius: 200px;
+}
+.popup .popup-container .play-stat .play-progress.active {
+  animation: playstat 32s linear;
+  animation-play-state: running;
+}
+@keyframes playstat {
+  100% {
+    left: 246px;
+  }
+}
+.popup .popup-container .play-stat .play-progress.pause {
+  animation-play-state: paused;
+}
+.popup .popup-container .play-stat .play-progress-bar {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+.popup .popup-container .music-player {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 276px;
+  text-align: center;
+  background-image: url(../imgs/main/icon/pay_ico1.png);
+  background-repeat: no-repeat;
+  background-position: 50% center;
+}
+.popup .popup-container .music-player h1 {
+  font-family: "nanumR";
+  font-weight: 500;
+}
+.popup .popup-container .music-player .music-btn {
+  position: absolute;
+  width: 93%;
+  bottom: 10px;
+  left: 10px;
+  background: none;
+}
+.popup .popup-container .music-player .music-btn button {
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 200px;
+  background-color: white;
+}
+.popup .popup-container .music-player .music-btn button:hover {
+  cursor: pointer;
+  background-color: #c0c0c0;
+}
+.popup .popup-container .music-player .music-btn button.play-btn {
+  background-image: url(../imgs/main/btn/btn_play.png);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.popup .popup-container .music-player .music-btn button.pause-btn {
+  background-image: url(../imgs/main/btn/btn_pause.png);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.popup .popup-container .music-player .music-btn button p {
+  display: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin: 0 auto;
+  padding: 20px;
+}
+header > h1 {
+  width: 20%;
+}
+header nav {
+  width: 80%;
+}
+header nav ul {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+header nav ul li a {
+  font-size: 1.3021vw;
+  color: black;
+  font-family: nanumB;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+header nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  background-color: black;
+  transition: 0.5s;
+  transform: translateY(10px);
+}
+
+main section.banner-sec {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  height: 130px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+main section.banner-sec .swiper {
+  width: 100%;
+  height: 130px;
+}
+main section.banner-sec .swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+main section.banner-sec .swiper .swiper-slide:hover {
+  cursor: grab;
+}
+main section.banner-sec .swiper .swiper-slide .banner-title h1 {
+  font-size: 1.6667vw;
+  font-family: nanumB;
+  font-weight: bold;
+}
+main section.banner-sec .swiper .swiper-slide .banner-title p {
+  font-size: 1vw;
+  font-family: nanumR;
+  font-weight: 550;
+  padding-top: 1.0417vw;
+}
+main section.banner-sec .swiper .swiper-slide .banner-title p.opc {
+  opacity: 0.7;
+}
+main section.banner-sec .swiper .swiper-slide .banner-title p span {
+  font-family: nanumB;
+  font-weight: bold;
+  padding: 5px;
+}
+main section.banner-sec .swiper .swiper-slide .banner-background {
+  background: linear-gradient(to right, #fffbd5, #b20a2c, #fffbd5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+main section.banner-sec .swiper .swiper-slide .banner-img-item ul {
+  display: flex;
+  margin: 2px;
+}
+main section.banner-sec .swiper .swiper-slide .banner-img-item ul li {
+  margin: 2px;
+}
+main section.banner-sec .swiper .swiper-slide .banner-img-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+main section.banner-sec .swiper .swiper-slide .banner-character {
+  padding: 5px;
+}
+main section.banner-sec .swiper .swiper-slide .banner-character img {
+  width: 220px;
+  height: 130px;
+}
+main section.board-sec {
+  padding-top: 4.1667vw;
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+main section.board-sec .borad-open-btn {
+  width: 100%;
+}
+main section.board-sec .borad-open-btn h1 {
+  display: flex;
+  justify-content: center;
+  width: 260px;
+  margin: 0 auto;
+  font-size: 1.8vw;
+}
+main section.board-sec .borad-open-btn button {
+  width: 100px;
+  margin: 0 auto;
+  font-size: 1vw;
+  font-family: nanumB;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+main section.board-sec .borad-open-btn button span {
+  font-size: 1vw;
+  padding-left: 5px;
+}
+main section.board-sec .board-content .board-notice {
+  padding: 10px;
+  display: flex;
+}
+main section.board-sec .board-content .board-notice .board-title {
+  margin-right: 5.2083vw;
+}
+main section.board-sec .board-content .board-notice .board-title h1 a {
+  position: relative;
+  display: inline-block;
+  font-family: nanumB;
+  font-weight: bold;
+  font-size: 2.1875vw;
+  color: black;
+}
+main section.board-sec .board-content .board-notice .board-title h1 a:hover::after {
+  width: 110%;
+}
+main section.board-sec .board-content .board-notice .board-title h1 a::after {
+  transition: 0.5s;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.5;
+  content: "";
+  width: 100%;
+  height: 8px;
+  border-radius: 500px;
+  background-color: salmon;
+  display: block;
+}
+main section.board-sec .board-content .board-notice .board-notice-list ul {
+  display: flex;
+  justify-content: left;
+}
+main section.board-sec .board-content .board-notice .board-notice-list ul li {
+  padding: 0px 15px 15px 15px;
+  margin-right: 5.2083vw;
+}
+main section.board-sec .board-content .board-notice .board-notice-list ul li a {
+  display: inline-block;
+  margin-bottom: 1.5625vw;
+  line-height: 1.5;
+  font-family: nanumR;
+  font-weight: bold;
+  color: salmon;
+}
+main section.board-sec .board-content .board-notice .board-notice-list ul li p {
+  font-family: nanumR;
+  font-weight: 550;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+main section.board-sec .board-content .board-faq {
+  padding: 10px;
+  display: flex;
+}
+main section.board-sec .board-content .board-faq .board-title {
+  margin-right: 8.4083vw;
+}
+main section.board-sec .board-content .board-faq .board-title h1 a {
+  position: relative;
+  display: inline-block;
+  font-family: nanumB;
+  font-weight: bold;
+  font-size: 2.1875vw;
+  color: black;
+}
+main section.board-sec .board-content .board-faq .board-title h1 a:hover::after {
+  width: 110%;
+}
+main section.board-sec .board-content .board-faq .board-title h1 a::after {
+  transition: 0.5s;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.5;
+  content: "";
+  width: 100%;
+  height: 8px;
+  border-radius: 500px;
+  background-color: salmon;
+  display: block;
+}
+main section.board-sec .board-content .board-faq .board-faq-list ul {
+  display: flex;
+  justify-content: left;
+}
+main section.board-sec .board-content .board-faq .board-faq-list ul li {
+  padding: 0px 15px 15px 15px;
+  margin-right: 11.4083vw;
+}
+main section.board-sec .board-content .board-faq .board-faq-list ul li a {
+  display: inline-block;
+  margin-bottom: 1.5625vw;
+  line-height: 1.5;
+  color: gray;
+  font-family: nanumR;
+  font-weight: bold;
+}
+main section.board-sec .board-content .board-faq .board-faq-list ul li p {
+  font-family: nanumR;
+  font-weight: 550;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+main section.map-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5.2083vw;
+  background-image: url(../imgs/main/map/main_bg.jpg);
+  background-size: cover;
+  background-position: center top;
+}
+main section.map-sec .img-map {
+  width: 100%;
+  max-width: 675px;
+}
+main section.map-sec .img-map img {
+  min-width: 675px;
+  max-width: 675px;
+  width: 675px;
+  height: 947px;
+}
+main section.map-sec .img-page h1 {
+  font-size: 2.1875vw;
+  position: relative;
+  display: inline-block;
+  font-family: nanumB;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5.2083vw;
+  z-index: 2;
+}
+main section.map-sec .img-page h1:hover::after {
+  width: 110%;
+}
+main section.map-sec .img-page h1::after {
+  transition: 0.5s;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.5;
+  content: "";
+  width: 100%;
+  height: 8px;
+  border-radius: 500px;
+  background-color: salmon;
+  display: block;
+}
+main section.map-sec .img-page h1::after {
+  z-index: 1;
+}
+main section.map-sec .img-page h1:hover::after {
+  width: 100%;
+}
+main section.map-sec .img-page img {
+  width: 26.0417vw;
+  border-radius: 10px;
+}
+main section.map-sec .img-page-link {
+  margin-top: 5.2083vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main section.map-sec .img-page-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  position: relative;
+  display: inline-block;
+}
+main section.map-sec .img-page-link a:hover::after {
+  width: 110%;
+}
+main section.map-sec .img-page-link a::after {
+  transition: 0.5s;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.5;
+  content: "";
+  width: 100%;
+  height: 8px;
+  border-radius: 500px;
+  background-color: salmon;
+  display: block;
+}
+main section.map-sec .img-page-link a:hover::after {
+  width: 100%;
+}
+main section.map-sec .img-page-link a::after {
+  width: 95%;
+  z-index: 2;
+}
+main section.map-sec .img-page-link a.map-active {
+  display: none;
+}
+main section.map-sec .img-page-link span {
+  opacity: 0.6;
+}
+main section.mainfootbg {
+  width: 100%;
+  overflow: hidden;
+}
+main section.mainfootbg .imganimation {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  white-space: nowrap;
+  animation: imganimation 20s linear infinite;
+}
+@keyframes imganimation {
+  100% {
+    transform: translateX(-86%);
+  }
+}
+main section.mainfootbg .imganimation img {
+  width: 100%;
+}
+main section.mainfootbg {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+footer {
+  width: 100%;
+  background-color: #3e3e3e;
+  padding: 10px;
+  color: white;
+}
+footer .footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+footer .footer-inner .footer-left {
+  width: 50%;
+}
+footer .footer-inner .footer-left .footer-top h1 {
+  padding-bottom: 1.5625vw;
+}
+footer .footer-inner .footer-left .footer-middle h3 {
+  font-size: 1.5vw;
+  padding-bottom: 1.5625vw;
+  font-family: nanumB;
+  font-weight: bold;
+}
+footer .footer-inner .footer-left .footer-middle .adress {
+  padding-bottom: 1.5625vw;
+  line-height: 2;
+}
+footer .footer-inner .footer-left .footer-middle .adress span {
+  margin: 5px;
+  color: salmon;
+}
+footer .footer-inner .footer-right {
+  width: 50%;
+}
+footer .footer-inner .footer-right nav ul {
+  display: flex;
+}
+footer .footer-inner .footer-right nav ul li {
+  width: 25%;
+  padding: 10px;
+}
+footer .footer-inner .footer-right nav ul li a {
+  color: white;
+}/*# sourceMappingURL=index.css.map */

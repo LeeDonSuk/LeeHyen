@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "nanumB";
+    src: url(../font/NanumSquareB.ttf);
+}
+@font-face {
+    font-family: "nanumR";
+    src: url(../font/NanumSquareR.ttf);
+}
+@font-face {
+    font-family: "nanumA";
+    src: url(../font/NanumSquareAcB.ttf);
+}
+
+@mixin font($fonf, $fonw) {
+    font-family: $fonf;
+    font-weight: $fonw;
+}
+@mixin mwd($max) {
+    max-width: $max;
+    margin: 0 auto;
+}
+@mixin after {
+    &::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        display: block;
+        background-color: black;
+        transition: 0.5s;
+        transform: translateY(10px);
+    }
+}
+@mixin title {
+    position: relative;
+    display: inline-block;
+    &:hover {
+        &::after {
+            width: 110%;
+        }
+    }
+    &::after {
+        transition: 0.5s;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0.5;
+        content: "";
+        width: 100%;
+        height: 8px;
+        border-radius: 500px;
+        background-color: salmon;
+        display: block;
+    }
+}

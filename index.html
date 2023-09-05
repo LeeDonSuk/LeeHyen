@@ -5,329 +5,281 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./kidsland/css/index.css">
-    <link rel="shortcut icon" href="./kidsland/imgs/favicon/favicon.ico" type="image/x-icon">
     <title>키즈랜드 캠핑</title>
 
-    <script defer src="./js/eventhover.js"></script>
+    <!-- index.js -->
+    <script defer src="./js/main/index.js"></script>
+    <!-- index.css -->
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 구글폰트 -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- 스와이퍼 -->
+    <!-- 스와이퍼 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <script defer src="./kidsland/js/swiper.js"></script>
-    <script defer src="./kidsland/js/site-map.js"></script>
-    <script defer src="./kidsland/js/eventhover.js"></script>
-    <script defer src="./kidsland/js/eventhover.js"></script>
-    <script defer type="text" src="./sub-page/data/map.js"></script>
-    <script defer src="./kidsland/js/headerover.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
 </head>
 
 <body>
-    <div class="top-btn">
-        <a id="topBtn" onclick="scrollToTop()">
-            <img src="./kidsland/imgs/png/icon-2423349_1280.png">
-        </a>
-        <script>
-            window.onscroll = function () {
-                scrollFunction();
-            };
-
-            function scrollFunction() {
-                var topBtn = document.getElementById("topBtn");
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    topBtn.classList.add("show");
-                } else {
-                    topBtn.classList.remove("show");
-                }
-            }
-
-            // Scroll to top when the button is clicked
-            function scrollToTop() {
-                var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-                if (currentScroll > 0) {
-                    window.requestAnimationFrame(scrollToTop);
-                    window.scrollTo(0, currentScroll - (currentScroll / 8));
-                }
-            }
-        </script>
-    </div>
-    <div class="github">
-        <a href="https://github.com/LeeDonSuk/LeeHyen" target="_blank">
-            <img src="./kidsland/imgs/png/logo_github_icon_143196.png" alt="github-icon" title="github로 이동">
-        </a>
-    </div>
-    <div class="follower">
-        <script>
-            const follower = document.querySelector('.follower');
-
-            document.addEventListener('mousemove', (e) => {
-                // 마우스의 현재 위치를 follower의 위치로 설정합니다.
-                // .follower 요소의 크기의 절반만큼을 좌표에서 빼면 중앙에 오게 됩니다.
-                follower.style.left = e.pageX - follower.offsetWidth / 2.5 + 'px';
-                follower.style.top = e.pageY - follower.offsetHeight / 2.5 + 'px';
-            });
-        </script>
+    <div class="popup" id="myPopup">
+        <div class="popup-icon"></div>
+        <div class="popup-container">
+            <div class="pop-header" id="dragHeader">
+                <div class="minimize">
+                    <span class="material-symbols-outlined">
+                        minimize
+                    </span>
+                </div>
+                <div class="dontmini">
+                    <span class="material-symbols-outlined">
+                        toolbar
+                    </span>
+                </div>
+                <div class="close-btn">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+            </div>
+            <div class="music-player">
+                <h1>
+                    <img src="./imgs/main/logo/logo_white.png" alt="musiclogo.png">
+                </h1>
+                <div class="play-stat">
+                    <video src="./imgs/main/mp3/camping_song.mp3" id="campingsong"></video>
+                    <div class="play-progress"></div>
+                    <div class="play-progress-bar"></div>
+                </div>
+                <div class="music-btn">
+                    <button class="play-btn">
+                        <p>재생</p>
+                    </button>
+                    <button class="pause-btn">
+                        <p>일시정지</p>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
     <header>
+        <h1 class="logo">
+            <img src="./imgs/main/logo/logo_orange.png" alt="logo.png">
+        </h1>
         <nav>
             <ul>
                 <li>
-                    <a href="./index.html" title="Camping">
-                        Home
+                    <a href="#">회사소개</a>
+                </li>
+                <li>
+                    <a href="#">실시간 예약</a>
+                </li>
+                <li>
+                    <a href="#">
+                        컨텐츠
                     </a>
                 </li>
                 <li>
-                    <a href="./sub-page/Reservation.html" title="예약신청">
-                        예약신청
-                    </a>
-                </li>
-                <li>
-                    <a href="./sub-page/Reservationcheck.html" title="예약확인">
-                        예약확인
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <h2 id="logo">
-            <a href="./index.html"><img src="./kidsland/imgs/logo/logo_orange.png"></a>
-        </h2>
-        <nav>
-            <ul>
-                <li>
-                    <a href="https://www.kidslandcamping.co.kr/index.php" target="_blank">원본페이지</a>
-                </li>
-                <li class="notice">
-                    <a href="./sub-page/board.html" title="고객센터">
+                    <a href="#">
                         고객센터
                     </a>
                 </li>
             </ul>
-        </nav>
-        <div class="mobile-menu">
-            <ul>
-                <li>
-                    <a href="./index.html">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="./sub-page/Reservation.html" title="예약신청">
-                        예약신청
-                    </a>
-                </li>
-                <li>
-                    <a href="./sub-page/Reservationcheck.html" title="예약확인">
-                        예약확인
-                    </a>
-                </li>
-                <li>
-                    <a href="./sub-page/board.html" title="예약확인">
-                        고객센터
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <nav class="menu-ico">
-            <g>
-                <span></span>
-                <span></span>
-                <span></span>
-            </g>
         </nav>
     </header>
     <main>
-
-        <article>
-            <div class="benner">
-                <div class="benner-text">
-                    <h1>
-                        <img src="../kidsland/imgs/png/lnb_blit.png">키즈랜드 캠핑
-                    </h1>
-                </div>
-                <video src="./kidsland/mp4/bennr.mp4" autoplay loop muted></video>
-            </div>
-        </article>
-
-        <article>
-
-            <div class="site-items">
-                <ul>
-                    <li>
-                        <a href="./sub-page/camping.html" id="map1">
-                            <figure>
-                                <img src="./kidsland/imgs/banner/9_big_img.png" title="병지방">
-                                <figcaption>병지방</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./sub-page/camping2.html" id="map2">
-                            <figure>
-                                <img src="./kidsland/imgs/banner/banner[1].jpg" title="어은돌">
-                                <figcaption>어은돌</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./sub-page/camping6.html" id="map6">
-                            <figure>
-                                <img src="./kidsland/imgs/banner/banner[5].jpg" title="담양 금성산성 캠핑장">
-                                <figcaption class="site-hover">담양산성</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./sub-page/camping4.html" id="map4">
-                            <figure>
-                                <img src="./kidsland/imgs/banner/banner[2].jpg" title="칠곡보 오토 캠핑장">
-                                <figcaption>칠곡보</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./sub-page/camping5.html" id="map5">
-                            <figure>
-                                <img src="./kidsland/imgs/banner/banner6.jpg" title="캠프포레">
-                                <figcaption>캠프포레</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./sub-page/camping3.html" id="map3">
-                            <figure>
-                                <img src="./kidsland/imgs/banner/banner[4].jpg" title="수원KT위즈파크">
-                                <figcaption>수원KT</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-            <div class="deco1">
-                <img src="./kidsland/imgs/png/lnb_character.png" alt="">
-            </div>
-        </article>
-
-        <article class="kisland-article">
-            <div class="deco1">
-                <img src="./kidsland/imgs/png/lnb_character.png" alt="">
-            </div>
-            <div class="introduction">
-                <h2>
-                    <a>
-                        키즈랜드 소개
-                    </a>
-                </h2>
-                <video src="./kidsland/mp4/질투가 많아진 아이, 오은영 박사의 금쪽 솔루션은_ 키즈랜드 30초 ver..mp4" autoplay loop muted
-                    controls></video>
-            </div>
-        </article>
-
-
-        <article class="swiper2-article">
-            <div class="swiper mySwiper swiper2">
+        <section class="banner-sec">
+            <div class="swiper mySwiper bannerswiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="./kidsland/imgs/banner/img_intro_01.jpg">
+                        <div class="banner-background"></div>
+                        <div class="banner-title">
+                            <h1>전국 6개 인기 캠핑장에서 만나요</h1>
+                            <p><span>❝</span>야구 . 산 . 바다<span>❞</span>어디로든 떠날수 있어요</p>
+                        </div>
+                        <div class="banner-img-item">
+                            <ul>
+                                <li>
+                                    <img src="./imgs/main/banner/topbanner1.jpg" alt="img.jpg">
+                                </li>
+                                <li>
+                                    <img src="./imgs/main/banner/topbanner2.jpg" alt="img.jpg">
+                                </li>
+                                <li>
+                                    <img src="./imgs/main/banner/topbanner3.jpg" alt="img.jpg">
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <img src="./imgs/main/banner/topbanner4.jpg" alt="img.jpg">
+                                </li>
+                                <li>
+                                    <img src="./imgs/main/banner/topbanner5.jpg" alt="img.jpg">
+                                </li>
+                                <li>
+                                    <img src="./imgs/main/banner/topbanner6.jpg" alt="img.jpg">
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                        <img src="./kidsland/imgs/banner/img_intro_02.jpg">
+                        <div class="banner-background"></div>
+                        <div class="banner-title">
+                            <h1>키즈랜드만의 특별한 <br />전용캠핑장 탄생</h1>
+                            <p class="opc">평일부터 주말까지 언제든 놀러오세요</p>
+                        </div>
+                        <div class="banner-character">
+                            <img src="./imgs/main/banner/character.png" alt="character.png">
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img src="./kidsland/imgs/banner/img_intro_04.jpg">
-                    </div>
-
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-                <div class="autoplay-progress">
-                    <svg viewBox="0 0 48 48">
-                        <circle cx="24" cy="24" r="20"></circle>
-                    </svg>
-                    <span></span>
+        </section>
+        <section class="board-sec">
+            <div class="board-content">
+                <div class="board-notice">
+                    <div class="board-title">
+                        <h1>
+                            <a href="#">공지사항</a>
+                        </h1>
+                    </div>
+                    <div class="board-notice-list">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    📢 9월 수원KT위즈파크 캠핑<br />(잔여경기)오픈 일정 안내드립니다
+                                </a>
+                                <p>
+                                    9월 수원KT위즈파크 캠핑(잔여경기)은<br />
+                                    9월 4일(월) 오전 10시부터 키즈랜드 <br />
+                                    캠핑 홈페이지를 통해 예약 가능합니다.<br />
+                                    9월 잔여경기 일정을 꼭 확인해 주세요!
+                                </p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    📢 9월 수원KT위즈파크<br /> 캠핑 오픈 일정 안내드립니다
+                                </a>
+                                <p>
+                                    9월 수원KT위즈파크 캠핑은<br />
+                                    8월 21일(월) 오전 10시부터<br />
+                                    키즈랜드 캠핑 홈페이지를 통해 예약 가능합니다.<br />
+                                    9월 경기 일정을 꼭 확인해 주세요!
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="board-faq">
+                    <div class="board-title">
+                        <h1>
+                            <a href="#">FAQ</a>
+                        </h1>
+                    </div>
+                    <div class="board-faq-list">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    📢 9월 수원KT위즈파크 캠핑<br />(잔여경기)오픈 일정 안내드립니다
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    📢 9월 수원KT위즈파크<br /> 캠핑 오픈 일정 안내드립니다
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </article>
-
-        <article class="event-article">
-            <div class="ar3-container">
-                <div class="event-container">
-
-                    <h2>
-                        <a>
-                            event
-                        </a>
-                    </h2>
-                    <div class="eventbox-con">
-                        <div class="event-box1">
-                            <figure class="box-event1">
-                                <a href="#">
-                                    <img src="./kidsland/imgs/banner/03.jpg">
-                                </a>
-                                <figcaption>키즈랜드 캠핑 후기를 부탁해</figcaption>
-                                <div class="hover-box1 hover-box">
-                                    <p>상세</p>
-                                </div>
-                            </figure>
-                        </div>
-                        <div class="event-box2">
-                            <figure class="box-event2">
-                                <a href="#">
-                                    <img src="./kidsland/imgs/banner/04.jpg">
-                                </a>
-                                <figcaption>4월 키즈랜드 캠핑 후기를 부탁해</figcaption>
-                                <div class="hover-box2 hover-box">
-                                    <p>상세</p>
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
+        </section>
+        <section class="map-sec">
+            <div class="img-map">
+                <img src="./imgs/main/map/map.png" alt="kisland.png" usemap="#kisland">
+                <map name="kisland">
+                    <area shape="rect" coords="255,28,489,97" href="javascript:void(0);" alt="키즈랜드 병지방캠핑장"
+                        title="키즈랜드 병지방 캠핑장">
+                    <area shape="rect" coords="76,193,281,231" href="javascript:void(0);" alt="수원 수원KT위즈파크"
+                        title="수원 KT 위즈파크">
+                    <area shape="rect" coords="60,357,280,397" href="javascript:void(0);" alt="어은돌 송림캠핑장"
+                        title="어은돌 송림 캠핑장">
+                    <area shape="rect" coords="364,423,581,461" href="javascript:void(0);" alt="칠곡보 오토캠핑장"
+                        title="칠곡보 오토캠핑장">
+                    <area shape="rect" coords="483,701,631,737" href="javascript:void(0);" alt="양산 캠프포레"
+                        title="양산 캠프 포레">
+                    <area shape="rect" coords="102,834,390,887" href="javascript:void(0);" alt="담양 금성산성 캠핑장"
+                        title="담양 금성산성 캠핑장">
+                </map>
+            </div>
+            <div class="img-page">
+                <div class="img-page-title">
+                    <h1>
+                        키즈랜드 병지방 캠핑장
+                    </h1>
                 </div>
-                <div class="swiper-container">
-                    <h2>
-                        <a href="./sub-page/Reservation.html">
-                            예약
-                        </a>
-                    </h2>
-                    <div class="swiper mySwiper swiprer-script">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="./sub-page/Reservation.html">
-                                    <img src="./kidsland/imgs/banner/contentswiper1.png">
-                                </a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="./sub-page/Reservation.html">
-                                    <img src="./kidsland/imgs/banner/contentswiper2.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
+                <div class="img-page-img">
+                    <img src="./imgs/main/map/1.png" alt="병지방오토 캠핑장">
+                </div>
+                <div class="img-page-link">
+                    <a href="http://xn--vh3b1l64u9pb68d9xkusfbqi.kr/mall/" target="_blank">
+                        홈페이지 바로가기
+                    </a>
+                    <span class="material-symbols-outlined">
+                        left_click
+                    </span>
                 </div>
             </div>
-
-        </article>
-
+        </section>
+        <section class="mainfootbg">
+            <div class="imganimation">
+                <img src="./imgs/main/png/ani-removebg-preview.png" alt="kidsland.png">
+                <img src="./imgs/main/png/ani-removebg-preview.png" alt="kidsland.png">
+                <img src="./imgs/main/png/ani-removebg-preview.png" alt="kidsland.png">
+            </div>
+        </section>
     </main>
-
-    <footer id="index-footer">
-        <div class="footer-inner">
-            <div class="footer-title">
-                <img src="./kidsland/imgs/logo/logo_white.png">
-            </div>
-            <div class="footer-text">
-                <p>개인정보 처리 방침</p>
-                <p>경기도 성남시 분당구 불정로 90 ( 정자동 )</p>
-                <p>( 주 )케이티 대표이사구현모 사업자등록번호102-81-42945 통신판매업신고2002-경기성남-0048</p>
-                <p>*상시 무료 캠핑 고객센터 : 02-545-6296</p>
-                <p>고객센터 운영시간 : 평일(월~목) 10:00~17:00, (금) 10:00~13:00 / 점심시간 12:30 ~ 13:30)</p>
-                <p>Copyright © hello kids camping co.</p>
+    <footer>
+<div class="footer-inner">
+    <div class="footer-left">
+        <div class="footer-top">
+            <h1>
+                <img src="./imgs/main/logo/logo_white.png" alt="footerlogo.png">
+            </h1>
+        </div>
+        <div class="footer-middle">
+            <h3>개인정보처리방침</h3>
+            <div class="adress">
+                경기도 성남시 분당구 불정로 90 (정자동)<br/>(주)케이티 대표이사 : 김영섭<br/>사업자등록번호 : 102-81-42945<br/>통신판매업신고2002-경기성남-0048<br />
+                <span>❝</span>상시 무료 캠핑 고객센터 : 02-545-6296<span>❞</span><br />
+                (고객센터 운영시간 : 평일(월~목) 10:00~17:00, (금) 10:00~13:00 / 점심시간 12:30 ~ 13:30)
             </div>
         </div>
+        <div class="licens">
+            <p>Copyright © hello kids camping co.</p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">회사소개</a>
+                </li>
+                <li>
+                    <a href="#">실시간 예약</a>
+                </li>
+                <li>
+                    <a href="#">컨텐츠</a>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
     </footer>
-
 </body>
 
 </html>
