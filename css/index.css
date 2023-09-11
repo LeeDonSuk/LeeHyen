@@ -70,6 +70,89 @@ button {
   border: none;
 }
 
+@media (max-width: 955px) {
+  main section.board-sec .board-content {
+    display: flex;
+    flex-direction: column;
+  }
+  main section.board-sec .board-content .board-notice {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main section.board-sec .board-content .board-notice .board-title {
+    text-align: center;
+    margin-right: 6.911vw !important;
+    margin-bottom: 2.6178vw;
+  }
+  main section.board-sec .board-content .board-notice .board-notice-list {
+    display: flex;
+  }
+  main section.board-sec .board-content .board-notice .board-notice-list ul {
+    width: 100%;
+    justify-content: center !important;
+  }
+  main section.board-sec .board-content .board-notice .board-notice-list ul li {
+    margin-right: 0 !important;
+  }
+  main section.board-sec .board-content .board-notice .board-notice-list ul li:nth-of-type(1) {
+    border-right: 1px solid rgba(0, 0, 0, 0.293);
+    padding-right: 50px;
+  }
+  main section.board-sec .board-content .board-notice .board-notice-list ul li:nth-of-type(2) {
+    padding-left: 50px;
+  }
+  main section.board-sec .board-content .board-faq {
+    display: none !important;
+  }
+  main section.map-sec {
+    display: none !important;
+  }
+  main section.map-mobile-sec {
+    margin-top: 5.2356vw;
+    display: block !important;
+  }
+  main section.map-mobile-sec .swiper {
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+  }
+  main section.map-mobile-sec .swiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+  main section.map-mobile-sec .swiper .swiper-slide .slide-tip {
+    position: absolute;
+    bottom: -5.2356vw;
+    color: black;
+    font-size: 3vw;
+    font-family: nanumB;
+    font-weight: bold;
+  }
+  main section.map-mobile-sec .swiper .swiper-slide .slide-tip span {
+    padding: 20px;
+    color: salmon;
+  }
+  main section.map-mobile-sec .swiper .swiper-slide .slide-tip.tip4 {
+    z-index: 99;
+    top: 20px;
+    color: black;
+  }
+  main section.map-mobile-sec .swiper .swiper-slide img {
+    width: 90%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 10px;
+  }
+}
 .popup .popup-icon {
   width: 50px;
   height: 50px;
@@ -77,16 +160,43 @@ button {
   background-size: 25px;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: 1px 1px 5px black;
+  border: 5px solid black;
   position: fixed;
   bottom: 5%;
   right: 5%;
   border-radius: 50px;
   z-index: 9;
+  background-color: white;
 }
 .popup .popup-icon:hover {
   cursor: pointer;
-  background-color: #c0c0c0;
+  opacity: 0.5;
+}
+.popup .top-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 5px solid black;
+  background-color: white;
+  opacity: 0.5;
+  position: fixed;
+  bottom: 15%;
+  right: 5%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: nanumB;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.5s;
+}
+.popup .top-icon.topbtn-on {
+  opacity: 1;
+}
+.popup .top-icon.topbtn-on:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 .popup .popup-container {
   display: none;
@@ -227,14 +337,54 @@ header > h1 {
 }
 header nav {
   width: 80%;
+  position: relative;
 }
-header nav ul {
+header nav .nav-drop {
+  width: 50%;
+  height: 0;
+  background-color: salmon;
+  position: absolute;
+  z-index: 2;
+  opacity: 0.7;
+  top: 20px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+header nav .nav-drop.slide-down {
+  height: 30px;
+  padding: 20px;
+}
+header nav .sub-menu {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  top: 50px;
+  transition: 0.5s;
+}
+header nav .sub-menu.last-sub-menu > a {
+  display: none;
+}
+header nav .sub-menu.last-sub-menu li .main-menu {
+  display: none;
+}
+header nav .sub-menu li a {
+  font-size: 0.7292vw;
+}
+header nav .sub-menu.display {
+  display: block;
+}
+header nav > ul {
   width: 50%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
-header nav ul li a {
+header nav > ul li a {
   font-size: 1.3021vw;
   color: black;
   font-family: nanumB;
@@ -244,17 +394,17 @@ header nav ul li a {
   align-items: center;
   transition: 0.5s;
 }
-header nav ul li a:hover::after {
+header nav > ul li a:hover::after {
   width: 100%;
 }
-header nav ul li a::after {
+header nav > ul li a::after {
   content: "";
   width: 0%;
   height: 2px;
   display: block;
   background-color: black;
   transition: 0.5s;
-  transform: translateY(10px);
+  transform: translateY(5px);
 }
 
 main section.banner-sec {
@@ -563,6 +713,12 @@ main section.map-sec .img-page-link a.map-active {
 main section.map-sec .img-page-link span {
   opacity: 0.6;
 }
+main section.map-sec .img-page-link span.span-active {
+  display: none;
+}
+main section.map-mobile-sec {
+  display: none;
+}
 main section.mainfootbg {
   width: 100%;
   overflow: hidden;
@@ -584,15 +740,16 @@ main section.mainfootbg .imganimation img {
 
 footer {
   width: 100%;
+  overflow: hidden;
   background-color: #3e3e3e;
-  padding: 10px;
   color: white;
 }
 footer .footer-inner {
-  max-width: 1280px;
-  margin: 0 auto;
+  padding: 10px;
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 footer .footer-inner .footer-left {
   width: 50%;
@@ -619,11 +776,29 @@ footer .footer-inner .footer-right {
 }
 footer .footer-inner .footer-right nav ul {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 footer .footer-inner .footer-right nav ul li {
   width: 25%;
-  padding: 10px;
+  height: 50px;
+  white-space: nowrap;
 }
 footer .footer-inner .footer-right nav ul li a {
   color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+footer .footer-inner .footer-right nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  display: block;
+  transition: 0.5s;
+  transform: translateY(10px);
+}
+footer .footer-inner .footer-right nav ul li a:hover:after {
+  width: 100%;
+  background-color: white;
 }/*# sourceMappingURL=index.css.map */
