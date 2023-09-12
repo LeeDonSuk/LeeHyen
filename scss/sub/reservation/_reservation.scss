@@ -1,0 +1,225 @@
+main {
+    &.reservation {
+        section {
+            width: 100%;
+            @include mwd(1280px);
+            &.status {
+                border: 3px solid rgba(250, 128, 114, 0.397);
+                padding-top: 50px;
+                padding-bottom: 50px;
+                position: fixed;
+                top: 75px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: white;
+                .status-inner {
+                    display: flex;
+                    justify-content: space-evenly;
+                    .step {
+                        p {
+                            color: salmon;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            font-weight: bold;
+                            font-size: 20px;
+                            span {
+                                color: black;
+                                margin-top: 10%;
+                                text-align: center;
+                                line-height: 1.5;
+                                font-weight: bold;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+                .status-progress {
+                    @include mwd(1000px);
+                    .progress-bar {
+                        border-bottom: 1px dashed rgba(0, 128, 0, 0.363);
+                        opacity: 0.7;
+                        transform: translateY(-10px);
+                    }
+                    img {
+                        width: 50px;
+                        animation: tutle 2s linear infinite;
+                        transform: translateX(105px);
+                        @keyframes tutle {
+                            0% {
+                                transform: translateX(100px);
+                            }
+                            50% {
+                                transform: translateX(105px);
+                            }
+                            100% {
+                                transform: translateX(100px);
+                            }
+                        }
+                        @keyframes tutle1 {
+                            0% {
+                                transform: translateX(305px);
+                            }
+                            50% {
+                                transform: translateX(310px);
+                            }
+                            100% {
+                                transform: translateX(305px);
+                            }
+                        }
+                        @keyframes tutle2 {
+                            0% {
+                                transform: translateX(435px);
+                            }
+                            50% {
+                                transform: translateX(440px);
+                            }
+                            100% {
+                                transform: translateX(435px);
+                            }
+                        }
+                        @keyframes tutle3 {
+                            0% {
+                                transform: translateX(650px);
+                            }
+                            50% {
+                                transform: translateX(655px);
+                            }
+                            100% {
+                                transform: translateX(650px);
+                            }
+                        }
+                        &.move1 {
+                            animation: tutle 2s linear infinite;
+                        }
+                        &.move2 {
+                            animation: tutle1 2s linear infinite;
+                        }
+                        &.move3 {
+                            animation: tutle2 2s linear infinite;
+                        }
+                    }
+                }
+            }
+            &.camping-list {
+                @include mwd(1000px);
+                margin-top: 347px;
+                h1 {
+                    display: flex;
+                    align-items: center;
+                    font-size: 2vw;
+                    @include titleimg;
+                    font-weight: bold;
+                    &::before {
+                        width: 2.6042vw;
+                        height: 2.6042vw;
+                    }
+                }
+                .cam-list-btn {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    width: 100%;
+                    margin-top: 4.1667vw;
+                    button {
+                        width: 30%;
+                        height: 50px;
+                        border: 3px solid #eee;
+                        margin: 5px;
+                        border-radius: 2%;
+                        padding: 0;
+                        font-weight: bold;
+                        transition: 0.5s;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: rgba(250, 128, 114, 0.285);
+                        }
+                        &.active {
+                            background-color: salmon;
+                            color: white;
+                            border: 3px solid black;
+                        }
+                    }
+                }
+            }
+            &.site {
+                margin-top: 100px;
+                iframe {
+                    width: 70%;
+                    height: 500px;
+                    display: flex;
+                    justify-content: center;
+                    @include mwd(1000px);
+                    &.active {
+                        display: none;
+                    }
+                }
+            }
+            &.check {
+                width: 70%;
+                @include mwd(1000px);
+                margin-top: 50px;
+                border: 1px solid aqua;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h1 {
+                    margin-bottom: 4.1667vw;
+                    font-size: 2vw;
+                    font-weight: bold;
+                    -webkit-text-stroke: 0.3px salmon; /* 테두리 색상 및 너비 (브라우저 접두사 포함) */
+                }
+                input {
+                    border: 1px solid salmon;
+                    padding: 20px 0px 20px 40px;
+                    outline-style: none;
+                    &.kidslandid {
+                        border-bottom: none;
+                    }
+                    &.btirthday {
+                        border-top: none;
+                    }
+                    &::placeholder {
+                        margin-left: 40px;
+                    }
+                }
+                .check-id {
+                    position: relative;
+                    span {
+                        position: absolute;
+                        top: 50%;
+                        left: 5%;
+                        transform: translateY(-50%);
+                        color: salmon;
+                    }
+                }
+                .check-birth {
+                    position: relative;
+                    span {
+                        position: absolute;
+                        top: 50%;
+                        left: 5%;
+                        transform: translateY(-50%);
+                        color: salmon;
+                    }
+                }
+                .submit-btn {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    button {
+                        width: 100%;
+                        max-width: 211px;
+                        margin-top: 50px;
+                        padding: 20px;
+                        border: 1px solid salmon;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

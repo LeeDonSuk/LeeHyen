@@ -201,15 +201,24 @@ function footermap() {
     })
 }
 
-function load(){
-    fetch('./html/header.html')
-  .then(response => response.text())
-  .then(data => {
-    const headerContainer = document.querySelector('header'); // 삽입할 위치의 요소 선택
-    headerContainer.innerHTML = data; // 헤더 HTML을 삽입할 위치에 추가
-    dropdownheader();
-  });
+function headerload() {
+    fetch('./html/common/header.html')
+        .then(response => response.text())
+        .then(data => {
+            const headerContainer = document.querySelector('header'); // 삽입할 위치의 요소 선택
+            headerContainer.innerHTML = data; // 헤더 HTML을 삽입할 위치에 추가
+            dropdownheader();
+        });
 
+}
+function footerload() {
+    fetch('./html/common/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            const headerContainer = document.querySelector('footer'); // 삽입할 위치의 요소 선택
+            headerContainer.innerHTML = data; // 헤더 HTML을 삽입할 위치에 추가
+            footermap();
+        });
 }
 // DOM이 로드되면 실행될 함수들을 이벤트 리스너로 등록
 document.addEventListener('DOMContentLoaded', function () {
@@ -237,5 +246,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //푸터 슬라이더 버튼
     //푸터 슬라이더 버튼
     footermap();
-    load();
+    headerload();
+    footerload();
 });

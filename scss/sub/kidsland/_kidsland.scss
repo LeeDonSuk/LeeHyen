@@ -1,0 +1,198 @@
+@import "../../mixin";
+main {
+    &.kidslaind {
+        section {
+            &.main-title {
+                width: 100%;
+                @include mwd(1280px);
+                img {
+                    width: 100%;
+                }
+            }
+            &.main-content {
+                @include mwd(1280px);
+                .main-content-btn {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px;
+                    button {
+                        width: 32%;
+                        height: 10.4167vw;
+                        background-size: 100%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        transition: 0.5s;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                        &.btn1 {
+                            background-image: url(../../../imgs/sub/kidsland/btn/about_tab_01_off.png);
+                            &.active {
+                                background-image: url(../../../imgs/sub/kidsland/btn/about_tab_01_on.png);
+                            }
+                        }
+                        &.btn2 {
+                            background-image: url(../../../imgs/sub/kidsland/btn/about_tab_02_off.png);
+                            &.active {
+                                background-image: url(../../../imgs/sub/kidsland/btn/about_tab_02_on.png);
+                            }
+                        }
+                        &.btn3 {
+                            background-image: url(../../../imgs/sub/kidsland/btn/about_tab_05_off.png);
+                            &.active {
+                                background-image: url(../../../imgs/sub/kidsland/btn/about_tab_05_on.png);
+                            }
+                        }
+                    }
+                }
+                .main-content-img {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            &.apply {
+                width: 100%;
+                background-color: #f4f4f4;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                h1 {
+                    display: flex;
+                    justify-content: center;
+                    font-size: 3vw;
+                    text-align: center;
+                    align-items: center;
+                    padding-bottom: 2.6042vw;
+                    @include titleimg;
+                    font-weight: bold;
+                }
+                .apply-guide {
+                    @include mwd(1280px);
+                    width: 100%;
+                    display: flex;
+                    .guide-box {
+                        width: calc(100% / 3);
+                        height: 18.2292vw;
+                        margin: 10px;
+                        background-color: white;
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+                        border-radius: 5%;
+                        padding-bottom: 4.1667vw;
+                        h2 {
+                            text-align: center;
+                            img {
+                                width: 4.5313vw;
+                                margin-top: 1.0417vw;
+                                margin-bottom: 10px;
+                            }
+                        }
+                        p {
+                            display: flex;
+                            align-items: center;
+                            justify-content: left;
+                            margin-bottom: 20px;
+                            font-size: 1.2vw;
+                            letter-spacing: 0.5px;
+                            line-height: 1.1;
+                            padding-left: 5%;
+                            &::before {
+                                content: "";
+                                width: 0.7813vw;
+                                height: 0.7813vw;
+                                background-color: black;
+                                border-radius: 100%;
+                                background-color: salmon;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+            &.guide {
+                @include mwd(1280px);
+                width: 100%;
+                margin-top: 4.1667vw;
+                .guide-inner {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    border: 5px solid salmon;
+                    padding: 30px;
+                    .guide-title {
+                        h1 {
+                            margin-left: 10px;
+                            margin-right: 10px;
+                            font-size: 3vw;
+                            font-weight: bold;
+                            color: salmon;
+                            display: flex;
+                            align-items: center;
+                            @include titleimg;
+                            &::before {
+                                width: 37px;
+                                height: 37px;
+                                background-repeat: no-repeat;
+                                background-image: url(../../../imgs/sub/kidsland/icon/ico_notice.png);
+                            }
+                        }
+                    }
+                    .guide-list {
+                        ul {
+                            li {
+                                padding: 10px;
+                                @include titleimg;
+                                display: flex;
+                                align-items: center;
+                                &::before {
+                                    width: 10px;
+                                    height: 10px;
+                                    background-image: url(../../../imgs/sub/kidsland/icon/blit_orangr.png);
+                                }
+                                p {
+                                    font-size: 1.2vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 710px) {
+    main {
+        &.kidslaind {
+            section {
+                &.apply {
+                    .apply-guide {
+                        display: flex;
+                        flex-direction: column;
+                        h2 {
+                            display: flex;
+                            justify-content: center;
+                            img{
+                                width: 20% !important;
+                            }
+                        }
+                        .guide-box {
+                            width: 100%;
+                            max-width: 500px;
+                            margin: 30px auto;
+                            height: 70.4225vw;
+                            justify-content: space-around;
+                            p {
+                                justify-content: center;
+                                font-size: 3vw;
+                                &:nth-of-type(1){
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

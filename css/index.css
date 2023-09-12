@@ -346,7 +346,7 @@ header nav .nav-drop {
   position: absolute;
   z-index: 2;
   opacity: 0.7;
-  top: 20px;
+  top: 30px;
   transition: 0.5s;
   display: flex;
   justify-content: center;
@@ -372,7 +372,11 @@ header nav .sub-menu.last-sub-menu li .main-menu {
   display: none;
 }
 header nav .sub-menu li a {
-  font-size: 0.7292vw;
+  font-size: 1vw;
+  opacity: 0.7;
+}
+header nav .sub-menu li a::after {
+  opacity: 0.7;
 }
 header nav .sub-menu.display {
   display: block;

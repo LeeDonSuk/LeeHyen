@@ -30,6 +30,19 @@
         transform: translateY(5px);
     }
 }
+@mixin titleimg{
+    &::before{
+        content: '';
+        width: 45px;
+        height: 45px;
+        display: block;
+        background-image: url(../../../imgs/sub/kidsland/icon/tit_ico.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 10px;
+    }
+}
 @mixin title {
     position: relative;
     display: inline-block;
